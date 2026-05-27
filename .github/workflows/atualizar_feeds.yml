@@ -28,4 +28,4 @@ jobs:
         token: ${{ secrets.GIST_TOKEN }}
         gist_id: a6564ddeec0f72ffeb9918cb5c16a873
         file_path: noticias_final.json
-        gist_file_name: noticias_final.json
+        file_name: noticias_final.json
