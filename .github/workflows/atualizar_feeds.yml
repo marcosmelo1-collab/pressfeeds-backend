@@ -2,30 +2,28 @@ name: Atualizador Automatico de Noticias
 
 on:
   schedule:
-    # Corre automaticamente a cada 15 minutos
     - cron: '*/15 * * * *'
-  workflow_dispatch: # Permite-te clicar num botão para rodar manualmente se quiseres
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Copiar os ficheiros do repositório
+      - name: Checkout do repositorio
         uses: actions/checkout@v3
 
-      - name: Instalar o Node.js
+      - name: Instalar Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-      - name: Processar os Feeds e Gerar o JSON
+      - name: Processar os Feeds
         run: node processar_feeds.js
 
-      - name: Enviar o Super JSON para o Gist do GitHub
+      - name: Enviar para o Gist
         uses: exuanbo/actions-deploy-gist@v1
         with:
           token: ${{ secrets.GIST_TOKEN }}
           gist_id: a6564ddeec0f72ffeb9918cb5c16a873
           file_path: noticias_final.json
-          gist_file_name: noticias_final.json
