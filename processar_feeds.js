@@ -131,8 +131,9 @@ function extrairImagemDoTexto(texto) {
 async function processarFeed(feed) {
     try {
         const xml = await fecthUrl(feed.u);
-        // Regex simples para capturar blocos <item>
-        const itemRegex = /<item>([\s\S]*?)<\/item>/g;
+        
+        // Regex insensível a maiúsculas para capturar blocos <item> ou <ITEM>
+        const itemRegex = /<item>([\s\S]*?)<\/item>/gi;
         let match;
         const artigos = [];
         let contador = 0;
@@ -140,22 +141,25 @@ async function processarFeed(feed) {
         while ((match = itemRegex.exec(xml)) !== null && contador < 9) {
             const itemXml = match[1];
 
-            const titleMatch = itemXml.match(/<title>([\s\S]*?)<\/title>/);
+            // Procura por <title> ou <TITLE> de forma tolerante e insensível
+            const titleMatch = itemXml.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
             let rawTitle = titleMatch ? titleMatch[1] : "";
             
             // Tratamento e limpeza segura do título
             let title = cleanText(rawTitle);
             
-            // Salvaguarda: Se a limpeza por algum motivo esvaziou o título, usa o rawTitle original sem tags
+            // Salvaguarda caso a limpeza esvazie tudo
             if (!title && rawTitle) {
                 title = rawTitle.replace(/<[^>]*>/g, "").trim();
             }
             if (!title) continue;
 
-            const linkMatch = itemXml.match(/<link>([\s\S]*?)<\/link>/);
+            // Procura por <link> ou <LINK> de forma insensível
+            const linkMatch = itemXml.match(/<link[^>]*>([\s\S]*?)<\/link>/i);
             const link = linkMatch ? linkMatch[1].trim() : "";
 
-            const pubDateMatch = itemXml.match(/<pubDate>([\s\S]*?)<\/pubDate>/);
+            // Procura por data de publicação
+            const pubDateMatch = itemXml.match(/<pubDate[^>]*>([\s\S]*?)<\/pubDate>/i);
             const pubDate = pubDateMatch ? new Date(pubDateMatch[1]) : new Date();
 
             // Traduz se o feed estiver marcado como inglês
@@ -182,6 +186,7 @@ async function processarFeed(feed) {
             else if (domain.includes("billboard")) fallbackImg = "https://www.billboard.com/wp-content/themes/vip/pmc-billboard-2021/assets/public/lazyload.png";
             else if (domain.includes("cnn")) fallbackImg = "https://images.weserv.nl/?url=cnnportugal.iol.pt/assets/images/logos/cnn-portugal.png";
             else if (domain.includes("bola")) fallbackImg = "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png";
+            else if (domain.includes("record")) fallbackImg = "https://images.weserv.nl/?url=cdn.record.pt/images/og-image.png";
             else if (domain.includes("público") || domain.includes("publico")) fallbackImg = "https://images.weserv.nl/?url=data.publico.pt/assets/images/facebook-opengraph.png";
 
             artigos.push({
