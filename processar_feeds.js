@@ -9,8 +9,6 @@ const priorityOrder = [
     "PopNow", "Renascença", "In Magazine", "Billboard", "NiT"
 ];
 
-// CORREÇÃO CIRÚRGICA: Função HTTP nativa alterada para ler dados binários brutos (Buffer)
-// e decodificar os acentos de acordo com a resposta específica de cada jornal.
 // Função utilitária para fazer requisições HTTP (GET) nativas e decodificar perfeitamente os caracteres
 function fecthUrl(url) {
     return new Promise((resolve, reject) => {
@@ -49,12 +47,11 @@ function fecthUrl(url) {
                 let textoDecodificado = bufferCompleto.toString(encoding);
                 
                 // 4. Correção extra de segurança contra dupla conversão (Double-Encoding)
-                // Se mesmo em latin1 ou utf-8 escapou algum caractere quebrado visível, limpamos aqui
                 if (textoDecodificado.includes('')) {
                     try {
                         textoDecodificado = decodeURIComponent(escape(textoDecodificado));
                     } catch(e) {
-                        // Se falhar o escape, tenta forçar uma conversão direta dos caracteres corrompidos mais comuns
+                        // Se falhar o escape, força uma conversão direta dos caracteres corrompidos mais comuns
                         textoDecodificado = textoDecodificado
                             .replace(/NOTCIAS/g, "NOTÍCIAS")
                             .replace(/OPINIO/g, "OPINIÃO")
@@ -70,12 +67,24 @@ function fecthUrl(url) {
     });
 }
 
-// Função para limpar CDATA e tags HTML básicas
+// Função melhorada para limpar CDATA e tags HTML de forma implacável (Garante limpeza no Record, etc.)
 function cleanText(txt) {
     if (!txt) return "";
-    let str = txt.replace(/<!\[CDATA\[|\]\]>/g, "").trim();
-    str = str.replace(/<[^>]*>/g, ""); // Remove tags HTML
-    return str;
+    
+    // 1. Remove qualquer ocorrência de <![CDATA[ e ]]> que venha agarrada ao texto de forma insensível a maiúsculas/minúsculas
+    let str = txt.replace(/<!\[CDATA\[/gi, "").replace(/\]\]>/gi, "").trim();
+    
+    // 2. Remove tags HTML residuais (como <p>, <strong>, etc.)
+    str = str.replace(/<[^>]*>/g, ""); 
+    
+    // 3. Descodifica entidades HTML básicas (como &amp; para &, &quot; para ", etc.)
+    str = str.replace(/&amp;/g, "&")
+             .replace(/&lt;/g, "<")
+             .replace(/&gt;/g, ">")
+             .replace(/&quot;/g, '"')
+             .replace(/&#39;/g, "'");
+
+    return str.trim();
 }
 
 // Função para obter o Favicon do domínio
@@ -129,7 +138,10 @@ async function processarFeed(feed) {
             const itemXml = match[1];
 
             const titleMatch = itemXml.match(/<title>([\s\S]*?)<\/title>/);
-            let title = titleMatch ? cleanText(titleMatch[1]) : "";
+            let rawTitle = titleMatch ? titleMatch[1] : "";
+            
+            // Aplica a limpeza implacável contra CDATA e HTML antes de prosseguir
+            let title = cleanText(rawTitle);
             if (!title) continue;
 
             const linkMatch = itemXml.match(/<link>([\s\S]*?)<\/link>/);
@@ -226,8 +238,8 @@ async function ejecutar() {
     const resultadoFinal = {
         ultimasAtualizacao: new Date().toISOString(),
         fontesAtivas: fontesAtivas,
-        todosArtigosPlanos: todosArtigosPlanos, // Usado para quando filtram por uma fonte específica (Ex: Ver Tudo +)
-        gruposPorPrioridade: gruposNoticias      // Usado para montar a grelha inicial (1 notícia grande + 2 sub-itens)
+        todosArtigosPlanos: todosArtigosPlanos, 
+        gruposPorPrioridade: gruposNoticias      
     };
 
     // Grava o ficheiro temporário local que o GitHub Actions vai enviar para o teu Gist
