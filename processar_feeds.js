@@ -67,17 +67,20 @@ function fecthUrl(url) {
     });
 }
 
-// Função melhorada para limpar CDATA e tags HTML de forma implacável (Garante limpeza no Record, etc.)
+// Função perfeitamente calibrada para limpar CDATA e tags HTML (Garante compatibilidade total com o Record)
 function cleanText(txt) {
     if (!txt) return "";
     
-    // 1. Remove qualquer ocorrência de <![CDATA[ e ]]> que venha agarrada ao texto de forma insensível a maiúsculas/minúsculas
-    let str = txt.replace(/<!\[CDATA\[/gi, "").replace(/\]\]>/gi, "").trim();
+    let str = txt;
+    
+    // 1. Remove blocos literais de CDATA sem corromper o conteúdo interno
+    str = str.replace(/<!\[CDATA\[/gi, "");
+    str = str.replace(/\]\]>/gi, "");
     
     // 2. Remove tags HTML residuais (como <p>, <strong>, etc.)
     str = str.replace(/<[^>]*>/g, ""); 
     
-    // 3. Descodifica entidades HTML básicas (como &amp; para &, &quot; para ", etc.)
+    // 3. Descodifica entidades HTML básicas
     str = str.replace(/&amp;/g, "&")
              .replace(/&lt;/g, "<")
              .replace(/&gt;/g, ">")
@@ -140,8 +143,13 @@ async function processarFeed(feed) {
             const titleMatch = itemXml.match(/<title>([\s\S]*?)<\/title>/);
             let rawTitle = titleMatch ? titleMatch[1] : "";
             
-            // Aplica a limpeza implacável contra CDATA e HTML antes de prosseguir
+            // Tratamento e limpeza segura do título
             let title = cleanText(rawTitle);
+            
+            // Salvaguarda: Se a limpeza por algum motivo esvaziou o título, usa o rawTitle original sem tags
+            if (!title && rawTitle) {
+                title = rawTitle.replace(/<[^>]*>/g, "").trim();
+            }
             if (!title) continue;
 
             const linkMatch = itemXml.match(/<link>([\s\S]*?)<\/link>/);
