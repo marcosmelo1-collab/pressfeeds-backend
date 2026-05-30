@@ -11,9 +11,10 @@ const priorityOrder = [
 
 // CORREÇÃO CIRÚRGICA: Função HTTP nativa alterada para ler dados binários brutos (Buffer)
 // e decodificar os acentos de acordo com a resposta específica de cada jornal.
+// Função utilitária para fazer requisições HTTP (GET) nativas e decodificar perfeitamente os caracteres
 function fecthUrl(url) {
     return new Promise((resolve, reject) => {
-        https.get(url, { headers: { 'User-Agent': 'Mozilla/5.0' } }, (res) => {
+        https.get(url, { headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' } }, (res) => {
             const chunks = [];
             
             res.on('data', chunk => chunks.push(chunk));
@@ -21,27 +22,48 @@ function fecthUrl(url) {
             res.on('end', () => {
                 const bufferCompleto = Buffer.concat(chunks);
                 
-                // Analisa o cabeçalho 'content-type' enviado pelo jornal para ver se usa codificação antiga
+                // 1. Detetar encoding pelo cabeçalho do servidor
                 const contentType = res.headers['content-type'] || '';
-                let encoding = 'utf-8'; // Padrão
+                let encoding = 'utf-8';
                 
-                if (contentType.toLowerCase().includes('iso-8859-1')) {
-                    encoding = 'latin1'; // O Node.js mapeia ISO-8859-1 como 'latin1'
-                } else if (contentType.toLowerCase().includes('windows-1252')) {
+                if (contentType.toLowerCase().includes('iso-8859-1') || contentType.toLowerCase().includes('windows-1252')) {
                     encoding = 'latin1';
                 }
                 
-                // Se o cabeçalho não avisar, faz uma verificação rápida no início do ficheiro XML
+                // 2. Detetar encoding inspecionando a tag inicial do XML
                 if (encoding === 'utf-8') {
-                    const amostraTexto = bufferCompleto.slice(0, 200).toString('ascii');
+                    const amostraTexto = bufferCompleto.slice(0, 250).toString('ascii');
                     if (amostraTexto.toLowerCase().includes('encoding="iso-8859-1"') || 
                         amostraTexto.toLowerCase().includes('encoding="windows-1252"')) {
                         encoding = 'latin1';
                     }
                 }
                 
-                // Decodifica o buffer de forma perfeita mantendo os acentos originais intactos
-                const textoDecodificado = bufferCompleto.toString(encoding);
+                // 3. Forçar 'latin1' para domínios problemáticos conhecidos que enviam dados errados (Ex: A Bola)
+                const urlLower = url.toLowerCase();
+                if (urlLower.includes('abola.pt')) {
+                    encoding = 'latin1';
+                }
+                
+                // Decodifica o buffer usando a estratégia apurada
+                let textoDecodificado = bufferCompleto.toString(encoding);
+                
+                // 4. Correção extra de segurança contra dupla conversão (Double-Encoding)
+                // Se mesmo em latin1 ou utf-8 escapou algum caractere quebrado visível, limpamos aqui
+                if (textoDecodificado.includes('')) {
+                    try {
+                        textoDecodificado = decodeURIComponent(escape(textoDecodificado));
+                    } catch(e) {
+                        // Se falhar o escape, tenta forçar uma conversão direta dos caracteres corrompidos mais comuns
+                        textoDecodificado = textoDecodificado
+                            .replace(/NOTCIAS/g, "NOTÍCIAS")
+                            .replace(/OPINIO/g, "OPINIÃO")
+                            .replace(/EM FCO/g, "EM FOCO")
+                            .replace(/CONCEIO/g, "CONCEIÇÃO")
+                            .replace(/SELEO/g, "SELEÇÃO");
+                    }
+                }
+                
                 resolve(textoDecodificado);
             });
         }).on('error', err => reject(err));
