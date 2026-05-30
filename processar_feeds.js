@@ -9,13 +9,41 @@ const priorityOrder = [
     "PopNow", "Renascença", "In Magazine", "Billboard", "NiT"
 ];
 
-// Função utilitária para fazer requisições HTTP (GET) nativas retornar uma Promessa
+// CORREÇÃO CIRÚRGICA: Função HTTP nativa alterada para ler dados binários brutos (Buffer)
+// e decodificar os acentos de acordo com a resposta específica de cada jornal.
 function fecthUrl(url) {
     return new Promise((resolve, reject) => {
         https.get(url, { headers: { 'User-Agent': 'Mozilla/5.0' } }, (res) => {
-            let data = '';
-            res.on('data', chunk => data += chunk);
-            res.on('end', () => resolve(data));
+            const chunks = [];
+            
+            res.on('data', chunk => chunks.push(chunk));
+            
+            res.on('end', () => {
+                const bufferCompleto = Buffer.concat(chunks);
+                
+                // Analisa o cabeçalho 'content-type' enviado pelo jornal para ver se usa codificação antiga
+                const contentType = res.headers['content-type'] || '';
+                let encoding = 'utf-8'; // Padrão
+                
+                if (contentType.toLowerCase().includes('iso-8859-1')) {
+                    encoding = 'latin1'; // O Node.js mapeia ISO-8859-1 como 'latin1'
+                } else if (contentType.toLowerCase().includes('windows-1252')) {
+                    encoding = 'latin1';
+                }
+                
+                // Se o cabeçalho não avisar, faz uma verificação rápida no início do ficheiro XML
+                if (encoding === 'utf-8') {
+                    const amostraTexto = bufferCompleto.slice(0, 200).toString('ascii');
+                    if (amostraTexto.toLowerCase().includes('encoding="iso-8859-1"') || 
+                        amostraTexto.toLowerCase().includes('encoding="windows-1252"')) {
+                        encoding = 'latin1';
+                    }
+                }
+                
+                // Decodifica o buffer de forma perfeita mantendo os acentos originais intactos
+                const textoDecodificado = bufferCompleto.toString(encoding);
+                resolve(textoDecodificado);
+            });
         }).on('error', err => reject(err));
     });
 }
@@ -134,7 +162,7 @@ async function processarFeed(feed) {
     }
 }
 
-async function executar() {
+async function ejecutar() {
     console.log("A iniciar processamento dos feeds no servidor...");
     
     // 1. Descarrega a lista de fontes ativas
@@ -185,4 +213,4 @@ async function executar() {
     console.log("Super JSON gerado com sucesso!");
 }
 
-executar();
+ejecutar();
