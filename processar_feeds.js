@@ -67,27 +67,34 @@ function fetchUrl(url) {
 }
 
 // Função perfeitamente calibrada para limpar CDATA e tags HTML (Garante compatibilidade total com o Record)
+// Substitua APENAS a função cleanText no seu Node.js por esta versão implacável:
 function cleanText(txt) {
     if (!txt) return "";
     
     let str = txt;
     
-    // 1. Remove os delimitadores de CDATA primeiro
+    // 1. Remove qualquer CDATA normal ou oculto por double-encoding de variadíssimas formas
     str = str.replace(/<!\[CDATA\[/gi, "");
     str = str.replace(/\]\]>/gi, "");
+    str = str.replace(/&lt;!\[CDATA\[/gi, "");
+    str = str.replace(/\]\]&gt;/gi, "");
+    str = str.replace(/CDATA/g, "");
     
-    // 2. Descodifica JÁ as entidades básicas para evitar que o conteúdo fique camuflado
+    // 2. Descodifica as entidades básicas
     str = str.replace(/&amp;/g, "&")
              .replace(/&lt;/g, "<")
              .replace(/&gt;/g, ">")
              .replace(/&quot;/g, '"')
              .replace(/&#39;/g, "'");
              
-    // 3. Remove apenas as tags HTML estruturais (<p>, <img>, <a>) sem corromper o texto envolvente
-    str = str.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, ""); // Remove scripts se houver
-    str = str.replace(/<[^>]+>/g, ""); // Remove tags mas protege texto livre
+    // 3. Remove todas as tags HTML que tenham sobrado
+    str = str.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, "");
+    str = str.replace(/<[^>]+>/g, "");
     
-    // 4. Limpeza final de espaços duplicados
+    // 4. Limpeza final absoluta para limpar os delimitadores que possam ter ficado perdidos por acidentes de texto
+    str = str.replace("<![CDATA[", "").replace("]]>", "");
+    str = str.replace("<![CDATA[", "").replace("]]>", ""); // Dupla confirmação por segurança
+    
     return str.replace(/\s+/g, " ").trim();
 }
 
