@@ -130,9 +130,19 @@ function formatarData(dateObj) {
 
 // Regex para capturar a primeira imagem de uma descrição/conteúdo caso não haja enclosure
 function extrairImagemDoTexto(texto) {
-    const imgRegex = /<img[^>]+(?:src|data-src|data-lazy-src|data-original)=["']([^"']+)["']/i;
-    const match = texto.match(imgRegex);
-    return match ? match[1] : "";
+    if (!texto) return "";
+    
+    // 1. Tenta apanhar qualquer atributo clássico de imagem (src, data-src, url, etc.)
+    const imgRegex = /<img[^>]+(?:src|data-src|data-lazy-src|data-original|url)=["']([^"']+)["']/i;
+    let match = texto.match(imgRegex);
+    if (match && match[1] && match[1].length > 10) return match[1].trim();
+
+    // 2. Se falhar, procura por links diretos de imagens (.jpg, .jpeg, .png, .webp) escondidos no texto
+    const urlRegex = /(https?:\/\/[^"'\s<>]+?\.(?:jpg|jpeg|png|webp|gif))/i;
+    match = texto.match(urlRegex);
+    if (match && match[1]) return match[1].trim();
+
+    return "";
 }
 
 // Captura e faz o parse manual simplificado de um feed XML
