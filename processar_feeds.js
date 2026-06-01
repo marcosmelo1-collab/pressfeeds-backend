@@ -213,15 +213,23 @@ async function processarFeed(feed) {
             }
 
             // 7. Tenta encontrar imagens nas tags conhecidas
+            // 7. CORREÇÃO: Captura de imagens ultra-agressiva lendo todas as tags possíveis do item
             let thumb = "";
+            
+            // Estratégia A: Procura nas tags nativas de média/enclosure
             const mediaMatch = itemXml.match(/<media:content[^>]+url=["']([^"']+)["']/i) || 
                                itemXml.match(/<enclosure[^>]+url=["']([^"']+)["']/i) || 
                                itemXml.match(/<media:thumbnail[^>]+url=["']([^"']+)["']/i);
             
-            if (mediaMatch) {
+            if (mediaMatch && mediaMatch[1]) {
                 thumb = mediaMatch[1];
             } else {
-                thumb = extrairImagemDoTexto(itemXml);
+                // Estratégia B: Se não houver tag de média, extrai o conteúdo da descrição ou do content do item
+                const descMatch = itemXml.match(/<description[^>]*>([\s\S]*?)<\/description>/i);
+                const contentMatch = itemXml.match(/<content:encoded[^>]*>([\s\S]*?)<\/content:encoded>/i);
+                
+                const textoParaProcurar = (descMatch ? descMatch[1] : "") + (contentMatch ? contentMatch[1] : "");
+                thumb = extrairImagemDoTexto(textoParaProcurar);
             }
 
             // Fallbacks de imagens fixas baseadas no nome da fonte
@@ -245,6 +253,7 @@ async function processarFeed(feed) {
                 n: feed.n
             });
             contador++;
+        } // <-- Aqui fecha o loop while do seu código
         }
 
         return artigos;
