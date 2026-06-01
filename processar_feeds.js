@@ -73,21 +73,23 @@ function cleanText(txt) {
     
     let str = txt;
     
-    // 1. Remove blocos literais de CDATA sem corromper o conteúdo interno
+    // 1. Remove os delimitadores de CDATA primeiro
     str = str.replace(/<!\[CDATA\[/gi, "");
     str = str.replace(/\]\]>/gi, "");
     
-    // 2. Remove tags HTML residuais (como <p>, <strong>, etc.)
-    str = str.replace(/<[^>]*>/g, ""); 
-    
-    // 3. Descodifica entidades HTML básicas
+    // 2. Descodifica JÁ as entidades básicas para evitar que o conteúdo fique camuflado
     str = str.replace(/&amp;/g, "&")
              .replace(/&lt;/g, "<")
              .replace(/&gt;/g, ">")
              .replace(/&quot;/g, '"')
              .replace(/&#39;/g, "'");
-
-    return str.trim();
+             
+    // 3. Remove apenas as tags HTML estruturais (<p>, <img>, <a>) sem corromper o texto envolvente
+    str = str.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, ""); // Remove scripts se houver
+    str = str.replace(/<[^>]+>/g, ""); // Remove tags mas protege texto livre
+    
+    // 4. Limpeza final de espaços duplicados
+    return str.replace(/\s+/g, " ").trim();
 }
 
 // Função para obter o Favicon do domínio
