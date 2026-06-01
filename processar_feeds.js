@@ -154,49 +154,49 @@ async function processarFeed(feed) {
 
             // 1. Captura o título de forma tolerante e limpa as tags HTML
             const titleMatch = itemXml.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
-            let rawTitle = titleMatch ? titleMatch[1] : "";
-            let title = cleanText(rawTitle);
-            
-            if (!title && rawTitle) {
-                title = rawTitle.replace(/<[^>]*>/g, "").trim();
-            }
-            if (!title) continue;
+    let rawTitle = titleMatch ? titleMatch[1] : "";
+    let title = cleanText(rawTitle);
+    
+    if (!title && rawTitle) {
+        title = rawTitle.replace(/<[^>]*>/g, "").trim();
+    }
+    if (!title) continue;
 
-            // CORREÇÃO CIRÚRGICA: Repara o Double-Encoding de caracteres corrompidos comuns (Record/FeedBurner)
-            title = title
-                .replace(/Ã³/g, "ó").replace(/Ã³/g, "ó")
-                .replace(/Ã§/g, "ç").replace(/Ã§/g, "ç")
-                .replace(/Ã£/g, "ã").replace(/Ã£/g, "ã")
-                .replace(/Ã©/g, "é").replace(/Ã©/g, "é")
-                .replace(/Ã¡/g, "á").replace(/Ã¡/g, "á")
-                .replace(/Ã­/g, "í").replace(/Ã\u00ad/g, "í")
-                .replace(/Ã¢/g, "â").replace(/Ã¢/g, "â")
-                .replace(/Ãª/g, "ê").replace(/Ãª/g, "ê")
-                .replace(/Ãµ/g, "õ").replace(/Ãµ/g, "õ")
-                .replace(/Ãº/g, "ú").replace(/Ãº/g, "ú")
-                .replace(/Ã /g, "à").replace(/Ã /g, "à")
-                .replace(/Âº/g, "º").replace(/Âº/g, "º")
-                .replace(/Âª/g, "ª").replace(/Âª/g, "ª")
-                .replace(/Ã“/g, "Ó").replace(/Ã‡/g, "Ç")
-                .replace(/Ã/g, "É").replace(/Ã\u0081/g, "Á")
-                .replace(/Ãƒ/g, "Ã").replace(/â€“/g, "—")
-                .replace(/â€œ/g, '"').replace(/â€\u009d/g, '"');
-            // Remove os resíduos de CDATA que restaram devido ao Double-Encoding
-    title = title.replace(/<!\[CDATA\[/gi, "").replace(/\]\]>/gi, "");
+    // 1. Repara o Double-Encoding de caracteres corrompidos comuns
+    title = title
+        .replace(/Ã³/g, "ó").replace(/Ã³/g, "ó")
+        .replace(/Ã§/g, "ç").replace(/Ã§/g, "ç")
+        .replace(/Ã£/g, "ã").replace(/Ã£/g, "ã")
+        .replace(/Ã©/g, "é").replace(/Ã©/g, "é")
+        .replace(/Ã¡/g, "á").replace(/Ã¡/g, "á")
+        .replace(/Ã­/g, "í").replace(/Ã\u00ad/g, "í")
+        .replace(/Ã¢/g, "â").replace(/Ã¢/g, "â")
+        .replace(/Ãª/g, "ê").replace(/Ãª/g, "ê")
+        .replace(/Ãµ/g, "õ").replace(/Ãµ/g, "õ")
+        .replace(/Ãº/g, "ú").replace(/Ãº/g, "ú")
+        .replace(/Ã /g, "à").replace(/Ã /g, "à")
+        .replace(/Âº/g, "º").replace(/Âº/g, "º")
+        .replace(/Âª/g, "ª").replace(/Âª/g, "ª")
+        .replace(/Ã“/g, "Ó").replace(/Ã‡/g, "Ç")
+        .replace(/Ã/g, "É").replace(/Ã\u0081/g, "Á")
+        .replace(/Ãƒ/g, "Ã").replace(/â€“/g, "—")
+        .replace(/â€œ/g, '"').replace(/â€\u009d/g, '"');
 
-            // 2. Procura por <link> ou <LINK> de forma insensível
-            const linkMatch = itemXml.match(/<link[^>]*>([\s\S]*?)<\/link>/i);
-            const link = linkMatch ? linkMatch[1].trim() : "";
+    // 2. Remove de vez as marcas de CDATA que o double-encoding escondeu
+    title = title.replace(/<!\[CDATA\[/gi, "").replace(/\]\]>/gi, "").trim();
 
-            // 3. Procura por data de publicação
-            const pubDateMatch = itemXml.match(/<pubDate[^>]*>([\s\S]*?)<\/pubDate>/i);
-            const pubDate = pubDateMatch ? new Date(pubDateMatch[1]) : new Date();
+    // 3. Procura por <link> ou <LINK> de forma insensível
+    const linkMatch = itemXml.match(/<link[^>]*>([\s\S]*?)<\/link>/i);
+    const link = linkMatch ? linkMatch[1].trim() : "";
 
-            // 4. Traduz se o feed estiver marcado como inglês
-            if (feed.l === "en") {
-                title = await traduzirTexto(title);
-            }
+    // 4. Procura por data de publicação
+    const pubDateMatch = itemXml.match(/<pubDate[^>]*>([\s\S]*?)<\/pubDate>/i);
+    const pubDate = pubDateMatch ? new Date(pubDateMatch[1]) : new Date();
 
+    // 5. Traduz se o feed estiver marcado como inglês
+    if (feed.l === "en") {
+        title = await traduzirTexto(title);
+    }
             // 5. Tenta encontrar imagens nas tags conhecidas
             let thumb = "";
             const mediaMatch = itemXml.match(/<media:content[^>]+url=["']([^"']+)["']/i) || 
