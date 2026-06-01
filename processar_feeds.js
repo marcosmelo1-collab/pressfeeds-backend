@@ -129,6 +129,7 @@ function extrairImagemDoTexto(texto) {
 }
 
 // Captura e faz o parse manual simplificado de um feed XML
+// Substitua a função processarFeed antiga no seu Node.js por esta versão limpa:
 async function processarFeed(feed) {
     try {
         const xmlRaw = await fetchUrl(feed.u);
@@ -148,71 +149,53 @@ async function processarFeed(feed) {
         const artigos = [];
         let contador = 0;
 
-        // Procure este bloco dentro da função processarFeed no seu Node.js e substitua-o:
+        while ((match = itemRegex.exec(xml)) !== null && contador < 9) {
+            const itemXml = match[1];
 
-while ((match = itemRegex.exec(xml)) !== null && contador < 9) {
-    const itemXml = match[1];
-
-    const titleMatch = itemXml.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
-    let rawTitle = titleMatch ? titleMatch[1] : "";
-    let title = cleanText(rawTitle);
-    
-    if (!title && rawTitle) {
-        title = rawTitle.replace(/<[^>]*>/g, "").trim();
-    }
-    if (!title) continue;
-
-    // CORREÇÃO CIRÚRGICA: Repara o Double-Encoding de caracteres corrompidos comuns (Record/FeedBurner)
-    title = title
-        .replace(/Ã³/g, "ó").replace(/Ã³/g, "ó")
-        .replace(/Ã§/g, "ç").replace(/Ã§/g, "ç")
-        .replace(/Ã£/g, "ã").replace(/Ã£/g, "ã")
-        .replace(/Ã©/g, "é").replace(/Ã©/g, "é")
-        .replace(/Ã¡/g, "á").replace(/Ã¡/g, "á")
-        .replace(/Ã­/g, "í").replace(/Ã\u00ad/g, "í")
-        .replace(/Ã¢/g, "â").replace(/Ã¢/g, "â")
-        .replace(/Ãª/g, "ê").replace(/Ãª/g, "ê")
-        .replace(/Ãµ/g, "õ").replace(/Ãµ/g, "õ")
-        .replace(/Ãº/g, "ú").replace(/Ãº/g, "ú")
-        .replace(/Ã /g, "à").replace(/Ã /g, "à")
-        .replace(/Âº/g, "º").replace(/Âº/g, "º")
-        .replace(/Âª/g, "ª").replace(/Âª/g, "ª")
-        .replace(/Ã“/g, "Ó").replace(/Ã‡/g, "Ç")
-        .replace(/Ã/g, "É").replace(/Ã\u0081/g, "Á")
-        .replace(/Ãƒ/g, "Ã").replace(/â€“/g, "—")
-        .replace(/â€œ/g, '"').replace(/â€\u009d/g, '"');
-
-    // O resto do seu loop while continua exatamente igual abaixo...
-    const linkMatch = itemXml.match(/<link[^>]*>([\s\S]*?)<\/link>/i);
-    const link = linkMatch ? linkMatch[1].trim() : "";
-
-            // Procura por <title> ou <TITLE> de forma tolerante e insensível
+            // 1. Captura o título de forma tolerante e limpa as tags HTML
             const titleMatch = itemXml.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
             let rawTitle = titleMatch ? titleMatch[1] : "";
-            
-            // Tratamento e limpeza segura do título
             let title = cleanText(rawTitle);
             
-            // Salvaguarda caso a limpeza esvazie tudo
             if (!title && rawTitle) {
                 title = rawTitle.replace(/<[^>]*>/g, "").trim();
             }
             if (!title) continue;
 
-            // Procura por <link> ou <LINK> de forma insensível
+            // CORREÇÃO CIRÚRGICA: Repara o Double-Encoding de caracteres corrompidos comuns (Record/FeedBurner)
+            title = title
+                .replace(/Ã³/g, "ó").replace(/Ã³/g, "ó")
+                .replace(/Ã§/g, "ç").replace(/Ã§/g, "ç")
+                .replace(/Ã£/g, "ã").replace(/Ã£/g, "ã")
+                .replace(/Ã©/g, "é").replace(/Ã©/g, "é")
+                .replace(/Ã¡/g, "á").replace(/Ã¡/g, "á")
+                .replace(/Ã­/g, "í").replace(/Ã\u00ad/g, "í")
+                .replace(/Ã¢/g, "â").replace(/Ã¢/g, "â")
+                .replace(/Ãª/g, "ê").replace(/Ãª/g, "ê")
+                .replace(/Ãµ/g, "õ").replace(/Ãµ/g, "õ")
+                .replace(/Ãº/g, "ú").replace(/Ãº/g, "ú")
+                .replace(/Ã /g, "à").replace(/Ã /g, "à")
+                .replace(/Âº/g, "º").replace(/Âº/g, "º")
+                .replace(/Âª/g, "ª").replace(/Âª/g, "ª")
+                .replace(/Ã“/g, "Ó").replace(/Ã‡/g, "Ç")
+                .replace(/Ã/g, "É").replace(/Ã\u0081/g, "Á")
+                .replace(/Ãƒ/g, "Ã").replace(/â€“/g, "—")
+                .replace(/â€œ/g, '"').replace(/â€\u009d/g, '"');
+
+            // 2. Procura por <link> ou <LINK> de forma insensível
             const linkMatch = itemXml.match(/<link[^>]*>([\s\S]*?)<\/link>/i);
             const link = linkMatch ? linkMatch[1].trim() : "";
 
-            // Procura por data de publicação
+            // 3. Procura por data de publicação
             const pubDateMatch = itemXml.match(/<pubDate[^>]*>([\s\S]*?)<\/pubDate>/i);
             const pubDate = pubDateMatch ? new Date(pubDateMatch[1]) : new Date();
 
-            // Traduz se o feed estiver marcado como inglês
+            // 4. Traduz se o feed estiver marcado como inglês
             if (feed.l === "en") {
                 title = await traduzirTexto(title);
             }
 
-            // Tenta encontrar imagens nas tags conhecidas
+            // 5. Tenta encontrar imagens nas tags conhecidas
             let thumb = "";
             const mediaMatch = itemXml.match(/<media:content[^>]+url=["']([^"']+)["']/i) || 
                                itemXml.match(/<enclosure[^>]+url=["']([^"']+)["']/i) || 
@@ -248,6 +231,11 @@ while ((match = itemRegex.exec(xml)) !== null && contador < 9) {
         }
 
         return artigos;
+    } catch (e) {
+        console.error(`Erro ao processar fonte ${feed.n}:`, e.message);
+        return [];
+    }
+}
     } catch (e) {
         console.error(`Erro ao processar fonte ${feed.n}:`, e.message);
         return [];
