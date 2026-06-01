@@ -181,6 +181,8 @@ async function processarFeed(feed) {
                 .replace(/Ã/g, "É").replace(/Ã\u0081/g, "Á")
                 .replace(/Ãƒ/g, "Ã").replace(/â€“/g, "—")
                 .replace(/â€œ/g, '"').replace(/â€\u009d/g, '"');
+            // Remove os resíduos de CDATA que restaram devido ao Double-Encoding
+    title = title.replace(/<!\[CDATA\[/gi, "").replace(/\]\]>/gi, "");
 
             // 2. Procura por <link> ou <LINK> de forma insensível
             const linkMatch = itemXml.match(/<link[^>]*>([\s\S]*?)<\/link>/i);
