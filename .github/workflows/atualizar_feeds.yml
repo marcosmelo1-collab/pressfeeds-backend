@@ -1,22 +1,38 @@
-name: Atualizar Notícias PressFeeds
+name: Atualizacao Automatica de Noticias
 
 on:
+  push:
+    branches:
+      - main
   schedule:
-    - cron: '0 * * * *' # Executa de hora em hora (ou o seu horário atual)
-  workflow_dispatch:
-
-# ADICIONE ESTE BLOCO "ENV" LOGO AQUI NO TOPO:
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    # Atualiza automaticamente de 2 em 2 horas, todos os dias
+    # (O GitHub corre em horário UTC, este intervalo garante rotação constante)
+    - cron: '0 */2 * * *'
+  workflow_dispatch: # Mantém o botão manual ativo por segurança
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout do repositório
-        uses: actions/checkout@v4
 
-      - name: Configurar Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20' # Pode manter a '20' ou mudar para '24' para o seu script
+    steps:
+    - name: Copiar o código do repositório
+      uses: actions/checkout@v4
+
+    - name: Configurar o Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-node-version: '20'
+
+    - name: Instalar dependências se sobrarem
+      run: |
+        if [ -f package.json ]; then npm install; fi
+
+    - name: Executar o script de notícias
+      run: node noticias.js
+
+    - name: Guardar e enviar alterações para o GitHub
+      run: |
+        git config --global user.name "GitHub Action Bot"
+        git config --global user.email "actions@github.com"
+        git add noticias_final.json
+        git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Atualização automática de notícias [Skip CI]" && git push)
