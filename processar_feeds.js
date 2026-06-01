@@ -37,7 +37,7 @@ function fetchUrl(url) {
                     }
                 }
                 
-                // 3. REPARAÇÃO: Forçar 'latin1' para domínios que enviam dados ISO-8859-1 (Ex: A Bola e Record)
+                // 3. Forçar 'latin1' para domínios que enviam dados ISO-8859-1 (Ex: A Bola e Record)
                 const urlLower = url.toLowerCase();
                 if (urlLower.includes('abola.pt') || urlLower.includes('record.pt')) {
                     encoding = 'latin1';
@@ -129,21 +129,18 @@ function extrairImagemDoTexto(texto) {
 }
 
 // Captura e faz o parse manual simplificado de um feed XML
-// Substitua a função processarFeed antiga no seu Node.js por esta versão limpa:
 async function processarFeed(feed) {
     try {
         const xmlRaw = await fetchUrl(feed.u);
         
-        // CORREÇÃO CRÍTICA: Remove o caractere invisível BOM (\uFEFF) e espaços em branco iniciais para evitar SAXParseException (prolog error)
+        // Remove o caractere invisível BOM (\uFEFF) e espaços em branco iniciais
         const xml = xmlRaw.replace(/^\uFEFF/, '').trim();
         
-        // Validação básica para garantir que o retorno não é um HTML de erro ou bloqueio
         if (!xml.startsWith('<')) {
             console.error(`Aviso: O feed de ${feed.n} não retornou um XML válido.`);
             return [];
         }
         
-        // Regex insensível a maiúsculas para capturar blocos <item> ou <ITEM>
         const itemRegex = /<item>([\s\S]*?)<\/item>/gi;
         let match;
         const artigos = [];
@@ -152,52 +149,53 @@ async function processarFeed(feed) {
         while ((match = itemRegex.exec(xml)) !== null && contador < 9) {
             const itemXml = match[1];
 
-            // 1. Captura o título de forma tolerante e limpa as tags HTML
+            // 1. Procura e limpa o título
             const titleMatch = itemXml.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
-    let rawTitle = titleMatch ? titleMatch[1] : "";
-    let title = cleanText(rawTitle);
-    
-    if (!title && rawTitle) {
-        title = rawTitle.replace(/<[^>]*>/g, "").trim();
-    }
-    if (!title) continue;
+            let rawTitle = titleMatch ? titleMatch[1] : "";
+            let title = cleanText(rawTitle);
+            
+            if (!title && rawTitle) {
+                title = rawTitle.replace(/<[^>]*>/g, "").trim();
+            }
+            if (!title) continue;
 
-    // 1. Repara o Double-Encoding de caracteres corrompidos comuns
-    title = title
-        .replace(/Ã³/g, "ó").replace(/Ã³/g, "ó")
-        .replace(/Ã§/g, "ç").replace(/Ã§/g, "ç")
-        .replace(/Ã£/g, "ã").replace(/Ã£/g, "ã")
-        .replace(/Ã©/g, "é").replace(/Ã©/g, "é")
-        .replace(/Ã¡/g, "á").replace(/Ã¡/g, "á")
-        .replace(/Ã­/g, "í").replace(/Ã\u00ad/g, "í")
-        .replace(/Ã¢/g, "â").replace(/Ã¢/g, "â")
-        .replace(/Ãª/g, "ê").replace(/Ãª/g, "ê")
-        .replace(/Ãµ/g, "õ").replace(/Ãµ/g, "õ")
-        .replace(/Ãº/g, "ú").replace(/Ãº/g, "ú")
-        .replace(/Ã /g, "à").replace(/Ã /g, "à")
-        .replace(/Âº/g, "º").replace(/Âº/g, "º")
-        .replace(/Âª/g, "ª").replace(/Âª/g, "ª")
-        .replace(/Ã“/g, "Ó").replace(/Ã‡/g, "Ç")
-        .replace(/Ã/g, "É").replace(/Ã\u0081/g, "Á")
-        .replace(/Ãƒ/g, "Ã").replace(/â€“/g, "—")
-        .replace(/â€œ/g, '"').replace(/â€\u009d/g, '"');
+            // 2. Repara os acentos corrompidos resultantes do Double-Encoding do Record/FeedBurner
+            title = title
+                .replace(/Ã³/g, "ó").replace(/Ã³/g, "ó")
+                .replace(/Ã§/g, "ç").replace(/Ã§/g, "ç")
+                .replace(/Ã£/g, "ã").replace(/Ã£/g, "ã")
+                .replace(/Ã©/g, "é").replace(/Ã©/g, "é")
+                .replace(/Ã¡/g, "á").replace(/Ã¡/g, "á")
+                .replace(/Ã­/g, "í").replace(/Ã\u00ad/g, "í")
+                .replace(/Ã¢/g, "â").replace(/Ã¢/g, "â")
+                .replace(/Ãª/g, "ê").replace(/Ãª/g, "ê")
+                .replace(/Ãµ/g, "õ").replace(/Ãµ/g, "õ")
+                .replace(/Ãº/g, "ú").replace(/Ãº/g, "ú")
+                .replace(/Ã /g, "à").replace(/Ã /g, "à")
+                .replace(/Âº/g, "º").replace(/Âº/g, "º")
+                .replace(/Âª/g, "ª").replace(/Âª/g, "ª")
+                .replace(/Ã“/g, "Ó").replace(/Ã‡/g, "Ç")
+                .replace(/Ã/g, "É").replace(/Ã\u0081/g, "Á")
+                .replace(/Ãƒ/g, "Ã").replace(/â€“/g, "—")
+                .replace(/â€œ/g, '"').replace(/â€\u009d/g, '"');
 
-    // 2. Remove de vez as marcas de CDATA que o double-encoding escondeu
-    title = title.replace(/<!\[CDATA\[/gi, "").replace(/\]\]>/gi, "").trim();
+            // 3. Limpeza final e cirúrgica de resíduos CDATA remanescentes no título
+            title = title.replace(/<!\[CDATA\[/gi, "").replace(/\]\]>/gi, "").trim();
 
-    // 3. Procura por <link> ou <LINK> de forma insensível
-    const linkMatch = itemXml.match(/<link[^>]*>([\s\S]*?)<\/link>/i);
-    const link = linkMatch ? linkMatch[1].trim() : "";
+            // 4. Procura por <link> ou <LINK> de forma insensível
+            const linkMatch = itemXml.match(/<link[^>]*>([\s\S]*?)<\/link>/i);
+            const link = linkMatch ? linkMatch[1].trim() : "";
 
-    // 4. Procura por data de publicação
-    const pubDateMatch = itemXml.match(/<pubDate[^>]*>([\s\S]*?)<\/pubDate>/i);
-    const pubDate = pubDateMatch ? new Date(pubDateMatch[1]) : new Date();
+            // 5. Procura por data de publicação
+            const pubDateMatch = itemXml.match(/<pubDate[^>]*>([\s\S]*?)<\/pubDate>/i);
+            const pubDate = pubDateMatch ? new Date(pubDateMatch[1]) : new Date();
 
-    // 5. Traduz se o feed estiver marcado como inglês
-    if (feed.l === "en") {
-        title = await traduzirTexto(title);
-    }
-            // 5. Tenta encontrar imagens nas tags conhecidas
+            // 6. Traduz se o feed estiver marcado como inglês
+            if (feed.l === "en") {
+                title = await traduzirTexto(title);
+            }
+
+            // 7. Tenta encontrar imagens nas tags conhecidas
             let thumb = "";
             const mediaMatch = itemXml.match(/<media:content[^>]+url=["']([^"']+)["']/i) || 
                                itemXml.match(/<enclosure[^>]+url=["']([^"']+)["']/i) || 
@@ -209,7 +207,7 @@ async function processarFeed(feed) {
                 thumb = extrairImagemDoTexto(itemXml);
             }
 
-            // Fallbacks de imagens fixas baseadas no nome da fonte (idêntico ao teu front-end)
+            // Fallbacks de imagens fixas baseadas no nome da fonte
             let fallbackImg = `https://images.weserv.nl/?url=${encodeURIComponent(getFav(feed.u))}&w=120&h=120&fit=contain`;
             const domain = feed.n.toLowerCase();
             if (domain.includes("magazine hd") || domain.includes("magazinehd")) fallbackImg = "https://images.weserv.nl/?url=www.magazine-hd.com/apps/wp/wp-content/uploads/2023/01/mhd-logo.jpg";
@@ -238,11 +236,6 @@ async function processarFeed(feed) {
         return [];
     }
 }
-    } catch (e) {
-        console.error(`Erro ao processar fonte ${feed.n}:`, e.message);
-        return [];
-    }
-}
 
 async function ejecutar() {
     console.log("A iniciar processamento dos feeds no servidor...");
@@ -255,7 +248,7 @@ async function ejecutar() {
         let todosArtigosPlanos = [];
         let gruposNoticias = [];
 
-        // 2. Processa cada feed (um por um para evitar sobrecarga de conexões)
+        // 2. Processa cada feed (um por um)
         for (const fonte of fontes) {
             console.log(`A recolher: ${fonte.n}`);
             const artigosDaFonte = await processarFeed(fonte);
@@ -270,7 +263,7 @@ async function ejecutar() {
             }
         }
 
-        // 3. Ordena a lista plana de artigos de forma global (Mais recentes primeiro)
+        // 3. Ordena a lista plana de artigos (Mais recentes primeiro)
         todosArtigosPlanos.sort((a, b) => new Date(b.p) - new Date(a.p));
 
         // 4. Ordena os grupos pela ordem de prioridade definida
@@ -280,10 +273,9 @@ async function ejecutar() {
             return (idxA === -1 ? 999 : idxA) - (idxB === -1 ? 999 : idxB);
         });
 
-        // 5. Filtra as fontes ativas para remontar o dropdown de forma limpa no front
+        // 5. Filtra as fontes ativas para o front
         const fontesAtivas = fontes.filter(f => gruposNoticias.some(g => g.nome === f.n));
 
-        // Estrutura o Objeto Final mastigado
         const resultadoFinal = {
             ultimasAtualizacao: new Date().toISOString(),
             fontesAtivas: fontesAtivas,
@@ -291,7 +283,7 @@ async function ejecutar() {
             gruposPorPrioridade: gruposNoticias 
         };
 
-        // Grava o ficheiro temporário local que o GitHub Actions vai enviar para o teu Gist
+        // Grava o ficheiro final
         fs.writeFileSync('noticias_final.json', JSON.stringify(resultadoFinal, null, 2));
         console.log("Super JSON gerado com sucesso!");
     } catch (err) {
