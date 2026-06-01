@@ -148,8 +148,43 @@ async function processarFeed(feed) {
         const artigos = [];
         let contador = 0;
 
-        while ((match = itemRegex.exec(xml)) !== null && contador < 9) {
-            const itemXml = match[1];
+        // Procure este bloco dentro da função processarFeed no seu Node.js e substitua-o:
+
+while ((match = itemRegex.exec(xml)) !== null && contador < 9) {
+    const itemXml = match[1];
+
+    const titleMatch = itemXml.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+    let rawTitle = titleMatch ? titleMatch[1] : "";
+    let title = cleanText(rawTitle);
+    
+    if (!title && rawTitle) {
+        title = rawTitle.replace(/<[^>]*>/g, "").trim();
+    }
+    if (!title) continue;
+
+    // CORREÇÃO CIRÚRGICA: Repara o Double-Encoding de caracteres corrompidos comuns (Record/FeedBurner)
+    title = title
+        .replace(/Ã³/g, "ó").replace(/Ã³/g, "ó")
+        .replace(/Ã§/g, "ç").replace(/Ã§/g, "ç")
+        .replace(/Ã£/g, "ã").replace(/Ã£/g, "ã")
+        .replace(/Ã©/g, "é").replace(/Ã©/g, "é")
+        .replace(/Ã¡/g, "á").replace(/Ã¡/g, "á")
+        .replace(/Ã­/g, "í").replace(/Ã\u00ad/g, "í")
+        .replace(/Ã¢/g, "â").replace(/Ã¢/g, "â")
+        .replace(/Ãª/g, "ê").replace(/Ãª/g, "ê")
+        .replace(/Ãµ/g, "õ").replace(/Ãµ/g, "õ")
+        .replace(/Ãº/g, "ú").replace(/Ãº/g, "ú")
+        .replace(/Ã /g, "à").replace(/Ã /g, "à")
+        .replace(/Âº/g, "º").replace(/Âº/g, "º")
+        .replace(/Âª/g, "ª").replace(/Âª/g, "ª")
+        .replace(/Ã“/g, "Ó").replace(/Ã‡/g, "Ç")
+        .replace(/Ã/g, "É").replace(/Ã\u0081/g, "Á")
+        .replace(/Ãƒ/g, "Ã").replace(/â€“/g, "—")
+        .replace(/â€œ/g, '"').replace(/â€\u009d/g, '"');
+
+    // O resto do seu loop while continua exatamente igual abaixo...
+    const linkMatch = itemXml.match(/<link[^>]*>([\s\S]*?)<\/link>/i);
+    const link = linkMatch ? linkMatch[1].trim() : "";
 
             // Procura por <title> ou <TITLE> de forma tolerante e insensível
             const titleMatch = itemXml.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
