@@ -37,21 +37,20 @@ function fetchUrl(url) {
                     }
                 }
                 
-                // 3. Forçar 'latin1' para domínios problemáticos conhecidos que enviam dados errados (Ex: A Bola)
+                // 3. REPARAÇÃO: Forçar 'latin1' para domínios que enviam dados ISO-8859-1 (Ex: A Bola e Record)
                 const urlLower = url.toLowerCase();
-                if (urlLower.includes('abola.pt')) {
+                if (urlLower.includes('abola.pt') || urlLower.includes('record.pt')) {
                     encoding = 'latin1';
                 }
                 
                 // Decodifica o buffer usando a estratégia apurada
                 let textoDecodificado = bufferCompleto.toString(encoding);
                 
-                // 4. Correção extra de segurança contra dupla conversão (Double-Encoding) - Corrigido para verificar sequências inválidas reais
+                // 4. Correção extra de segurança contra dupla conversão (Double-Encoding)
                 if (textoDecodificado.includes('\u00c3') || textoDecodificado.includes('\u00e3')) {
                     try {
                         textoDecodificado = decodeURIComponent(escape(textoDecodificado));
                     } catch(e) {
-                        // Se falhar o escape, força uma conversão direta dos caracteres corrompidos mais comuns
                         textoDecodificado = textoDecodificado
                             .replace(/NOTCIAS/g, "NOTÍCIAS")
                             .replace(/OPINIO/g, "OPINIÃO")
