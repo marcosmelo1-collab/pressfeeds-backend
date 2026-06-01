@@ -1,29 +1,22 @@
-name: Atualizador Automatico de Noticias
+name: Atualizar Notícias PressFeeds
 
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '0 * * * *' # Executa de hora em hora (ou o seu horário atual)
   workflow_dispatch:
+
+# ADICIONE ESTE BLOCO "ENV" LOGO AQUI NO TOPO:
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout do repositorio
+      - name: Checkout do repositório
         uses: actions/checkout@v4
 
-      - name: Instalar Node.js
+      - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '24' # Atualizado para a versão recomendada pelo GitHub
-
-      - name: Processar os Feeds
-        run: node processar_feeds.js
-
-      - name: Enviar para o Gist
-        uses: exuanbo/actions-deploy-gist@v1
-        with:
-          token: ${{ secrets.GIST_TOKEN }}
-          gist_id: a6564ddeec0f72ffeb9918cb5c16a873
-          file_path: noticias_final.json
+          node-version: '20' # Pode manter a '20' ou mudar para '24' para o seu script
