@@ -10,7 +10,7 @@ const priorityOrder = [
 ];
 
 // Função utilitária para fazer requisições HTTP (GET) nativas e decodificar perfeitamente os caracteres
-function fecthUrl(url) {
+function fetchUrl(url) {
     return new Promise((resolve, reject) => {
         https.get(url, { headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' } }, (res) => {
             const chunks = [];
@@ -46,8 +46,8 @@ function fecthUrl(url) {
                 // Decodifica o buffer usando a estratégia apurada
                 let textoDecodificado = bufferCompleto.toString(encoding);
                 
-                // 4. Correção extra de segurança contra dupla conversão (Double-Encoding)
-                if (textoDecodificado.includes('')) {
+                // 4. Correção extra de segurança contra dupla conversão (Double-Encoding) - Corrigido para verificar sequências inválidas reais
+                if (textoDecodificado.includes('\u00c3') || textoDecodificado.includes('\u00e3')) {
                     try {
                         textoDecodificado = decodeURIComponent(escape(textoDecodificado));
                     } catch(e) {
@@ -102,7 +102,7 @@ function getFav(url) {
 async function traduzirTexto(texto) {
     try {
         const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=pt&dt=t&q=${encodeURIComponent(texto)}`;
-        const res = await fecthUrl(url);
+        const res = await fetchUrl(url);
         const json = JSON.parse(res);
         return json[0][0][0];
     } catch (e) {
@@ -130,7 +130,16 @@ function extrairImagemDoTexto(texto) {
 // Captura e faz o parse manual simplificado de um feed XML
 async function processarFeed(feed) {
     try {
-        const xml = await fecthUrl(feed.u);
+        const xmlRaw = await fetchUrl(feed.u);
+        
+        // CORREÇÃO CRÍTICA: Remove o caractere invisível BOM (\uFEFF) e espaços em branco iniciais para evitar SAXParseException (prolog error)
+        const xml = xmlRaw.replace(/^\uFEFF/, '').trim();
+        
+        // Validação básica para garantir que o retorno não é um HTML de erro ou bloqueio
+        if (!xml.startsWith('<')) {
+            console.error(`Aviso: O feed de ${feed.n} não retornou um XML válido.`);
+            return [];
+        }
         
         // Regex insensível a maiúsculas para capturar blocos <item> ou <ITEM>
         const itemRegex = /<item>([\s\S]*?)<\/item>/gi;
@@ -212,52 +221,56 @@ async function processarFeed(feed) {
 async function ejecutar() {
     console.log("A iniciar processamento dos feeds no servidor...");
     
-    // 1. Descarrega a lista de fontes ativas
-    const fontesRaw = await fecthUrl(JSON_FEEDS_URL);
-    const fontes = JSON.parse(fontesRaw);
-    
-    let todosArtigosPlanos = [];
-    let gruposNoticias = [];
+    try {
+        // 1. Descarrega a lista de fontes ativas
+        const fontesRaw = await fetchUrl(JSON_FEEDS_URL);
+        const fontes = JSON.parse(fontesRaw);
+        
+        let todosArtigosPlanos = [];
+        let gruposNoticias = [];
 
-    // 2. Processa cada feed (um por um para evitar sobrecarga de conexões)
-    for (const fonte of fontes) {
-        console.log(`A recolher: ${fonte.n}`);
-        const artigosDaFonte = await processarFeed(fonte);
-        if (artigosDaFonte.length > 0) {
-            todosArtigosPlanos = todosArtigosPlanos.concat(artigosDaFonte);
-            
-            gruposNoticias.push({
-                nome: fonte.n,
-                categoria: fonte.c,
-                artigos: artigosDaFonte
-            });
+        // 2. Processa cada feed (um por um para evitar sobrecarga de conexões)
+        for (const fonte of fontes) {
+            console.log(`A recolher: ${fonte.n}`);
+            const artigosDaFonte = await processarFeed(fonte);
+            if (artigosDaFonte.length > 0) {
+                todosArtigosPlanos = todosArtigosPlanos.concat(artigosDaFonte);
+                
+                gruposNoticias.push({
+                    nome: fonte.n,
+                    categoria: fonte.c,
+                    artigos: artigosDaFonte
+                });
+            }
         }
+
+        // 3. Ordena a lista plana de artigos de forma global (Mais recentes primeiro)
+        todosArtigosPlanos.sort((a, b) => new Date(b.p) - new Date(a.p));
+
+        // 4. Ordena os grupos pela ordem de prioridade definida
+        gruposNoticias.sort((a, b) => {
+            const idxA = priorityOrder.indexOf(a.nome);
+            const idxB = priorityOrder.indexOf(b.nome);
+            return (idxA === -1 ? 999 : idxA) - (idxB === -1 ? 999 : idxB);
+        });
+
+        // 5. Filtra as fontes ativas para remontar o dropdown de forma limpa no front
+        const fontesAtivas = fontes.filter(f => gruposNoticias.some(g => g.nome === f.n));
+
+        // Estrutura o Objeto Final mastigado
+        const resultadoFinal = {
+            ultimasAtualizacao: new Date().toISOString(),
+            fontesAtivas: fontesAtivas,
+            todosArtigosPlanos: todosArtigosPlanos, 
+            gruposPorPrioridade: gruposNoticias 
+        };
+
+        // Grava o ficheiro temporário local que o GitHub Actions vai enviar para o teu Gist
+        fs.writeFileSync('noticias_final.json', JSON.stringify(resultadoFinal, null, 2));
+        console.log("Super JSON gerado com sucesso!");
+    } catch (err) {
+        console.error("Erro fatal na execução do script:", err.message);
     }
-
-    // 3. Ordena a lista plana de artigos de forma global (Mais recentes primeiro)
-    todosArtigosPlanos.sort((a, b) => new Date(b.p) - new Date(a.p));
-
-    // 4. Ordena os grupos pela ordem de prioridade definida
-    gruposNoticias.sort((a, b) => {
-        const idxA = priorityOrder.indexOf(a.nome);
-        const idxB = priorityOrder.indexOf(b.nome);
-        return (idxA === -1 ? 999 : idxA) - (idxB === -1 ? 999 : idxB);
-    });
-
-    // 5. Filtra as fontes ativas para remontar o dropdown de forma limpa no front
-    const fontesAtivas = fontes.filter(f => gruposNoticias.some(g => g.nome === f.n));
-
-    // Estrutura o Objeto Final mastigado
-    const resultadoFinal = {
-        ultimasAtualizacao: new Date().toISOString(),
-        fontesAtivas: fontesAtivas,
-        todosArtigosPlanos: todosArtigosPlanos, 
-        gruposPorPrioridade: gruposNoticias      
-    };
-
-    // Grava o ficheiro temporário local que o GitHub Actions vai enviar para o teu Gist
-    fs.writeFileSync('noticias_final.json', JSON.stringify(resultadoFinal, null, 2));
-    console.log("Super JSON gerado com sucesso!");
 }
 
 ejecutar();
