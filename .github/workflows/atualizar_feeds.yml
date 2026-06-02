@@ -28,7 +28,7 @@ jobs:
         if [ -f package.json ]; then npm install; fi
 
     - name: Executar o script de notícias
-      run: node noticia.js # <--- Corrigido de "noticias.js" para "noticia.js" (no singular)
+      run: node processar_feeds.js # <--- Corrigido para o nome real do teu ficheiro
 
     - name: Guardar e enviar alterações para o GitHub
       run: |
