@@ -13,7 +13,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-  steps:
+    steps:
     - name: Copiar o código do repositório
       uses: actions/checkout@v4
       with:
@@ -33,12 +33,17 @@ jobs:
 
     - name: Preparar payload do Gist de forma segura
       run: |
-        # Transforma o conteúdo do arquivo JSON gerado em uma string JSON segura para a API do GitHub
         node -e "
-          const fs = require('fs');
-          const content = fs.readFileSync('noticias_final.json', 'utf8');
-          const payload = { files: { 'noticias_final.json': { content: content } } };
-          fs.writeFileSync('gist_payload.json', JSON.stringify(payload));
+        const fs = require('fs');
+        const conteudoNoticias = fs.readFileSync('noticias_final.json', 'utf8');
+        const estruturaGist = {
+          files: {
+            'noticias_final.json': {
+              content: conteudoNoticias
+            }
+          }
+        };
+        fs.writeFileSync('gist_payload.json', JSON.stringify(estruturaGist));
         "
 
     - name: Atualizar o Gist Público para o Blogger
