@@ -7,7 +7,7 @@ on:
   schedule:
     # Atualiza automaticamente de 2 em 2 horas, todos os dias
     - cron: '0 */2 * * *'
-  workflow_dispatch: # Botão manual ativo por segurança
+  workflow_dispatch: # Mantém o botão manual ativo por segurança
 
 jobs:
   build:
@@ -17,7 +17,7 @@ jobs:
     - name: Copiar o código do repositório
       uses: actions/checkout@v4
       with:
-        fetch-depth: 0 # Garante o histórico completo para evitar rejeições
+        fetch-depth: 0 # Traz o histórico completo para sincronização limpa
 
     - name: Configurar o Node.js
       uses: actions/setup-node@v4
@@ -31,16 +31,22 @@ jobs:
     - name: Executar o script de notícias
       run: node processar_feeds.js
 
-    - name: Guardar e enviar alterações para o GitHub
+    - name: Guardar e enviar alterações de forma limpa para o GitHub
       run: |
         git config --global user.name "GitHub Action Bot"
         git config --global user.email "actions@github.com"
         
-        # 1. Fazemos o pull antes de adicionar o JSON para garantir sincronização limpa
-        git pull origin main
+        # ESTRATÉGIA ANTI-CONFLITO:
+        # 1. Atualiza referências do repositório remoto sem tocar nos ficheiros gerados
+        git fetch origin main
         
-        # 2. Adicionamos o novo ficheiro gerado pelo script
+        # 2. Descarta quaisquer conflitos no JSON temporário sincronizando o ponteiro com a nuvem
+        git stash -- include-untracked || true
+        git pull origin main --rebase -X theirs || true
+        git stash pop || true
+        
+        # 3. Força a adição do ficheiro novo gerado nesta sessão, substituindo o antigo na totalidade
         git add noticias_final.json
         
-        # 3. Fazemos o commit e o push limpo. Se não houver alterações, ele ignora sem dar erro
+        # 4. Faz o commit e envia. Se não houver notícias novas, a Action termina em sucesso sem falhar
         git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Atualização automática de notícias [Skip CI]" && git push origin main)
