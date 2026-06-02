@@ -39,11 +39,12 @@ jobs:
         # 1. Adiciona o arquivo gerado pelo script nesta execução
         git add noticias_final.json
         
-        # 2. Verifica se houve alterações reais no JSON. 
-        # Se houver modificações, cria o commit e força a gravação absoluta na branch 'main'
+        # 2. Verifica se houve alterações reais no JSON.
+        # Se houver modificações, cria o commit e força a gravação absoluta.
+        # Caso contrário, exibe uma mensagem limpa via echo.
         if ! git diff --cached --quiet; then
           git commit -m "🤖 Atualização automática de notícias [Skip CI]"
           git push origin main --force
         else
-          console.log("Nenhuma notícia nova detetada nesta rodada. Finalizado com sucesso.")
+          echo "Nenhuma noticia nova detetada nesta rodada. Finalizado com sucesso."
         fi
