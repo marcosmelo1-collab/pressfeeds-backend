@@ -1,5 +1,5 @@
 {
-  "ultimasAtualizacao": "2026-06-02T08:15:48.714Z",
+  "ultimasAtualizacao": "2026-06-02T08:22:18.378Z",
   "fontesAtivas": [
     {
       "n": "SIC Notícias",
@@ -298,6 +298,66 @@
   ],
   "todosArtigosPlanos": [
     {
+      "t": "9h Líder do Bloco contra a Prestação Social Única",
+      "l": "https://www.rtp.pt/noticias/noticiario-antena1/9h-lider-do-bloco-contra-a-prestacao-social-unica_a1_1744928",
+      "i": "https://cdn-images.rtp.pt/noticias/images/antena1_default.png?w=350&amp;q=50&amp;auto=format",
+      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.rtp.pt&w=120&h=120&fit=contain",
+      "p": "2026-06-02T09:18:02.000Z",
+      "data_formatada": "2 de junho 09:18",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.rtp.pt",
+      "n": "RTP"
+    },
+    {
+      "t": "Deputados de Israel aprovaram 1.ª votação para a dissolução do parlamento",
+      "l": "https://www.noticiasaominuto.com/mundo/2999522/deputados-de-israel-aprovaram-1-votacao-para-a-dissolucao-do-parlamento#utm_source=rss-ultima-hora&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
+      "i": "https://media-manager.noticiasaominuto.com/640/47142458.webp",
+      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
+      "p": "2026-06-02T09:18:00.000Z",
+      "data_formatada": "2 de junho 09:18",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
+      "n": "Notícias ao Minuto"
+    },
+    {
+      "t": "Irão anunciou execução de três homens acusados de violação de menores",
+      "l": "https://www.noticiasaominuto.com/mundo/2999510/irao-anunciou-execucao-de-tres-homens-acusados-de-violacao-de-menores#utm_source=rss-ultima-hora&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
+      "i": "https://media-manager.noticiasaominuto.com/640/naom_69e4be2818b43.webp",
+      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
+      "p": "2026-06-02T09:14:09.000Z",
+      "data_formatada": "2 de junho 09:14",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
+      "n": "Notícias ao Minuto"
+    },
+    {
+      "t": "Filho de Yolanda Tati \"finalmente operado\" e \"deu tudo certo\"",
+      "l": "https://www.noticiasaominuto.com/fama/2999515/filho-de-yolanda-tati-finalmente-operado-e-deu-tudo-certo#utm_source=rss-ultima-hora&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
+      "i": "https://media-manager.noticiasaominuto.com/640/naom_6a1e8ae205636.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoxNDAyLCJjcm9wSGVpZ2h0Ijo3ODksImNyb3BYIjoyNCwiY3JvcFkiOjIzMH19",
+      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
+      "p": "2026-06-02T09:13:37.000Z",
+      "data_formatada": "2 de junho 09:13",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
+      "n": "Notícias ao Minuto"
+    },
+    {
+      "t": "EM DIRETO: A conferência de imprensa da seleção nacional",
+      "l": "https://www.noticiasaominuto.com/desporto/2999495/em-direto-a-conferencia-de-imprensa-da-selecao-nacional#utm_source=rss-ultima-hora&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
+      "i": "https://media-manager.noticiasaominuto.com/640/naom_6a1e84084aaba.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoyNTYwLCJjcm9wSGVpZ2h0IjoxNDQwLCJjcm9wWCI6MCwiY3JvcFkiOjQwfX0=",
+      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
+      "p": "2026-06-02T09:13:26.000Z",
+      "data_formatada": "2 de junho 09:13",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
+      "n": "Notícias ao Minuto"
+    },
+    {
+      "t": "EM DIRETO: A conferência de imprensa da seleção nacional",
+      "l": "https://www.noticiasaominuto.com/desporto/2999495/em-direto-a-conferencia-de-imprensa-da-selecao-nacional#utm_source=rss-desporto&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
+      "i": "https://media-manager.noticiasaominuto.com/640/naom_6a1e84084aaba.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoyNTYwLCJjcm9wSGVpZ2h0IjoxNDQwLCJjcm9wWCI6MCwiY3JvcFkiOjQwfX0=",
+      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
+      "p": "2026-06-02T09:13:26.000Z",
+      "data_formatada": "2 de junho 09:13",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
+      "n": "Desporto"
+    },
+    {
       "t": "Mais de 40% dos profissionais identificam IA como prioridade",
       "l": "https://www.noticiasaominuto.com/tech/2999516/mais-de-40-dos-profissionais-identificam-ia-como-prioridade#utm_source=rss-ultima-hora&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
       "i": "https://media-manager.noticiasaominuto.com/640/naom_64b7cb9c91da5.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoyNTI5LCJjcm9wSGVpZ2h0IjoxNDIzLCJjcm9wWCI6MTUsImNyb3BZIjo4NX0sInBvcnRyYWl0Ijp7ImNyb3BXaWR0aCI6OTQ5LCJjcm9wSGVpZ2h0IjoxNjg3LCJjcm9wWCI6MTEzNCwiY3JvcFkiOjEyfX0=",
@@ -306,6 +366,16 @@
       "data_formatada": "2 de junho 09:10",
       "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
       "n": "Notícias ao Minuto"
+    },
+    {
+      "t": "Mais de 40% dos profissionais identificam IA como prioridade",
+      "l": "https://www.noticiasaominuto.com/tech/2999516/mais-de-40-dos-profissionais-identificam-ia-como-prioridade#utm_source=rss-tech&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
+      "i": "https://media-manager.noticiasaominuto.com/640/naom_64b7cb9c91da5.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoyNTI5LCJjcm9wSGVpZ2h0IjoxNDIzLCJjcm9wWCI6MTUsImNyb3BZIjo4NX0sInBvcnRyYWl0Ijp7ImNyb3BXaWR0aCI6OTQ5LCJjcm9wSGVpZ2h0IjoxNjg3LCJjcm9wWCI6MTEzNCwiY3JvcFkiOjEyfX0=",
+      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
+      "p": "2026-06-02T09:10:59.000Z",
+      "data_formatada": "2 de junho 09:10",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
+      "n": "Tech"
     },
     {
       "t": "Kevin Smith presta homenagem à mãe seis meses após a sua morte",
@@ -318,8 +388,8 @@
       "n": "Notícias ao Minuto"
     },
     {
-      "t": "A opção que ninguém vai querer perder na próxima atualização do iPhone",
-      "l": "https://www.noticiasaominuto.com/tech/2999518/a-opcao-que-ninguem-vai-querer-perder-na-proxima-atualizacao-do-iphone#utm_source=rss-ultima-hora&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
+      "t": "O iOS 27 terá opção para dividir contas com amigos",
+      "l": "https://www.noticiasaominuto.com/tech/2999518/o-ios-27-tera-opcao-para-dividir-contas-com-amigos#utm_source=rss-ultima-hora&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
       "i": "https://media-manager.noticiasaominuto.com/640/naom_6a1e8e3b6bc0b.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoyNTI2LCJjcm9wSGVpZ2h0IjoxNDIxLCJjcm9wWCI6MTEsImNyb3BZIjoyMDF9LCJwb3J0cmFpdCI6eyJjcm9wV2lkdGgiOjk0NSwiY3JvcEhlaWdodCI6MTY4MSwiY3JvcFgiOjEyMTcsImNyb3BZIjo2fX0=",
       "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
       "p": "2026-06-02T09:04:01.000Z",
@@ -328,8 +398,8 @@
       "n": "Notícias ao Minuto"
     },
     {
-      "t": "A opção que ninguém vai querer perder na próxima atualização do iPhone",
-      "l": "https://www.noticiasaominuto.com/tech/2999518/a-opcao-que-ninguem-vai-querer-perder-na-proxima-atualizacao-do-iphone#utm_source=rss-tech&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
+      "t": "O iOS 27 terá opção para dividir contas com amigos",
+      "l": "https://www.noticiasaominuto.com/tech/2999518/o-ios-27-tera-opcao-para-dividir-contas-com-amigos#utm_source=rss-tech&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
       "i": "https://media-manager.noticiasaominuto.com/640/naom_6a1e8e3b6bc0b.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoyNTI2LCJjcm9wSGVpZ2h0IjoxNDIxLCJjcm9wWCI6MTEsImNyb3BZIjoyMDF9LCJwb3J0cmFpdCI6eyJjcm9wV2lkdGgiOjk0NSwiY3JvcEhlaWdodCI6MTY4MSwiY3JvcFgiOjEyMTcsImNyb3BZIjo2fX0=",
       "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
       "p": "2026-06-02T09:04:01.000Z",
@@ -389,16 +459,6 @@
     },
     {
       "t": "Sabe quem mais marcou em Mundiais? E onde está Cristiano Ronaldo?",
-      "l": "https://www.noticiasaominuto.com/desporto/2999504/sabe-quem-mais-marcou-em-mundiais-e-onde-esta-cristiano-ronaldo#utm_source=rss-ultima-hora&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
-      "i": "https://media-manager.noticiasaominuto.com/640/naom_6a16e76b2cae0.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoyMDQ4LCJjcm9wSGVpZ2h0IjoxMTUyLCJjcm9wWCI6MjQ0LCJjcm9wWSI6Mjd9fQ==",
-      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
-      "p": "2026-06-02T08:53:05.000Z",
-      "data_formatada": "2 de junho 08:53",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
-      "n": "Notícias ao Minuto"
-    },
-    {
-      "t": "Sabe quem mais marcou em Mundiais? E onde está Cristiano Ronaldo?",
       "l": "https://www.noticiasaominuto.com/desporto/2999504/sabe-quem-mais-marcou-em-mundiais-e-onde-esta-cristiano-ronaldo#utm_source=rss-desporto&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
       "i": "https://media-manager.noticiasaominuto.com/640/naom_6a16e76b2cae0.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoyMDQ4LCJjcm9wSGVpZ2h0IjoxMTUyLCJjcm9wWCI6MjQ0LCJjcm9wWSI6Mjd9fQ==",
       "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
@@ -416,26 +476,6 @@
       "data_formatada": "2 de junho 08:51",
       "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.rtp.pt",
       "n": "RTP"
-    },
-    {
-      "t": "Metro de Lisboa fecha portas hoje e só abre na 5.ª-feira: Eis os horários",
-      "l": "https://www.noticiasaominuto.com/economia/2999513/metro-de-lisboa-fecha-portas-hoje-e-so-abre-na-5-feira-eis-os-horarios#utm_source=rss-ultima-hora&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
-      "i": "https://media-manager.noticiasaominuto.com/640/naom_61f67262e0a6d.webp",
-      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
-      "p": "2026-06-02T08:51:00.000Z",
-      "data_formatada": "2 de junho 08:51",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
-      "n": "Notícias ao Minuto"
-    },
-    {
-      "t": "Brasil ainda é o 'rei' dos Mundiais, apesar dos 24 anos de seca",
-      "l": "https://www.noticiasaominuto.com/desporto/2999508/brasil-ainda-e-o-rei-dos-mundiais-apesar-dos-24-anos-de-seca#utm_source=rss-ultima-hora&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
-      "i": "https://media-manager.noticiasaominuto.com/640/naom_6a1e8b4198c00.webp",
-      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
-      "p": "2026-06-02T08:50:45.000Z",
-      "data_formatada": "2 de junho 08:50",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
-      "n": "Notícias ao Minuto"
     },
     {
       "t": "Brasil ainda é o 'rei' dos Mundiais, apesar dos 24 anos de seca",
@@ -456,16 +496,6 @@
       "data_formatada": "2 de junho 08:49",
       "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.rtp.pt",
       "n": "RTP"
-    },
-    {
-      "t": "\"Passos compreende que, provavelmente, o seu tempo político já passou\"",
-      "l": "https://www.noticiasaominuto.com/politica/2999499/passos-compreende-que-provavelmente-o-seu-tempo-politico-ja-passou#utm_source=rss-ultima-hora&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
-      "i": "https://media-manager.noticiasaominuto.com/640/naom_560168b788c7f.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjo2MDMxLCJjcm9wSGVpZ2h0IjozMzkyLCJjcm9wWCI6MzcsImNyb3BZIjoyNzZ9LCJwb3J0cmFpdCI6eyJjcm9wV2lkdGgiOjIyMDIsImNyb3BIZWlnaHQiOjM5MTUsImNyb3BYIjoyNjQyLCJjcm9wWSI6OTB9fQ==",
-      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
-      "p": "2026-06-02T08:47:45.000Z",
-      "data_formatada": "2 de junho 08:47",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
-      "n": "Notícias ao Minuto"
     },
     {
       "t": "Manchester United farto. Rashford deixa relação com Barcelona por um fio",
@@ -538,16 +568,6 @@
       "n": "RTP Desporto"
     },
     {
-      "t": "Mundial2026. Los Angeles cria planos de contingência especiais para jogos do Irão",
-      "l": "https://www.rtp.pt/noticias/desporto/mundial2026-los-angeles-cria-planos-de-contingencia-especiais-para-jogos-do-irao_v1744915",
-      "i": "https://cdn-images.rtp.pt/icm/images/c2/c202e02bf6419ea14fd08c3f462c06af_N.jpg?",
-      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.rtp.pt&w=120&h=120&fit=contain",
-      "p": "2026-06-02T08:32:47.000Z",
-      "data_formatada": "2 de junho 08:32",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.rtp.pt",
-      "n": "RTP"
-    },
-    {
       "t": "Mundial2026. Seleção espanhola quer juntar título mundial ao Europeu",
       "l": "https://www.rtp.pt/noticias/desporto/mundial2026-selecao-espanhola-quer-juntar-titulo-mundial-ao-europeu_v1744914",
       "i": "https://cdn-images.rtp.pt/icm/images/33/3370f7d4a0702842680b43d7824d0ec0_N.jpg?",
@@ -566,6 +586,86 @@
       "data_formatada": "2 de junho 08:29",
       "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.rtp.pt",
       "n": "RTP Desporto"
+    },
+    {
+      "t": "PSD, PS e Chega falham entrega de nomes para o Conselho de Fiscalização das “secretas”",
+      "l": "https://sicnoticias.pt/pais/2026-06-02-psd-ps-e-chega-falham-entrega-de-nomes-para-o-conselho-de-fiscalizacao-das-secretas-727de7f5",
+      "i": "https://images.impresa.pt/sicnot/2026-01-21-parlamento-debate-quinzenal-governo-6f5495a6/1.91x1/mw-1200?outputFormat=jpeg",
+      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Drss.impresa.pt&w=120&h=120&fit=contain",
+      "p": "2026-06-02T08:21:11.000Z",
+      "data_formatada": "2 de junho 08:21",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=rss.impresa.pt",
+      "n": "SIC Notícias"
+    },
+    {
+      "t": "Santa Casa apela por famílias de acolhimento em Lisboa",
+      "l": "https://observador.pt/2026/06/02/santa-casa-reforca-apelo-por-familias-de-acolhimento-em-lisboa/",
+      "i": "https://bordalo.observador.pt/v2/rs:fill:770:403/c:4096:2298:nowe:0:113/q:70/plain/https://s3.observador.pt/wp-content/uploads/2026/02/12162923/reportagem-em-penamacor-terra-de-antonio-jose-seguro-diogo-faria-reis-7231-scaled.jpg",
+      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dobservador.pt&w=120&h=120&fit=contain",
+      "p": "2026-06-02T08:20:20.000Z",
+      "data_formatada": "2 de junho 08:20",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=observador.pt",
+      "n": "Observador"
+    },
+    {
+      "t": "As notícias das 9h",
+      "l": "https://observador.pt/programas/noticiario/as-noticias-das-9h-2367/",
+      "i": "https://bordalo.observador.pt/v2/rs:fill:770:403/c:770:433:nowe:0:0/q:70/plain/https://s3.observador.pt/wp-content/uploads/2021/04/13113304/770-podcast-noticiario.jpg",
+      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dobservador.pt&w=120&h=120&fit=contain",
+      "p": "2026-06-02T08:19:14.000Z",
+      "data_formatada": "2 de junho 08:19",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=observador.pt",
+      "n": "Observador"
+    },
+    {
+      "t": "Plano prevê 500 milhões por ano até 2030 para natureza",
+      "l": "https://observador.pt/2026/06/02/plano-nacional-preve-500-milhoes-por-ano-ate-2030-para-restaurar-natureza/",
+      "i": "https://bordalo.observador.pt/v2/rs:fill:770:403/c:2000:1124:nowe:0:104/q:70/plain/https://s3.observador.pt/wp-content/uploads/2025/09/05184420/45534018.jpg",
+      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dobservador.pt&w=120&h=120&fit=contain",
+      "p": "2026-06-02T08:18:41.000Z",
+      "data_formatada": "2 de junho 08:18",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=observador.pt",
+      "n": "Observador"
+    },
+    {
+      "t": "A reforma do Estado é apenas uma miragem desde 1978?",
+      "l": "https://observador.pt/programas/e-o-vencedor-e/a-reforma-do-estado-e-apenas-uma-miragem-desde-1978/",
+      "i": "https://bordalo.observador.pt/v2/rs:fill:770:403/c:770:433:nowe:0:0/q:70/plain/https://s3.observador.pt/wp-content/uploads/2021/04/13110132/770-podcast-e-o-vencedor-e.jpg",
+      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dobservador.pt&w=120&h=120&fit=contain",
+      "p": "2026-06-02T08:18:12.000Z",
+      "data_formatada": "2 de junho 08:18",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=observador.pt",
+      "n": "Observador"
+    },
+    {
+      "t": "IATA afasta risco de falta de combustível para aviação",
+      "l": "https://observador.pt/2026/06/02/iata-afasta-risco-de-falta-de-combustivel-para-aviacao-na-europa-no-verao/",
+      "i": "https://bordalo.observador.pt/v2/rs:fill:770:403/c:2000:1122:nowe:0:11/q:70/plain/https://s3.observador.pt/wp-content/uploads/2026/06/02081339/46311219.jpg",
+      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dobservador.pt&w=120&h=120&fit=contain",
+      "p": "2026-06-02T08:17:26.000Z",
+      "data_formatada": "2 de junho 08:17",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=observador.pt",
+      "n": "Observador"
+    },
+    {
+      "t": "\"A Rússia pode fazer dois ataques destes por mês, mais do que isso não consegue\"",
+      "l": "https://cnnportugal.iol.pt/videos/a-russia-pode-fazer-dois-ataques-destes-por-mes-mais-do-que-isso-nao-consegue/6a1e8c7c0cf21fcd83775753",
+      "i": "https://img.iol.pt/image/id/6a1e908cd34e28842c84b7d8/200.jpg",
+      "fallback": "https://images.weserv.nl/?url=cnnportugal.iol.pt/assets/images/logos/cnn-portugal.png",
+      "p": "2026-06-02T08:16:00.000Z",
+      "data_formatada": "2 de junho 08:16",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=cnnportugal.iol.pt",
+      "n": "CNN PT"
+    },
+    {
+      "t": "​Amanhã é dia de greve geral. Afinal, como vai ser?",
+      "l": "https://rr.pt/artigo/explicador-renascenca/2026/06/02/amanha-e-dia-de-greve-geral-afinal-como-vai-ser/473003/?utm_medium=rss",
+      "i": "https://d1gifpnctlcmg5.cloudfront.net/be03b976-08ec-46ac-b8a1-8cd7b89206b0/sources/8dd8cebe-dacd-4b62-90ac-49c5f21c5a8c.mp3",
+      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Drr.pt&w=120&h=120&fit=contain",
+      "p": "2026-06-02T08:11:00.000Z",
+      "data_formatada": "2 de junho 08:11",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=rr.pt",
+      "n": "Renascença"
     },
     {
       "t": "Tarifa do gás natural sobe 6,4% a partir de outubro no mercado regulado",
@@ -728,16 +828,6 @@
       "n": "Desporto"
     },
     {
-      "t": "Guardiola rejeita reencontro com Messi e decisão sobre futuro está tomada",
-      "l": "https://www.noticiasaominuto.com/desporto/2999481/guardiola-rejeita-reencontro-com-messi-e-decisao-sobre-futuro-esta-tomada#utm_source=rss-desporto&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
-      "i": "https://media-manager.noticiasaominuto.com/640/naom_69d105c5aa3d3.webp",
-      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
-      "p": "2026-06-02T07:57:18.000Z",
-      "data_formatada": "2 de junho 07:57",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
-      "n": "Desporto"
-    },
-    {
       "t": "Sondagem revela profunda divisão geracional sobre o amor e a IA",
       "l": "https://www.noticiasaominuto.com/tech/2999422/sondagem-revela-profunda-divisao-geracional-sobre-o-amor-e-a-ia#utm_source=rss-tech&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
       "i": "https://media-manager.noticiasaominuto.com/640/naom_613f33a58169e.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoyMzI3LCJjcm9wSGVpZ2h0IjoxMzA5LCJjcm9wWCI6MTE3LCJjcm9wWSI6MTR9LCJwb3J0cmFpdCI6eyJjcm9wV2lkdGgiOjczOSwiY3JvcEhlaWdodCI6MTMxMywiY3JvcFgiOjg5OSwiY3JvcFkiOjExfX0=",
@@ -816,6 +906,16 @@
       "data_formatada": "2 de junho 07:45",
       "fav": "https://www.google.com/s2/favicons?sz=64&domain=maisfutebol.iol.pt",
       "n": "Maisfutebol"
+    },
+    {
+      "t": "Safonov 'desmascarado': cábula escondida na toalha antes dos penáltis",
+      "l": "https://www.abola.pt/noticias/safonov-desmascarado-cabula-escondida-na-toalha-antes-dos-penaltis-2026060206350132241",
+      "i": "",
+      "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
+      "p": "2026-06-02T07:45:00.000Z",
+      "data_formatada": "2 de junho 07:45",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.abola.pt",
+      "n": "A Bola"
     },
     {
       "t": "Alphabet vende ações no valor de 68,8 mil milhões para investir em IA",
@@ -916,6 +1016,16 @@
       "data_formatada": "2 de junho 07:39",
       "fav": "https://www.google.com/s2/favicons?sz=64&domain=newinporto.nit.pt",
       "n": "New in Porto"
+    },
+    {
+      "t": "Adeus, calor: chuva e vento estão de regresso e temperaturas vão cair até 7ºC",
+      "l": "https://sicnoticias.pt/meteorologia/2026-06-02-adeus-calor-chuva-e-vento-estao-de-regresso-e-temperaturas-vao-cair-ate-7c-4d929c30",
+      "i": "https://images.impresa.pt/sicnot/2025-03-19-chuva-frio-tempestade-ff35c8c7/1.91x1/mw-1200?outputFormat=jpeg",
+      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Drss.impresa.pt&w=120&h=120&fit=contain",
+      "p": "2026-06-02T07:38:56.000Z",
+      "data_formatada": "2 de junho 07:38",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=rss.impresa.pt",
+      "n": "SIC Notícias"
     },
     {
       "t": "Cavaco incentiva Governo a avançar com a reforma do Estado, contra a burocracia",
@@ -1088,26 +1198,6 @@
       "n": "Maisfutebol"
     },
     {
-      "t": "Mundial pode ter impacto até 945 milhões em Portugal",
-      "l": "https://observador.pt/2026/06/02/mundial-pode-ter-impacto-economico-ate-945-milhoes-de-euros-em-portugal/",
-      "i": "https://bordalo.observador.pt/v2/rs:fill:770:403/c:4096:2298:nowe:0:401/q:70/plain/https://s3.observador.pt/wp-content/uploads/2026/06/01222827/gettyimages-2160651089-scaled.jpg",
-      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dobservador.pt&w=120&h=120&fit=contain",
-      "p": "2026-06-02T07:18:50.000Z",
-      "data_formatada": "2 de junho 07:18",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=observador.pt",
-      "n": "Observador"
-    },
-    {
-      "t": "8h. Efeitos da greve devem começar a ser sentidos já hoje",
-      "l": "https://observador.pt/programas/noticiario/as-noticias-das-8h-2415/",
-      "i": "https://bordalo.observador.pt/v2/rs:fill:770:403/c:770:433:nowe:0:0/q:70/plain/https://s3.observador.pt/wp-content/uploads/2021/04/13113304/770-podcast-noticiario.jpg",
-      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dobservador.pt&w=120&h=120&fit=contain",
-      "p": "2026-06-02T07:17:50.000Z",
-      "data_formatada": "2 de junho 07:17",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=observador.pt",
-      "n": "Observador"
-    },
-    {
       "t": "William Gomes interessa ao Manchester United e FC Porto define valor de referência",
       "l": "https://bolanarede.pt/especial-bola-na-rede/atualidade/william-gomes-interessa-ao-manchester-united-e-fc-porto-define-valor-de-referencia/",
       "i": "",
@@ -1128,16 +1218,6 @@
       "n": "Record"
     },
     {
-      "t": "A selfie \"traidora\", o adeus de Suárez e a regra dos lentos",
-      "l": "https://observador.pt/programas/tres-toques/a-selfie-traidora-o-adeus-de-suarez-e-a-regra-dos-lentos/",
-      "i": "https://bordalo.observador.pt/v2/rs:fill:770:403/c:770:433:nowe:0:0/q:70/plain/https://s3.observador.pt/wp-content/uploads/2025/11/06151953/770-podcast-tres-toques-2025-v2.jpg",
-      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dobservador.pt&w=120&h=120&fit=contain",
-      "p": "2026-06-02T07:15:54.000Z",
-      "data_formatada": "2 de junho 07:15",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=observador.pt",
-      "n": "Observador"
-    },
-    {
       "t": "Pentágono classifica sala de imprensa como área \"confidencial\" e proíbe entrada a jornalistas",
       "l": "https://sicnoticias.pt/mundo/eua/2026-06-02-pentagono-classifica-sala-de-imprensa-como-area-confidencial-e-proibe-entrada-a-jornalistas-f984deb8",
       "i": "https://images.impresa.pt/sicnot/2026-06-02-2026-05-05t120507z_1643521411_rc203laiak25_rtrmadp_3_iran-crisis-usa.jpg-76da8b2a/1.91x1/mw-1200?outputFormat=jpeg",
@@ -1146,16 +1226,6 @@
       "data_formatada": "2 de junho 07:15",
       "fav": "https://www.google.com/s2/favicons?sz=64&domain=rss.impresa.pt",
       "n": "SIC Notícias"
-    },
-    {
-      "t": "A transparência salarial e o guarda-sol: afinal, onde estão?",
-      "l": "https://observador.pt/newsletters/360/a-transparencia-salarial-e-o-guarda-sol-afinal-onde-estao/",
-      "i": "https://bordalo.observador.pt/v2/rs:fill:770:403/c:1540:866:nowe:0:0/q:70/plain/https://s3.observador.pt/wp-content/uploads/2021/06/25120046/360-16x9-1.png",
-      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dobservador.pt&w=120&h=120&fit=contain",
-      "p": "2026-06-02T07:11:29.000Z",
-      "data_formatada": "2 de junho 07:11",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=observador.pt",
-      "n": "Observador"
     },
     {
       "t": "A melhor praia da Europa é portuguesa e fica em Aljezur",
@@ -1278,6 +1348,16 @@
       "n": "Magazine HD"
     },
     {
+      "t": "Adversário de Portugal derrotado pelo Canadá de Eustáquio",
+      "l": "https://www.abola.pt/noticias/adversario-de-portugal-derrotado-pelo-canada-de-eustaquio-2026060207000465563",
+      "i": "",
+      "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
+      "p": "2026-06-02T07:00:04.000Z",
+      "data_formatada": "2 de junho 07:00",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.abola.pt",
+      "n": "A Bola"
+    },
+    {
       "t": "Vizinhos podem fazer “o barulho que quiserem” entre as 7h e as 23h?",
       "l": "https://sicnoticias.pt/sicverifica/2026-06-02-video-vizinhos-podem-fazer-o-barulho-que-quiserem-entre-as-7h-e-as-23h--39e5de8b",
       "i": "https://images.impresa.pt/sicnot/2026-06-01-porta-vizinho-sic-verifica.png-db883c6a/1.91x1/mw-1200?outputFormat=jpeg",
@@ -1318,32 +1398,12 @@
       "n": "Maisfutebol"
     },
     {
-      "t": "Ray-Ban Meta: os óculos que gravam sem pedir licença",
-      "l": "https://observador.pt/programas/no-se-fala-de-outra-coisa/ray-ban-meta-os-oculos-que-gravam-sem-pedir-licenca/",
-      "i": "https://bordalo.observador.pt/v2/rs:fill:770:403/c:770:433:nowe:0:0/q:70/plain/https://s3.observador.pt/wp-content/uploads/2025/07/14120208/770-podcast-nao-se-fala-de-outra-coisa-1.jpg",
-      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dobservador.pt&w=120&h=120&fit=contain",
-      "p": "2026-06-02T06:58:51.000Z",
-      "data_formatada": "2 de junho 06:58",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=observador.pt",
-      "n": "Observador"
-    },
-    {
       "t": "\"You're fucking crazy\". Trump furioso com Netanyahu: \"Estarias na prisão se não fosse eu\"",
       "l": "https://cnnportugal.iol.pt/trump/netanyahu/you-re-fucking-crazy-trump-furioso-com-netanyahu-estarias-na-prisao-se-nao-fosse-eu/20260602/6a1e79efd34edcee7c64d616",
       "i": "https://img.iol.pt/image/id/67f413d0d34e3f0bae9ca094/200.jpg",
       "fallback": "https://images.weserv.nl/?url=cnnportugal.iol.pt/assets/images/logos/cnn-portugal.png",
       "p": "2026-06-02T06:56:00.000Z",
       "data_formatada": "2 de junho 06:56",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=cnnportugal.iol.pt",
-      "n": "CNN PT"
-    },
-    {
-      "t": "Quem recusar trabalho social ou formação profissional vai ficar sem acesso à Pensão Social Única durante dois anos",
-      "l": "https://cnnportugal.iol.pt/prestacao-social-unica/psu/quem-recusar-trabalho-social-ou-formacao-profissional-vai-ficar-sem-acesso-a-pensao-social-unica-durante-dois-anos/20260602/6a1e7de3d34e28842c84b780",
-      "i": "https://img.iol.pt/image/id/6a05fdead34edcee7c642a28/200.jpg",
-      "fallback": "https://images.weserv.nl/?url=cnnportugal.iol.pt/assets/images/logos/cnn-portugal.png",
-      "p": "2026-06-02T06:55:00.000Z",
-      "data_formatada": "2 de junho 06:55",
       "fav": "https://www.google.com/s2/favicons?sz=64&domain=cnnportugal.iol.pt",
       "n": "CNN PT"
     },
@@ -1388,6 +1448,16 @@
       "n": "Record"
     },
     {
+      "t": "Atenção, Portugal: Luis Suárez com pontaria afinada antes do Mundial",
+      "l": "https://www.abola.pt/noticias/atencao-portugal-luis-suarez-com-pontaria-afinada-antes-do-mundial-2026060206390077051",
+      "i": "",
+      "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
+      "p": "2026-06-02T06:39:00.000Z",
+      "data_formatada": "2 de junho 06:39",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.abola.pt",
+      "n": "A Bola"
+    },
+    {
       "t": "Libertos do trabalho",
       "l": "https://expresso.pt/opiniao/2026-06-02-libertos-do-trabalho-fa60c86d",
       "i": "https://images.impresa.pt/expresso/2024-11-05-clara-ferreira-alves.png-05456ba9-1/1.91x1/mw-1200?outputFormat=jpeg",
@@ -1396,16 +1466,6 @@
       "data_formatada": "2 de junho 06:38",
       "fav": "https://www.google.com/s2/favicons?sz=64&domain=rss.impresa.pt",
       "n": "Expresso"
-    },
-    {
-      "t": "Rede Empregar quer ajudar 3.500 jovens a arranjar trabalho",
-      "l": "https://sicnoticias.pt/economia/emprego/2026-06-02-rede-empregar-quer-ajudar-3.500-jovens-a-arranjar-trabalho-f7767b6d",
-      "i": "https://images.impresa.pt/sicnot/2025-10-07-jovens-emprego-254a5b35/1.91x1/mw-1200?outputFormat=jpeg",
-      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Drss.impresa.pt&w=120&h=120&fit=contain",
-      "p": "2026-06-02T06:35:00.000Z",
-      "data_formatada": "2 de junho 06:35",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=rss.impresa.pt",
-      "n": "SIC Notícias"
     },
     {
       "t": "LEGO: lojas portuguesas com grande desconto no set Pokémon",
@@ -1438,16 +1498,6 @@
       "n": "Público"
     },
     {
-      "t": "Ataques russos causam pelo menos oito mortos em Kiev e no leste da Ucrânia",
-      "l": "https://sicnoticias.pt/especiais/guerra-russia-ucrania/2026-06-02-video-ataques-russos-causam-pelo-menos-oito-mortos-em-kiev-e-no-leste-da-ucrania-0897a4eb",
-      "i": "https://images.impresa.pt/sicnot/2026-06-02-ap26153139483462.jpg-30cdb70c/1.91x1/mw-1200?outputFormat=jpeg",
-      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Drss.impresa.pt&w=120&h=120&fit=contain",
-      "p": "2026-06-02T06:28:50.000Z",
-      "data_formatada": "2 de junho 06:28",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=rss.impresa.pt",
-      "n": "SIC Notícias"
-    },
-    {
       "t": "Jade Baraldo fala ao TMDQA! sobre o seu disco mais pessoal: &#8220;foi uma espécie de terapia&#8221;",
       "l": "https://www.tenhomaisdiscosqueamigos.com/2026/06/02/jade-baraldo-fala-sobre-disco-mais-pessoal/",
       "i": "https://www.youtube.com/embed/iURaCqxX-sU",
@@ -1456,6 +1506,16 @@
       "data_formatada": "2 de junho 06:21",
       "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.tenhomaisdiscosqueamigos.com",
       "n": "TMDQA"
+    },
+    {
+      "t": "Greve geral: efeitos começam a sentir-se já esta terça-feira",
+      "l": "https://www.abola.pt/noticias/greve-geral-efeitos-comecam-a-sentir-se-ja-esta-terca-feira-2026060206185097566",
+      "i": "",
+      "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
+      "p": "2026-06-02T06:18:50.000Z",
+      "data_formatada": "2 de junho 06:18",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.abola.pt",
+      "n": "A Bola"
     },
     {
       "t": "José Francisco Tapajós fala sobre o projeto &#8220;Replay &#8211; Exagerado&#8221;, que homenageia Cazuza em releituras de artistas atuais",
@@ -1769,7 +1829,7 @@
     },
     {
       "t": "O que vai dar hoje na TV? Está aqui a lista do que pode ver",
-      "l": "https://www.zerozero.pt//o-que-vai-dar-hoje-na-tv-esta-aqui-a-lista-do-que-pode-ver/517405",
+      "l": "https://www.zerozero.pt/noticias/o-que-vai-dar-hoje-na-tv-esta-aqui-a-lista-do-que-pode-ver/517405",
       "i": "https://www.zerozero.pt/img/noticias/405/imgS620I517405T20230914080002.png",
       "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.zerozero.pt&w=120&h=120&fit=contain",
       "p": "2026-06-02T03:05:04.000Z",
@@ -1846,16 +1906,6 @@
       "data_formatada": "1 de junho 23:34",
       "fav": "https://www.google.com/s2/favicons?sz=64&domain=inmagazine.ig.com.br",
       "n": "In Magazine"
-    },
-    {
-      "t": "UE aprova novas regras para deportar migrantes para centros fora do bloco europeu",
-      "l": "https://rr.pt/noticia/mundo/2026/06/02/ue-aprova-novas-regras-para-deportar-migrantes-para-centros-fora-do-bloco-europeu/472991/?utm_medium=rss",
-      "i": "https://images.rr.pt/policia-maritima-interceta-35-migrantes-ao-largo-da-ilha-grega-de-gavdos-1170283c0_standard.jpeg",
-      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Drr.pt&w=120&h=120&fit=contain",
-      "p": "2026-06-01T23:32:50.000Z",
-      "data_formatada": "1 de junho 23:32",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=rr.pt",
-      "n": "Renascença"
     },
     {
       "t": "Jay-Z encerra tudo e mais conclusões do Roots Picnic 2026",
@@ -2038,16 +2088,6 @@
       "n": "Billboard"
     },
     {
-      "t": "Asus celebra 20 anos de marca gaming com nova edição de consola portátil",
-      "l": "https://www.noticiasaominuto.com/tech/2999180/asus-celebra-20-anos-de-marca-gaming-com-nova-edicao-de-consola-portatil#utm_source=rss-tech&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
-      "i": "https://media-manager.noticiasaominuto.com/640/naom_6a1d9cbfc7266.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoyNTE4LCJjcm9wSGVpZ2h0IjoxNDE2LCJjcm9wWCI6MjEsImNyb3BZIjoxNH0sInBvcnRyYWl0Ijp7ImNyb3BXaWR0aCI6NzY4LCJjcm9wSGVpZ2h0IjoxMzY1LCJjcm9wWCI6ODU2LCJjcm9wWSI6MjAxfX0=",
-      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
-      "p": "2026-06-01T22:30:00.000Z",
-      "data_formatada": "1 de junho 22:30",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
-      "n": "Tech"
-    },
-    {
       "t": "Madonna anuncia versão “Pride” do “Confessions II” para celebrar o Mês do Orgulho",
       "l": "https://www.papelpop.com/2026/06/madonna-anuncia-versao-pride-do-confessions-ii-para-celebrar-o-mes-do-orgulho/",
       "i": "https://assets.papelpop.com/wp-content/uploads/2026/06/ChatGPT-Image-1-de-jun.-de-2026-18_40_12-400x261.png",
@@ -2089,7 +2129,7 @@
     },
     {
       "t": "Tozé Marreco aceita desafio em África",
-      "l": "https://www.zerozero.pt//toze-marreco-aceita-desafio-em-africa/1139116",
+      "l": "https://www.zerozero.pt/noticias/toze-marreco-aceita-desafio-em-africa/1139116",
       "i": "https://www.zerozero.pt/img/noticias/116/imgS620I1139116T20260601230217.jpg",
       "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.zerozero.pt&w=120&h=120&fit=contain",
       "p": "2026-06-01T22:06:09.000Z",
@@ -2229,7 +2269,7 @@
     },
     {
       "t": "Lopetegui inclui português na lista do Catar para o Mundial 2026",
-      "l": "https://www.zerozero.pt//lopetegui-inclui-portugues-na-lista-do-catar-para-o-mundial-2026/1139110",
+      "l": "https://www.zerozero.pt/noticias/lopetegui-inclui-portugues-na-lista-do-catar-para-o-mundial-2026/1139110",
       "i": "https://www.zerozero.pt/img/noticias/110/imgS620I1139110T20260601215405.jpg",
       "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.zerozero.pt&w=120&h=120&fit=contain",
       "p": "2026-06-01T21:25:37.000Z",
@@ -2369,7 +2409,7 @@
     },
     {
       "t": "Com Modric e mais cinco vice-campeões do mundo, Croácia divulga lista final para o Mundial",
-      "l": "https://www.zerozero.pt//com-modric-e-mais-cinco-vice-campeoes-do-mundo-croacia-divulga-lista-final-para-o-mundial/1139101",
+      "l": "https://www.zerozero.pt/noticias/com-modric-e-mais-cinco-vice-campeoes-do-mundo-croacia-divulga-lista-final-para-o-mundial/1139101",
       "i": "https://www.zerozero.pt/img/noticias/101/imgS620I1139101T20260601210407.jpg",
       "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.zerozero.pt&w=120&h=120&fit=contain",
       "p": "2026-06-01T20:57:05.000Z",
@@ -2399,7 +2439,7 @@
     },
     {
       "t": "Deniz Gül marca na vitória da Turquia sobre a Macedónia",
-      "l": "https://www.zerozero.pt//deniz-gul-marca-na-vitoria-da-turquia-sobre-a-macedonia/1139104",
+      "l": "https://www.zerozero.pt/noticias/deniz-gul-marca-na-vitoria-da-turquia-sobre-a-macedonia/1139104",
       "i": "https://www.zerozero.pt/img/noticias/104/imgS620I1139104T20260601214046.jpg",
       "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.zerozero.pt&w=120&h=120&fit=contain",
       "p": "2026-06-01T20:41:23.000Z",
@@ -2439,7 +2479,7 @@
     },
     {
       "t": "Penafiel renova com técnico espanhol",
-      "l": "https://www.zerozero.pt//penafiel-renova-com-tecnico-espanhol/1139105",
+      "l": "https://www.zerozero.pt/noticias/penafiel-renova-com-tecnico-espanhol/1139105",
       "i": "https://www.zerozero.pt/img/noticias/105/imgS620I1139105T20260601213006.jpg",
       "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.zerozero.pt&w=120&h=120&fit=contain",
       "p": "2026-06-01T20:30:37.000Z",
@@ -2449,7 +2489,7 @@
     },
     {
       "t": "Ava Seelenfreund despede-se do Torreense: «Obrigada por tudo»",
-      "l": "https://www.zerozero.pt//ava-seelenfreund-despede-se-do-torreense-obrigada-por-tudo/1139106",
+      "l": "https://www.zerozero.pt/noticias/ava-seelenfreund-despede-se-do-torreense-obrigada-por-tudo/1139106",
       "i": "https://www.zerozero.pt/img/noticias/106/imgS620I1139106T20260601212601.jpg",
       "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.zerozero.pt&w=120&h=120&fit=contain",
       "p": "2026-06-01T20:30:19.000Z",
@@ -2459,7 +2499,7 @@
     },
     {
       "t": "T11, Ep. 15 | Benfica tenta contratar avançado do Wolfsburg",
-      "l": "https://www.zerozero.pt//t11-ep-15-benfica-tenta-contratar-avancado-do-wolfsburg/1139000",
+      "l": "https://www.zerozero.pt/noticias/t11-ep-15-benfica-tenta-contratar-avancado-do-wolfsburg/1139000",
       "i": "https://www.zerozero.pt/img/noticias/000/imgS620I1139000T20260601212222.jpg",
       "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.zerozero.pt&w=120&h=120&fit=contain",
       "p": "2026-06-01T20:22:39.000Z",
@@ -2519,7 +2559,7 @@
     },
     {
       "t": "Estágio de Portugal arranca com 23 e sem bicampeões europeus",
-      "l": "https://www.rtp.pt/noticias/mundial-2026/estagio-de-portugal-arranca-com-23-e-sem-bicampeoes-europeus_d1744836",
+      "l": "https://www.rtp.pt/noticias/selecao-nacional/estagio-de-portugal-arranca-com-23-e-sem-bicampeoes-europeus_d1744836",
       "i": "https://cdn-images.rtp.pt/icm/noticias/images/f8/f822a9544564e6666b740d61c3700bb2?w=350&amp;q=50&amp;rect=0,31,1233,676&amp;auto=format",
       "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.rtp.pt&w=120&h=120&fit=contain",
       "p": "2026-06-01T19:55:21.000Z",
@@ -2549,7 +2589,7 @@
     },
     {
       "t": "Com Aursnes de início e Schjelderup a saltar do banco, Noruega vence Suécia de Lagerbielke",
-      "l": "https://www.zerozero.pt//com-aursnes-de-inicio-e-schjelderup-a-saltar-do-banco-noruega-vence-suecia-de-lagerbielke/1139064",
+      "l": "https://www.zerozero.pt/noticias/com-aursnes-de-inicio-e-schjelderup-a-saltar-do-banco-noruega-vence-suecia-de-lagerbielke/1139064",
       "i": "https://www.zerozero.pt/img/noticias/064/imgS620I1139064T20260601200048.jpg",
       "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.zerozero.pt&w=120&h=120&fit=contain",
       "p": "2026-06-01T19:51:30.000Z",
@@ -2559,7 +2599,7 @@
     },
     {
       "t": "Médio Issa Doumbia contratado pelo Sporting ao Veneza",
-      "l": "https://www.rtp.pt/noticias/1a-liga/medio-issa-doumbia-contratado-pelo-sporting-ao-veneza_d1744838",
+      "l": "https://www.rtp.pt/noticias/sporting/medio-issa-doumbia-contratado-pelo-sporting-ao-veneza_d1744838",
       "i": "https://cdn-images.rtp.pt/icm/noticias/images/53/5333e390f4466a0331092bef5fb609f5?w=350&amp;q=50&amp;rect=0,115,1239,679&amp;auto=format",
       "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.rtp.pt&w=120&h=120&fit=contain",
       "p": "2026-06-01T19:50:10.000Z",
@@ -3008,6 +3048,16 @@
       "n": "Mega Hits"
     },
     {
+      "t": "Oficial: Benfica despede-se de internacional espanhola",
+      "l": "https://www.abola.pt/noticias/oficial-benfica-despede-se-de-internacional-espanhola-2026060113513773967",
+      "i": "",
+      "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
+      "p": "2026-06-01T14:02:09.000Z",
+      "data_formatada": "1 de junho 14:02",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.abola.pt",
+      "n": "A Bola"
+    },
+    {
       "t": "Wearables com IA mudam de rumo: agora querem cuidar da sua saúde",
       "l": "https://www.maistecnologia.com/wearables-com-ia-mudam-de-rumo-agora-querem-cuidar-da-sua-saude/",
       "i": "",
@@ -3036,6 +3086,16 @@
       "data_formatada": "1 de junho 13:35",
       "fav": "https://www.google.com/s2/favicons?sz=64&domain=viva-porto.pt",
       "n": "Viva Porto"
+    },
+    {
+      "t": "Benfica segura filho de antigo guarda-redes do clube",
+      "l": "https://www.abola.pt/noticias/benfica-segura-filho-de-antigo-guarda-redes-do-clube-2026060113250003973",
+      "i": "",
+      "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
+      "p": "2026-06-01T13:25:00.000Z",
+      "data_formatada": "1 de junho 13:25",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.abola.pt",
+      "n": "A Bola"
     },
     {
       "t": "Confirmação oficial: sete anos depois, a série &#34;Euphoria&#34; chegou ao fim",
@@ -3198,6 +3258,16 @@
       "n": "Viva Porto"
     },
     {
+      "t": "Mercado: Santa Clara rejeita proposta por Paulo Victor",
+      "l": "https://www.abola.pt/noticias/mercado-santa-clara-rejeita-proposta-por-paulo-victor-2026060111293766258",
+      "i": "",
+      "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
+      "p": "2026-06-01T11:34:41.000Z",
+      "data_formatada": "1 de junho 11:34",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.abola.pt",
+      "n": "A Bola"
+    },
+    {
       "t": "Kon-Kord Records lançará “Two-Way Love Affair” do ícone do soul Sterling Harrison em 1º de junho de 2026 | ",
       "l": "https://news.theurbanmusicscene.com/2026/06/sterling-harrisons-two-way-love-affair/",
       "i": "https://news.theurbanmusicscene.com/wp-content/uploads/2026/04/Sterling-Harrison-1024x1022.jpg",
@@ -3216,6 +3286,16 @@
       "data_formatada": "1 de junho 11:05",
       "fav": "https://www.google.com/s2/favicons?sz=64&domain=news.theurbanmusicscene.com",
       "n": "The Urban Music Scene"
+    },
+    {
+      "t": "FPF promove Dia Nacional do Guarda-Redes",
+      "l": "https://www.abola.pt/noticias/fpf-promove-dia-nacional-do-guarda-redes-2026060110552941413",
+      "i": "",
+      "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
+      "p": "2026-06-01T10:55:29.000Z",
+      "data_formatada": "1 de junho 10:55",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.abola.pt",
+      "n": "A Bola"
     },
     {
       "t": "Dia de Katy Perry e Pedro Sampaio no Rock in Rio Lisboa está esgotado",
@@ -3368,26 +3448,6 @@
       "n": "Comunidade Cultura e Arte"
     },
     {
-      "t": "«A Europa não está a entender o que se passa noutros lados do Mundo»",
-      "l": "https://www.abola.pt/video/a-europa-nao-esta-a-entender-o-que-se-passa-noutros-lados-do-mundo-2026052915535287668",
-      "i": "",
-      "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
-      "p": "2026-06-01T08:00:00.000Z",
-      "data_formatada": "1 de junho 08:00",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.abola.pt",
-      "n": "A Bola"
-    },
-    {
-      "t": "«Treinar um grande em Portugal não é um cavalo de batalha»",
-      "l": "https://www.abola.pt/video/treinar-um-grande-em-portugal-nao-e-um-cavalo-de-batalha-2026052915531525558",
-      "i": "",
-      "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
-      "p": "2026-06-01T07:30:00.000Z",
-      "data_formatada": "1 de junho 07:30",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.abola.pt",
-      "n": "A Bola"
-    },
-    {
       "t": "12 concertos para ver no streaming antes de arrancar a época de festivais",
       "l": "https://newinporto.nit.pt/cultura/12-concertos-para-ver-no-streaming-antes-de-arrancar-a-epoca-de-festivais",
       "i": "",
@@ -3528,16 +3588,6 @@
       "n": "In Magazine"
     },
     {
-      "t": "Já imaginou Lewandowski a falar do Torreense? Aconteceu na Polónia (vídeo)",
-      "l": "https://www.abola.pt/noticias/ja-imaginou-lewandowski-a-falar-do-torreense-aconteceu-na-polonia-video-2026053116334307690",
-      "i": "",
-      "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
-      "p": "2026-05-31T16:44:00.000Z",
-      "data_formatada": "31 de maio 16:44",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.abola.pt",
-      "n": "A Bola"
-    },
-    {
       "t": "BMI Foundation Anuncia Prêmio BMI Babyface Inaugural: Música da Diáspora Africana",
       "l": "https://thisisrnb.com/2026/05/bmi-foundation-announces-inaugural-bmi-babyface-award-music-of-the-african-diaspora/",
       "i": "",
@@ -3546,16 +3596,6 @@
       "data_formatada": "31 de maio 16:28",
       "fav": "https://www.google.com/s2/favicons?sz=64&domain=thisisrnb.com",
       "n": "ThisIsRnB"
-    },
-    {
-      "t": "Nova regra das substituições já deixa marca: demorou a sair e causou 'estragos' (vídeo)",
-      "l": "https://www.abola.pt/noticias/nova-regra-das-substituicoes-ja-deixa-marca-demorou-a-sair-e-causou-estragos-video-2026053115374874279",
-      "i": "",
-      "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
-      "p": "2026-05-31T16:23:00.000Z",
-      "data_formatada": "31 de maio 16:23",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.abola.pt",
-      "n": "A Bola"
     },
     {
       "t": "Descobertas recentes: Saint Harison, Wyclef Jean, Anderson .Paak, NE-YO, Future & Tyla, Chris Brown e mais",
@@ -3578,16 +3618,6 @@
       "n": "Cultura"
     },
     {
-      "t": "«O sonho de um povo 'celeste'»: Uruguai anunciou assim os convocados para o Mundial",
-      "l": "https://www.abola.pt/video/o-sonho-de-um-povo-celeste-uruguai-anunciou-assim-os-convocados-para-o-mundial-2026053117492019648",
-      "i": "",
-      "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
-      "p": "2026-05-31T14:22:00.000Z",
-      "data_formatada": "31 de maio 14:22",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.abola.pt",
-      "n": "A Bola"
-    },
-    {
       "t": "Assista Art Garfunkel cantar 'The Boxer' com Charlie Puth no MSG",
       "l": "https://ultimateclassicrock.com/art-garfunkel-charlie-puth-the-boxer-madison-square-garden/",
       "i": "https://townsquare.media/site/295/files/2026/05/attachment-charlieart.jpg?format=natural",
@@ -3606,26 +3636,6 @@
       "data_formatada": "31 de maio 13:40",
       "fav": "https://www.google.com/s2/favicons?sz=64&domain=ultimateclassicrock.com",
       "n": "Ultimate Classic Rock"
-    },
-    {
-      "t": "Mais uma estrela cadente em Roland Garros: Iga Swiatek eliminada",
-      "l": "https://www.abola.pt/noticias/mais-uma-estrela-cadente-em-roland-garros-iga-swiatek-eliminada-2026053112553391066",
-      "i": "",
-      "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
-      "p": "2026-05-31T13:21:50.000Z",
-      "data_formatada": "31 de maio 13:21",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.abola.pt",
-      "n": "A Bola"
-    },
-    {
-      "t": "«Seria um sonho ver o Marco Silva a treinar o clube do meu coração»",
-      "l": "https://www.abola.pt/noticias/seria-um-sonho-ver-o-marco-silva-a-treinar-o-clube-do-meu-coracao-2026053017123102424",
-      "i": "",
-      "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
-      "p": "2026-05-31T13:05:00.000Z",
-      "data_formatada": "31 de maio 13:05",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.abola.pt",
-      "n": "A Bola"
     },
     {
       "t": "Música, sardinha e dança do esquema: nos “Santos em Santos” a festa dura 52 dias",
@@ -3728,26 +3738,6 @@
       "n": "Mais Tecnologia"
     },
     {
-      "t": "Fernando e Francisco Tomé, duas gerações no Vitória de Setúbal",
-      "l": "https://www.abola.pt/video/fernando-e-francisco-tome-duas-geracoes-no-vitoria-de-setubal-2026053019565837783",
-      "i": "",
-      "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
-      "p": "2026-05-31T09:29:00.000Z",
-      "data_formatada": "31 de maio 09:29",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.abola.pt",
-      "n": "A Bola"
-    },
-    {
-      "t": "Mulher de Safonov improvisa bandeira russa para os festejos do PSG",
-      "l": "https://www.abola.pt/noticias/mulher-de-safonov-improvisa-bandeira-russa-para-os-festejos-do-psg-2026053109180442668",
-      "i": "",
-      "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
-      "p": "2026-05-31T09:18:04.000Z",
-      "data_formatada": "31 de maio 09:18",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.abola.pt",
-      "n": "A Bola"
-    },
-    {
       "t": "Apple prepara 2 novidades que podem mudar o iPad",
       "l": "https://www.maistecnologia.com/apple-prepara-2-novidades-que-podem-mudar-o-ipad/",
       "i": "",
@@ -3756,6 +3746,16 @@
       "data_formatada": "31 de maio 09:05",
       "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.maistecnologia.com",
       "n": "Mais Tecnologia"
+    },
+    {
+      "t": "«Luis Enrique coloca dois atletas de costas voltadas a lutarem do mesmo lado»",
+      "l": "https://www.abola.pt/video/luis-enrique-coloca-dois-atletas-de-costas-voltadas-a-lutarem-do-mesmo-lado-2026053020315681126",
+      "i": "",
+      "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
+      "p": "2026-05-31T08:35:00.000Z",
+      "data_formatada": "31 de maio 08:35",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.abola.pt",
+      "n": "A Bola"
     },
     {
       "t": "Os crepes proteicos que só levam 2 ingredientes e se fazem em menos de 5 minutos",
@@ -4644,6 +4644,56 @@
       "categoria": "Atualidade",
       "artigos": [
         {
+          "t": "Santa Casa apela por famílias de acolhimento em Lisboa",
+          "l": "https://observador.pt/2026/06/02/santa-casa-reforca-apelo-por-familias-de-acolhimento-em-lisboa/",
+          "i": "https://bordalo.observador.pt/v2/rs:fill:770:403/c:4096:2298:nowe:0:113/q:70/plain/https://s3.observador.pt/wp-content/uploads/2026/02/12162923/reportagem-em-penamacor-terra-de-antonio-jose-seguro-diogo-faria-reis-7231-scaled.jpg",
+          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dobservador.pt&w=120&h=120&fit=contain",
+          "p": "2026-06-02T08:20:20.000Z",
+          "data_formatada": "2 de junho 08:20",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=observador.pt",
+          "n": "Observador"
+        },
+        {
+          "t": "As notícias das 9h",
+          "l": "https://observador.pt/programas/noticiario/as-noticias-das-9h-2367/",
+          "i": "https://bordalo.observador.pt/v2/rs:fill:770:403/c:770:433:nowe:0:0/q:70/plain/https://s3.observador.pt/wp-content/uploads/2021/04/13113304/770-podcast-noticiario.jpg",
+          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dobservador.pt&w=120&h=120&fit=contain",
+          "p": "2026-06-02T08:19:14.000Z",
+          "data_formatada": "2 de junho 08:19",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=observador.pt",
+          "n": "Observador"
+        },
+        {
+          "t": "Plano prevê 500 milhões por ano até 2030 para natureza",
+          "l": "https://observador.pt/2026/06/02/plano-nacional-preve-500-milhoes-por-ano-ate-2030-para-restaurar-natureza/",
+          "i": "https://bordalo.observador.pt/v2/rs:fill:770:403/c:2000:1124:nowe:0:104/q:70/plain/https://s3.observador.pt/wp-content/uploads/2025/09/05184420/45534018.jpg",
+          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dobservador.pt&w=120&h=120&fit=contain",
+          "p": "2026-06-02T08:18:41.000Z",
+          "data_formatada": "2 de junho 08:18",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=observador.pt",
+          "n": "Observador"
+        },
+        {
+          "t": "A reforma do Estado é apenas uma miragem desde 1978?",
+          "l": "https://observador.pt/programas/e-o-vencedor-e/a-reforma-do-estado-e-apenas-uma-miragem-desde-1978/",
+          "i": "https://bordalo.observador.pt/v2/rs:fill:770:403/c:770:433:nowe:0:0/q:70/plain/https://s3.observador.pt/wp-content/uploads/2021/04/13110132/770-podcast-e-o-vencedor-e.jpg",
+          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dobservador.pt&w=120&h=120&fit=contain",
+          "p": "2026-06-02T08:18:12.000Z",
+          "data_formatada": "2 de junho 08:18",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=observador.pt",
+          "n": "Observador"
+        },
+        {
+          "t": "IATA afasta risco de falta de combustível para aviação",
+          "l": "https://observador.pt/2026/06/02/iata-afasta-risco-de-falta-de-combustivel-para-aviacao-na-europa-no-verao/",
+          "i": "https://bordalo.observador.pt/v2/rs:fill:770:403/c:2000:1122:nowe:0:11/q:70/plain/https://s3.observador.pt/wp-content/uploads/2026/06/02081339/46311219.jpg",
+          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dobservador.pt&w=120&h=120&fit=contain",
+          "p": "2026-06-02T08:17:26.000Z",
+          "data_formatada": "2 de junho 08:17",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=observador.pt",
+          "n": "Observador"
+        },
+        {
           "t": "Haiti. Força de combate ataca território de um gangue",
           "l": "https://observador.pt/2026/06/02/forca-de-combate-a-grupos-armados-ataca-territorio-de-um-gangue-no-haiti/",
           "i": "https://bordalo.observador.pt/v2/rs:fill:770:403/c:2000:1122:nowe:0:155/q:70/plain/https://s3.observador.pt/wp-content/uploads/2026/06/02043008/47132502.jpg",
@@ -4680,56 +4730,6 @@
           "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dobservador.pt&w=120&h=120&fit=contain",
           "p": "2026-06-02T07:25:34.000Z",
           "data_formatada": "2 de junho 07:25",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=observador.pt",
-          "n": "Observador"
-        },
-        {
-          "t": "Mundial pode ter impacto até 945 milhões em Portugal",
-          "l": "https://observador.pt/2026/06/02/mundial-pode-ter-impacto-economico-ate-945-milhoes-de-euros-em-portugal/",
-          "i": "https://bordalo.observador.pt/v2/rs:fill:770:403/c:4096:2298:nowe:0:401/q:70/plain/https://s3.observador.pt/wp-content/uploads/2026/06/01222827/gettyimages-2160651089-scaled.jpg",
-          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dobservador.pt&w=120&h=120&fit=contain",
-          "p": "2026-06-02T07:18:50.000Z",
-          "data_formatada": "2 de junho 07:18",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=observador.pt",
-          "n": "Observador"
-        },
-        {
-          "t": "8h. Efeitos da greve devem começar a ser sentidos já hoje",
-          "l": "https://observador.pt/programas/noticiario/as-noticias-das-8h-2415/",
-          "i": "https://bordalo.observador.pt/v2/rs:fill:770:403/c:770:433:nowe:0:0/q:70/plain/https://s3.observador.pt/wp-content/uploads/2021/04/13113304/770-podcast-noticiario.jpg",
-          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dobservador.pt&w=120&h=120&fit=contain",
-          "p": "2026-06-02T07:17:50.000Z",
-          "data_formatada": "2 de junho 07:17",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=observador.pt",
-          "n": "Observador"
-        },
-        {
-          "t": "A selfie \"traidora\", o adeus de Suárez e a regra dos lentos",
-          "l": "https://observador.pt/programas/tres-toques/a-selfie-traidora-o-adeus-de-suarez-e-a-regra-dos-lentos/",
-          "i": "https://bordalo.observador.pt/v2/rs:fill:770:403/c:770:433:nowe:0:0/q:70/plain/https://s3.observador.pt/wp-content/uploads/2025/11/06151953/770-podcast-tres-toques-2025-v2.jpg",
-          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dobservador.pt&w=120&h=120&fit=contain",
-          "p": "2026-06-02T07:15:54.000Z",
-          "data_formatada": "2 de junho 07:15",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=observador.pt",
-          "n": "Observador"
-        },
-        {
-          "t": "A transparência salarial e o guarda-sol: afinal, onde estão?",
-          "l": "https://observador.pt/newsletters/360/a-transparencia-salarial-e-o-guarda-sol-afinal-onde-estao/",
-          "i": "https://bordalo.observador.pt/v2/rs:fill:770:403/c:1540:866:nowe:0:0/q:70/plain/https://s3.observador.pt/wp-content/uploads/2021/06/25120046/360-16x9-1.png",
-          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dobservador.pt&w=120&h=120&fit=contain",
-          "p": "2026-06-02T07:11:29.000Z",
-          "data_formatada": "2 de junho 07:11",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=observador.pt",
-          "n": "Observador"
-        },
-        {
-          "t": "Ray-Ban Meta: os óculos que gravam sem pedir licença",
-          "l": "https://observador.pt/programas/no-se-fala-de-outra-coisa/ray-ban-meta-os-oculos-que-gravam-sem-pedir-licenca/",
-          "i": "https://bordalo.observador.pt/v2/rs:fill:770:403/c:770:433:nowe:0:0/q:70/plain/https://s3.observador.pt/wp-content/uploads/2025/07/14120208/770-podcast-nao-se-fala-de-outra-coisa-1.jpg",
-          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dobservador.pt&w=120&h=120&fit=contain",
-          "p": "2026-06-02T06:58:51.000Z",
-          "data_formatada": "2 de junho 06:58",
           "fav": "https://www.google.com/s2/favicons?sz=64&domain=observador.pt",
           "n": "Observador"
         }
@@ -4836,6 +4836,46 @@
       "categoria": "Atualidade",
       "artigos": [
         {
+          "t": "Deputados de Israel aprovaram 1.ª votação para a dissolução do parlamento",
+          "l": "https://www.noticiasaominuto.com/mundo/2999522/deputados-de-israel-aprovaram-1-votacao-para-a-dissolucao-do-parlamento#utm_source=rss-ultima-hora&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
+          "i": "https://media-manager.noticiasaominuto.com/640/47142458.webp",
+          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
+          "p": "2026-06-02T09:18:00.000Z",
+          "data_formatada": "2 de junho 09:18",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
+          "n": "Notícias ao Minuto"
+        },
+        {
+          "t": "Irão anunciou execução de três homens acusados de violação de menores",
+          "l": "https://www.noticiasaominuto.com/mundo/2999510/irao-anunciou-execucao-de-tres-homens-acusados-de-violacao-de-menores#utm_source=rss-ultima-hora&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
+          "i": "https://media-manager.noticiasaominuto.com/640/naom_69e4be2818b43.webp",
+          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
+          "p": "2026-06-02T09:14:09.000Z",
+          "data_formatada": "2 de junho 09:14",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
+          "n": "Notícias ao Minuto"
+        },
+        {
+          "t": "Filho de Yolanda Tati \"finalmente operado\" e \"deu tudo certo\"",
+          "l": "https://www.noticiasaominuto.com/fama/2999515/filho-de-yolanda-tati-finalmente-operado-e-deu-tudo-certo#utm_source=rss-ultima-hora&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
+          "i": "https://media-manager.noticiasaominuto.com/640/naom_6a1e8ae205636.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoxNDAyLCJjcm9wSGVpZ2h0Ijo3ODksImNyb3BYIjoyNCwiY3JvcFkiOjIzMH19",
+          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
+          "p": "2026-06-02T09:13:37.000Z",
+          "data_formatada": "2 de junho 09:13",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
+          "n": "Notícias ao Minuto"
+        },
+        {
+          "t": "EM DIRETO: A conferência de imprensa da seleção nacional",
+          "l": "https://www.noticiasaominuto.com/desporto/2999495/em-direto-a-conferencia-de-imprensa-da-selecao-nacional#utm_source=rss-ultima-hora&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
+          "i": "https://media-manager.noticiasaominuto.com/640/naom_6a1e84084aaba.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoyNTYwLCJjcm9wSGVpZ2h0IjoxNDQwLCJjcm9wWCI6MCwiY3JvcFkiOjQwfX0=",
+          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
+          "p": "2026-06-02T09:13:26.000Z",
+          "data_formatada": "2 de junho 09:13",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
+          "n": "Notícias ao Minuto"
+        },
+        {
           "t": "Mais de 40% dos profissionais identificam IA como prioridade",
           "l": "https://www.noticiasaominuto.com/tech/2999516/mais-de-40-dos-profissionais-identificam-ia-como-prioridade#utm_source=rss-ultima-hora&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
           "i": "https://media-manager.noticiasaominuto.com/640/naom_64b7cb9c91da5.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoyNTI5LCJjcm9wSGVpZ2h0IjoxNDIzLCJjcm9wWCI6MTUsImNyb3BZIjo4NX0sInBvcnRyYWl0Ijp7ImNyb3BXaWR0aCI6OTQ5LCJjcm9wSGVpZ2h0IjoxNjg3LCJjcm9wWCI6MTEzNCwiY3JvcFkiOjEyfX0=",
@@ -4856,8 +4896,8 @@
           "n": "Notícias ao Minuto"
         },
         {
-          "t": "A opção que ninguém vai querer perder na próxima atualização do iPhone",
-          "l": "https://www.noticiasaominuto.com/tech/2999518/a-opcao-que-ninguem-vai-querer-perder-na-proxima-atualizacao-do-iphone#utm_source=rss-ultima-hora&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
+          "t": "O iOS 27 terá opção para dividir contas com amigos",
+          "l": "https://www.noticiasaominuto.com/tech/2999518/o-ios-27-tera-opcao-para-dividir-contas-com-amigos#utm_source=rss-ultima-hora&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
           "i": "https://media-manager.noticiasaominuto.com/640/naom_6a1e8e3b6bc0b.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoyNTI2LCJjcm9wSGVpZ2h0IjoxNDIxLCJjcm9wWCI6MTEsImNyb3BZIjoyMDF9LCJwb3J0cmFpdCI6eyJjcm9wV2lkdGgiOjk0NSwiY3JvcEhlaWdodCI6MTY4MSwiY3JvcFgiOjEyMTcsImNyb3BZIjo2fX0=",
           "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
           "p": "2026-06-02T09:04:01.000Z",
@@ -4882,46 +4922,6 @@
           "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
           "p": "2026-06-02T08:55:05.000Z",
           "data_formatada": "2 de junho 08:55",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
-          "n": "Notícias ao Minuto"
-        },
-        {
-          "t": "Sabe quem mais marcou em Mundiais? E onde está Cristiano Ronaldo?",
-          "l": "https://www.noticiasaominuto.com/desporto/2999504/sabe-quem-mais-marcou-em-mundiais-e-onde-esta-cristiano-ronaldo#utm_source=rss-ultima-hora&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
-          "i": "https://media-manager.noticiasaominuto.com/640/naom_6a16e76b2cae0.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoyMDQ4LCJjcm9wSGVpZ2h0IjoxMTUyLCJjcm9wWCI6MjQ0LCJjcm9wWSI6Mjd9fQ==",
-          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
-          "p": "2026-06-02T08:53:05.000Z",
-          "data_formatada": "2 de junho 08:53",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
-          "n": "Notícias ao Minuto"
-        },
-        {
-          "t": "Metro de Lisboa fecha portas hoje e só abre na 5.ª-feira: Eis os horários",
-          "l": "https://www.noticiasaominuto.com/economia/2999513/metro-de-lisboa-fecha-portas-hoje-e-so-abre-na-5-feira-eis-os-horarios#utm_source=rss-ultima-hora&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
-          "i": "https://media-manager.noticiasaominuto.com/640/naom_61f67262e0a6d.webp",
-          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
-          "p": "2026-06-02T08:51:00.000Z",
-          "data_formatada": "2 de junho 08:51",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
-          "n": "Notícias ao Minuto"
-        },
-        {
-          "t": "Brasil ainda é o 'rei' dos Mundiais, apesar dos 24 anos de seca",
-          "l": "https://www.noticiasaominuto.com/desporto/2999508/brasil-ainda-e-o-rei-dos-mundiais-apesar-dos-24-anos-de-seca#utm_source=rss-ultima-hora&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
-          "i": "https://media-manager.noticiasaominuto.com/640/naom_6a1e8b4198c00.webp",
-          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
-          "p": "2026-06-02T08:50:45.000Z",
-          "data_formatada": "2 de junho 08:50",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
-          "n": "Notícias ao Minuto"
-        },
-        {
-          "t": "\"Passos compreende que, provavelmente, o seu tempo político já passou\"",
-          "l": "https://www.noticiasaominuto.com/politica/2999499/passos-compreende-que-provavelmente-o-seu-tempo-politico-ja-passou#utm_source=rss-ultima-hora&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
-          "i": "https://media-manager.noticiasaominuto.com/640/naom_560168b788c7f.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjo2MDMxLCJjcm9wSGVpZ2h0IjozMzkyLCJjcm9wWCI6MzcsImNyb3BZIjoyNzZ9LCJwb3J0cmFpdCI6eyJjcm9wV2lkdGgiOjIyMDIsImNyb3BIZWlnaHQiOjM5MTUsImNyb3BYIjoyNjQyLCJjcm9wWSI6OTB9fQ==",
-          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
-          "p": "2026-06-02T08:47:45.000Z",
-          "data_formatada": "2 de junho 08:47",
           "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
           "n": "Notícias ao Minuto"
         }
@@ -5028,6 +5028,16 @@
       "categoria": "Atualidade",
       "artigos": [
         {
+          "t": "PSD, PS e Chega falham entrega de nomes para o Conselho de Fiscalização das “secretas”",
+          "l": "https://sicnoticias.pt/pais/2026-06-02-psd-ps-e-chega-falham-entrega-de-nomes-para-o-conselho-de-fiscalizacao-das-secretas-727de7f5",
+          "i": "https://images.impresa.pt/sicnot/2026-01-21-parlamento-debate-quinzenal-governo-6f5495a6/1.91x1/mw-1200?outputFormat=jpeg",
+          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Drss.impresa.pt&w=120&h=120&fit=contain",
+          "p": "2026-06-02T08:21:11.000Z",
+          "data_formatada": "2 de junho 08:21",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=rss.impresa.pt",
+          "n": "SIC Notícias"
+        },
+        {
           "t": "Tarifa do gás natural sobe 6,4% a partir de outubro no mercado regulado",
           "l": "https://sicnoticias.pt/economia/2026-06-02-tarifa-do-gas-natural-sobe-64-a-partir-de-outubro-no-mercado-regulado-b0ed2b4e",
           "i": "https://images.impresa.pt/sicnot/2025-10-09-gas-natural-3cde2f27/1.91x1/mw-1200?outputFormat=jpeg",
@@ -5044,6 +5054,16 @@
           "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Drss.impresa.pt&w=120&h=120&fit=contain",
           "p": "2026-06-02T07:48:07.000Z",
           "data_formatada": "2 de junho 07:48",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=rss.impresa.pt",
+          "n": "SIC Notícias"
+        },
+        {
+          "t": "Adeus, calor: chuva e vento estão de regresso e temperaturas vão cair até 7ºC",
+          "l": "https://sicnoticias.pt/meteorologia/2026-06-02-adeus-calor-chuva-e-vento-estao-de-regresso-e-temperaturas-vao-cair-ate-7c-4d929c30",
+          "i": "https://images.impresa.pt/sicnot/2025-03-19-chuva-frio-tempestade-ff35c8c7/1.91x1/mw-1200?outputFormat=jpeg",
+          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Drss.impresa.pt&w=120&h=120&fit=contain",
+          "p": "2026-06-02T07:38:56.000Z",
+          "data_formatada": "2 de junho 07:38",
           "fav": "https://www.google.com/s2/favicons?sz=64&domain=rss.impresa.pt",
           "n": "SIC Notícias"
         },
@@ -5094,26 +5114,6 @@
           "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Drss.impresa.pt&w=120&h=120&fit=contain",
           "p": "2026-06-02T07:00:00.000Z",
           "data_formatada": "2 de junho 07:00",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=rss.impresa.pt",
-          "n": "SIC Notícias"
-        },
-        {
-          "t": "Rede Empregar quer ajudar 3.500 jovens a arranjar trabalho",
-          "l": "https://sicnoticias.pt/economia/emprego/2026-06-02-rede-empregar-quer-ajudar-3.500-jovens-a-arranjar-trabalho-f7767b6d",
-          "i": "https://images.impresa.pt/sicnot/2025-10-07-jovens-emprego-254a5b35/1.91x1/mw-1200?outputFormat=jpeg",
-          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Drss.impresa.pt&w=120&h=120&fit=contain",
-          "p": "2026-06-02T06:35:00.000Z",
-          "data_formatada": "2 de junho 06:35",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=rss.impresa.pt",
-          "n": "SIC Notícias"
-        },
-        {
-          "t": "Ataques russos causam pelo menos oito mortos em Kiev e no leste da Ucrânia",
-          "l": "https://sicnoticias.pt/especiais/guerra-russia-ucrania/2026-06-02-video-ataques-russos-causam-pelo-menos-oito-mortos-em-kiev-e-no-leste-da-ucrania-0897a4eb",
-          "i": "https://images.impresa.pt/sicnot/2026-06-02-ap26153139483462.jpg-30cdb70c/1.91x1/mw-1200?outputFormat=jpeg",
-          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Drss.impresa.pt&w=120&h=120&fit=contain",
-          "p": "2026-06-02T06:28:50.000Z",
-          "data_formatada": "2 de junho 06:28",
           "fav": "https://www.google.com/s2/favicons?sz=64&domain=rss.impresa.pt",
           "n": "SIC Notícias"
         }
@@ -5276,6 +5276,16 @@
       "categoria": "Atualidade",
       "artigos": [
         {
+          "t": "9h Líder do Bloco contra a Prestação Social Única",
+          "l": "https://www.rtp.pt/noticias/noticiario-antena1/9h-lider-do-bloco-contra-a-prestacao-social-unica_a1_1744928",
+          "i": "https://cdn-images.rtp.pt/noticias/images/antena1_default.png?w=350&amp;q=50&amp;auto=format",
+          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.rtp.pt&w=120&h=120&fit=contain",
+          "p": "2026-06-02T09:18:02.000Z",
+          "data_formatada": "2 de junho 09:18",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.rtp.pt",
+          "n": "RTP"
+        },
+        {
           "t": "\"Sem reforma laboral, os salários nunca crescerão\", afirma Ministra do Trabalho",
           "l": "https://www.rtp.pt/noticias/economia/sem-reforma-laboral-os-salarios-nunca-crescerao-afirma-ministra-do-trabalho_v1744925",
           "i": "https://cdn-images.rtp.pt/icm/images/68/688c0ec51e3a1419020ec26e5c516fac_N.jpg?",
@@ -5352,16 +5362,6 @@
           "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.rtp.pt&w=120&h=120&fit=contain",
           "p": "2026-06-02T08:33:47.000Z",
           "data_formatada": "2 de junho 08:33",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.rtp.pt",
-          "n": "RTP"
-        },
-        {
-          "t": "Mundial2026. Los Angeles cria planos de contingência especiais para jogos do Irão",
-          "l": "https://www.rtp.pt/noticias/desporto/mundial2026-los-angeles-cria-planos-de-contingencia-especiais-para-jogos-do-irao_v1744915",
-          "i": "https://cdn-images.rtp.pt/icm/images/c2/c202e02bf6419ea14fd08c3f462c06af_N.jpg?",
-          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.rtp.pt&w=120&h=120&fit=contain",
-          "p": "2026-06-02T08:32:47.000Z",
-          "data_formatada": "2 de junho 08:32",
           "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.rtp.pt",
           "n": "RTP"
         }
@@ -5468,6 +5468,16 @@
       "categoria": "Atualidade",
       "artigos": [
         {
+          "t": "​Amanhã é dia de greve geral. Afinal, como vai ser?",
+          "l": "https://rr.pt/artigo/explicador-renascenca/2026/06/02/amanha-e-dia-de-greve-geral-afinal-como-vai-ser/473003/?utm_medium=rss",
+          "i": "https://d1gifpnctlcmg5.cloudfront.net/be03b976-08ec-46ac-b8a1-8cd7b89206b0/sources/8dd8cebe-dacd-4b62-90ac-49c5f21c5a8c.mp3",
+          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Drr.pt&w=120&h=120&fit=contain",
+          "p": "2026-06-02T08:11:00.000Z",
+          "data_formatada": "2 de junho 08:11",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=rr.pt",
+          "n": "Renascença"
+        },
+        {
           "t": "Trump chama \"louco\" e \"ingrato\" a Netanyahu",
           "l": "https://rr.pt/noticia/mundo/2026/06/02/trump-chama-louco-e-ingrato-a-netanyahu/472999/?utm_medium=rss",
           "i": "https://images.rr.pt/2025-09-30t083456z-1071735172-mt1eyeim269391-rtrmadp-3-israel-pm-at-white-house-on-gaza-peace-plan111992f6_standard.jpg",
@@ -5544,16 +5554,6 @@
           "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Drr.pt&w=120&h=120&fit=contain",
           "p": "2026-06-02T04:30:00.000Z",
           "data_formatada": "2 de junho 04:30",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=rr.pt",
-          "n": "Renascença"
-        },
-        {
-          "t": "UE aprova novas regras para deportar migrantes para centros fora do bloco europeu",
-          "l": "https://rr.pt/noticia/mundo/2026/06/02/ue-aprova-novas-regras-para-deportar-migrantes-para-centros-fora-do-bloco-europeu/472991/?utm_medium=rss",
-          "i": "https://images.rr.pt/policia-maritima-interceta-35-migrantes-ao-largo-da-ilha-grega-de-gavdos-1170283c0_standard.jpeg",
-          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Drr.pt&w=120&h=120&fit=contain",
-          "p": "2026-06-01T23:32:50.000Z",
-          "data_formatada": "1 de junho 23:32",
           "fav": "https://www.google.com/s2/favicons?sz=64&domain=rr.pt",
           "n": "Renascença"
         }
@@ -6044,8 +6044,18 @@
       "categoria": "Tek",
       "artigos": [
         {
-          "t": "A opção que ninguém vai querer perder na próxima atualização do iPhone",
-          "l": "https://www.noticiasaominuto.com/tech/2999518/a-opcao-que-ninguem-vai-querer-perder-na-proxima-atualizacao-do-iphone#utm_source=rss-tech&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
+          "t": "Mais de 40% dos profissionais identificam IA como prioridade",
+          "l": "https://www.noticiasaominuto.com/tech/2999516/mais-de-40-dos-profissionais-identificam-ia-como-prioridade#utm_source=rss-tech&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
+          "i": "https://media-manager.noticiasaominuto.com/640/naom_64b7cb9c91da5.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoyNTI5LCJjcm9wSGVpZ2h0IjoxNDIzLCJjcm9wWCI6MTUsImNyb3BZIjo4NX0sInBvcnRyYWl0Ijp7ImNyb3BXaWR0aCI6OTQ5LCJjcm9wSGVpZ2h0IjoxNjg3LCJjcm9wWCI6MTEzNCwiY3JvcFkiOjEyfX0=",
+          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
+          "p": "2026-06-02T09:10:59.000Z",
+          "data_formatada": "2 de junho 09:10",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
+          "n": "Tech"
+        },
+        {
+          "t": "O iOS 27 terá opção para dividir contas com amigos",
+          "l": "https://www.noticiasaominuto.com/tech/2999518/o-ios-27-tera-opcao-para-dividir-contas-com-amigos#utm_source=rss-tech&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
           "i": "https://media-manager.noticiasaominuto.com/640/naom_6a1e8e3b6bc0b.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoyNTI2LCJjcm9wSGVpZ2h0IjoxNDIxLCJjcm9wWCI6MTEsImNyb3BZIjoyMDF9LCJwb3J0cmFpdCI6eyJjcm9wV2lkdGgiOjk0NSwiY3JvcEhlaWdodCI6MTY4MSwiY3JvcFgiOjEyMTcsImNyb3BZIjo2fX0=",
           "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
           "p": "2026-06-02T09:04:01.000Z",
@@ -6120,16 +6130,6 @@
           "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
           "p": "2026-06-02T07:27:56.000Z",
           "data_formatada": "2 de junho 07:27",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
-          "n": "Tech"
-        },
-        {
-          "t": "Asus celebra 20 anos de marca gaming com nova edição de consola portátil",
-          "l": "https://www.noticiasaominuto.com/tech/2999180/asus-celebra-20-anos-de-marca-gaming-com-nova-edicao-de-consola-portatil#utm_source=rss-tech&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
-          "i": "https://media-manager.noticiasaominuto.com/640/naom_6a1d9cbfc7266.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoyNTE4LCJjcm9wSGVpZ2h0IjoxNDE2LCJjcm9wWCI6MjEsImNyb3BZIjoxNH0sInBvcnRyYWl0Ijp7ImNyb3BXaWR0aCI6NzY4LCJjcm9wSGVpZ2h0IjoxMzY1LCJjcm9wWCI6ODU2LCJjcm9wWSI6MjAxfX0=",
-          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
-          "p": "2026-06-01T22:30:00.000Z",
-          "data_formatada": "1 de junho 22:30",
           "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
           "n": "Tech"
         }
@@ -6590,6 +6590,16 @@
       "categoria": "Desporto",
       "artigos": [
         {
+          "t": "EM DIRETO: A conferência de imprensa da seleção nacional",
+          "l": "https://www.noticiasaominuto.com/desporto/2999495/em-direto-a-conferencia-de-imprensa-da-selecao-nacional#utm_source=rss-desporto&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
+          "i": "https://media-manager.noticiasaominuto.com/640/naom_6a1e84084aaba.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoyNTYwLCJjcm9wSGVpZ2h0IjoxNDQwLCJjcm9wWCI6MCwiY3JvcFkiOjQwfX0=",
+          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
+          "p": "2026-06-02T09:13:26.000Z",
+          "data_formatada": "2 de junho 09:13",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
+          "n": "Desporto"
+        },
+        {
           "t": "Roberto Martínez imune a agentes: \"Não acredito e nunca vi\"",
           "l": "https://www.noticiasaominuto.com/desporto/2999502/roberto-martinez-imune-a-agentes-nao-acredito-e-nunca-vi#utm_source=rss-desporto&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
           "i": "https://media-manager.noticiasaominuto.com/640/naom_6a0c2ca763b1e.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoyNTYwLCJjcm9wSGVpZ2h0IjoxNDQwLCJjcm9wWCI6MCwiY3JvcFkiOjh9fQ==",
@@ -6665,16 +6675,6 @@
           "i": "https://media-manager.noticiasaominuto.com/640/naom_69c15de670618.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoyMDQ4LCJjcm9wSGVpZ2h0IjoxMTUyLCJjcm9wWCI6MzMzLCJjcm9wWSI6MzB9fQ==",
           "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
           "p": "2026-06-02T07:57:49.000Z",
-          "data_formatada": "2 de junho 07:57",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
-          "n": "Desporto"
-        },
-        {
-          "t": "Guardiola rejeita reencontro com Messi e decisão sobre futuro está tomada",
-          "l": "https://www.noticiasaominuto.com/desporto/2999481/guardiola-rejeita-reencontro-com-messi-e-decisao-sobre-futuro-esta-tomada#utm_source=rss-desporto&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
-          "i": "https://media-manager.noticiasaominuto.com/640/naom_69d105c5aa3d3.webp",
-          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
-          "p": "2026-06-02T07:57:18.000Z",
           "data_formatada": "2 de junho 07:57",
           "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
           "n": "Desporto"
@@ -7015,7 +7015,7 @@
         },
         {
           "t": "Estágio de Portugal arranca com 23 e sem bicampeões europeus",
-          "l": "https://www.rtp.pt/noticias/mundial-2026/estagio-de-portugal-arranca-com-23-e-sem-bicampeoes-europeus_d1744836",
+          "l": "https://www.rtp.pt/noticias/selecao-nacional/estagio-de-portugal-arranca-com-23-e-sem-bicampeoes-europeus_d1744836",
           "i": "https://cdn-images.rtp.pt/icm/noticias/images/f8/f822a9544564e6666b740d61c3700bb2?w=350&amp;q=50&amp;rect=0,31,1233,676&amp;auto=format",
           "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.rtp.pt&w=120&h=120&fit=contain",
           "p": "2026-06-01T19:55:21.000Z",
@@ -7035,7 +7035,7 @@
         },
         {
           "t": "Médio Issa Doumbia contratado pelo Sporting ao Veneza",
-          "l": "https://www.rtp.pt/noticias/1a-liga/medio-issa-doumbia-contratado-pelo-sporting-ao-veneza_d1744838",
+          "l": "https://www.rtp.pt/noticias/sporting/medio-issa-doumbia-contratado-pelo-sporting-ao-veneza_d1744838",
           "i": "https://cdn-images.rtp.pt/icm/noticias/images/53/5333e390f4466a0331092bef5fb609f5?w=350&amp;q=50&amp;rect=0,115,1239,679&amp;auto=format",
           "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.rtp.pt&w=120&h=120&fit=contain",
           "p": "2026-06-01T19:50:10.000Z",
@@ -7262,6 +7262,16 @@
       "categoria": "Atualidade",
       "artigos": [
         {
+          "t": "\"A Rússia pode fazer dois ataques destes por mês, mais do que isso não consegue\"",
+          "l": "https://cnnportugal.iol.pt/videos/a-russia-pode-fazer-dois-ataques-destes-por-mes-mais-do-que-isso-nao-consegue/6a1e8c7c0cf21fcd83775753",
+          "i": "https://img.iol.pt/image/id/6a1e908cd34e28842c84b7d8/200.jpg",
+          "fallback": "https://images.weserv.nl/?url=cnnportugal.iol.pt/assets/images/logos/cnn-portugal.png",
+          "p": "2026-06-02T08:16:00.000Z",
+          "data_formatada": "2 de junho 08:16",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=cnnportugal.iol.pt",
+          "n": "CNN PT"
+        },
+        {
           "t": "Calor dá lugar a mudança brusca do tempo: temperaturas descem até sete graus e vem aí vento forte",
           "l": "https://cnnportugal.iol.pt/previsao-do-tempo/tempo-em-portugal/calor-da-lugar-a-mudanca-brusca-do-tempo-temperaturas-descem-ate-sete-graus-e-ha-vento-forte/20260602/6a1e8ec6d34e28842c84b7c6",
           "i": "https://img.iol.pt/image/id/65aa6c70d34e371fc0bc22c3/200.jpg",
@@ -7338,16 +7348,6 @@
           "fallback": "https://images.weserv.nl/?url=cnnportugal.iol.pt/assets/images/logos/cnn-portugal.png",
           "p": "2026-06-02T06:56:00.000Z",
           "data_formatada": "2 de junho 06:56",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=cnnportugal.iol.pt",
-          "n": "CNN PT"
-        },
-        {
-          "t": "Quem recusar trabalho social ou formação profissional vai ficar sem acesso à Pensão Social Única durante dois anos",
-          "l": "https://cnnportugal.iol.pt/prestacao-social-unica/psu/quem-recusar-trabalho-social-ou-formacao-profissional-vai-ficar-sem-acesso-a-pensao-social-unica-durante-dois-anos/20260602/6a1e7de3d34e28842c84b780",
-          "i": "https://img.iol.pt/image/id/6a05fdead34edcee7c642a28/200.jpg",
-          "fallback": "https://images.weserv.nl/?url=cnnportugal.iol.pt/assets/images/logos/cnn-portugal.png",
-          "p": "2026-06-02T06:55:00.000Z",
-          "data_formatada": "2 de junho 06:55",
           "fav": "https://www.google.com/s2/favicons?sz=64&domain=cnnportugal.iol.pt",
           "n": "CNN PT"
         }
@@ -7551,7 +7551,7 @@
       "artigos": [
         {
           "t": "O que vai dar hoje na TV? Está aqui a lista do que pode ver",
-          "l": "https://www.zerozero.pt//o-que-vai-dar-hoje-na-tv-esta-aqui-a-lista-do-que-pode-ver/517405",
+          "l": "https://www.zerozero.pt/noticias/o-que-vai-dar-hoje-na-tv-esta-aqui-a-lista-do-que-pode-ver/517405",
           "i": "https://www.zerozero.pt/img/noticias/405/imgS620I517405T20230914080002.png",
           "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.zerozero.pt&w=120&h=120&fit=contain",
           "p": "2026-06-02T03:05:04.000Z",
@@ -7561,7 +7561,7 @@
         },
         {
           "t": "Tozé Marreco aceita desafio em África",
-          "l": "https://www.zerozero.pt//toze-marreco-aceita-desafio-em-africa/1139116",
+          "l": "https://www.zerozero.pt/noticias/toze-marreco-aceita-desafio-em-africa/1139116",
           "i": "https://www.zerozero.pt/img/noticias/116/imgS620I1139116T20260601230217.jpg",
           "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.zerozero.pt&w=120&h=120&fit=contain",
           "p": "2026-06-01T22:06:09.000Z",
@@ -7571,7 +7571,7 @@
         },
         {
           "t": "Lopetegui inclui português na lista do Catar para o Mundial 2026",
-          "l": "https://www.zerozero.pt//lopetegui-inclui-portugues-na-lista-do-catar-para-o-mundial-2026/1139110",
+          "l": "https://www.zerozero.pt/noticias/lopetegui-inclui-portugues-na-lista-do-catar-para-o-mundial-2026/1139110",
           "i": "https://www.zerozero.pt/img/noticias/110/imgS620I1139110T20260601215405.jpg",
           "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.zerozero.pt&w=120&h=120&fit=contain",
           "p": "2026-06-01T21:25:37.000Z",
@@ -7581,7 +7581,7 @@
         },
         {
           "t": "Com Modric e mais cinco vice-campeões do mundo, Croácia divulga lista final para o Mundial",
-          "l": "https://www.zerozero.pt//com-modric-e-mais-cinco-vice-campeoes-do-mundo-croacia-divulga-lista-final-para-o-mundial/1139101",
+          "l": "https://www.zerozero.pt/noticias/com-modric-e-mais-cinco-vice-campeoes-do-mundo-croacia-divulga-lista-final-para-o-mundial/1139101",
           "i": "https://www.zerozero.pt/img/noticias/101/imgS620I1139101T20260601210407.jpg",
           "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.zerozero.pt&w=120&h=120&fit=contain",
           "p": "2026-06-01T20:57:05.000Z",
@@ -7591,7 +7591,7 @@
         },
         {
           "t": "Deniz Gül marca na vitória da Turquia sobre a Macedónia",
-          "l": "https://www.zerozero.pt//deniz-gul-marca-na-vitoria-da-turquia-sobre-a-macedonia/1139104",
+          "l": "https://www.zerozero.pt/noticias/deniz-gul-marca-na-vitoria-da-turquia-sobre-a-macedonia/1139104",
           "i": "https://www.zerozero.pt/img/noticias/104/imgS620I1139104T20260601214046.jpg",
           "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.zerozero.pt&w=120&h=120&fit=contain",
           "p": "2026-06-01T20:41:23.000Z",
@@ -7601,7 +7601,7 @@
         },
         {
           "t": "Penafiel renova com técnico espanhol",
-          "l": "https://www.zerozero.pt//penafiel-renova-com-tecnico-espanhol/1139105",
+          "l": "https://www.zerozero.pt/noticias/penafiel-renova-com-tecnico-espanhol/1139105",
           "i": "https://www.zerozero.pt/img/noticias/105/imgS620I1139105T20260601213006.jpg",
           "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.zerozero.pt&w=120&h=120&fit=contain",
           "p": "2026-06-01T20:30:37.000Z",
@@ -7611,7 +7611,7 @@
         },
         {
           "t": "Ava Seelenfreund despede-se do Torreense: «Obrigada por tudo»",
-          "l": "https://www.zerozero.pt//ava-seelenfreund-despede-se-do-torreense-obrigada-por-tudo/1139106",
+          "l": "https://www.zerozero.pt/noticias/ava-seelenfreund-despede-se-do-torreense-obrigada-por-tudo/1139106",
           "i": "https://www.zerozero.pt/img/noticias/106/imgS620I1139106T20260601212601.jpg",
           "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.zerozero.pt&w=120&h=120&fit=contain",
           "p": "2026-06-01T20:30:19.000Z",
@@ -7621,7 +7621,7 @@
         },
         {
           "t": "T11, Ep. 15 | Benfica tenta contratar avançado do Wolfsburg",
-          "l": "https://www.zerozero.pt//t11-ep-15-benfica-tenta-contratar-avancado-do-wolfsburg/1139000",
+          "l": "https://www.zerozero.pt/noticias/t11-ep-15-benfica-tenta-contratar-avancado-do-wolfsburg/1139000",
           "i": "https://www.zerozero.pt/img/noticias/000/imgS620I1139000T20260601212222.jpg",
           "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.zerozero.pt&w=120&h=120&fit=contain",
           "p": "2026-06-01T20:22:39.000Z",
@@ -7631,7 +7631,7 @@
         },
         {
           "t": "Com Aursnes de início e Schjelderup a saltar do banco, Noruega vence Suécia de Lagerbielke",
-          "l": "https://www.zerozero.pt//com-aursnes-de-inicio-e-schjelderup-a-saltar-do-banco-noruega-vence-suecia-de-lagerbielke/1139064",
+          "l": "https://www.zerozero.pt/noticias/com-aursnes-de-inicio-e-schjelderup-a-saltar-do-banco-noruega-vence-suecia-de-lagerbielke/1139064",
           "i": "https://www.zerozero.pt/img/noticias/064/imgS620I1139064T20260601200048.jpg",
           "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.zerozero.pt&w=120&h=120&fit=contain",
           "p": "2026-06-01T19:51:30.000Z",
@@ -7742,92 +7742,92 @@
       "categoria": "Desporto",
       "artigos": [
         {
-          "t": "«A Europa não está a entender o que se passa noutros lados do Mundo»",
-          "l": "https://www.abola.pt/video/a-europa-nao-esta-a-entender-o-que-se-passa-noutros-lados-do-mundo-2026052915535287668",
+          "t": "Greve geral: efeitos começam a sentir-se já esta terça-feira",
+          "l": "https://www.abola.pt/noticias/greve-geral-efeitos-comecam-a-sentir-se-ja-esta-terca-feira-2026060206185097566",
           "i": "",
           "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
-          "p": "2026-06-01T08:00:00.000Z",
-          "data_formatada": "1 de junho 08:00",
+          "p": "2026-06-02T06:18:50.000Z",
+          "data_formatada": "2 de junho 06:18",
           "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.abola.pt",
           "n": "A Bola"
         },
         {
-          "t": "«Treinar um grande em Portugal não é um cavalo de batalha»",
-          "l": "https://www.abola.pt/video/treinar-um-grande-em-portugal-nao-e-um-cavalo-de-batalha-2026052915531525558",
+          "t": "Safonov 'desmascarado': cábula escondida na toalha antes dos penáltis",
+          "l": "https://www.abola.pt/noticias/safonov-desmascarado-cabula-escondida-na-toalha-antes-dos-penaltis-2026060206350132241",
           "i": "",
           "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
-          "p": "2026-06-01T07:30:00.000Z",
-          "data_formatada": "1 de junho 07:30",
+          "p": "2026-06-02T07:45:00.000Z",
+          "data_formatada": "2 de junho 07:45",
           "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.abola.pt",
           "n": "A Bola"
         },
         {
-          "t": "«Seria um sonho ver o Marco Silva a treinar o clube do meu coração»",
-          "l": "https://www.abola.pt/noticias/seria-um-sonho-ver-o-marco-silva-a-treinar-o-clube-do-meu-coracao-2026053017123102424",
+          "t": "Oficial: Benfica despede-se de internacional espanhola",
+          "l": "https://www.abola.pt/noticias/oficial-benfica-despede-se-de-internacional-espanhola-2026060113513773967",
           "i": "",
           "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
-          "p": "2026-05-31T13:05:00.000Z",
-          "data_formatada": "31 de maio 13:05",
+          "p": "2026-06-01T14:02:09.000Z",
+          "data_formatada": "1 de junho 14:02",
           "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.abola.pt",
           "n": "A Bola"
         },
         {
-          "t": "Fernando e Francisco Tomé, duas gerações no Vitória de Setúbal",
-          "l": "https://www.abola.pt/video/fernando-e-francisco-tome-duas-geracoes-no-vitoria-de-setubal-2026053019565837783",
+          "t": "Adversário de Portugal derrotado pelo Canadá de Eustáquio",
+          "l": "https://www.abola.pt/noticias/adversario-de-portugal-derrotado-pelo-canada-de-eustaquio-2026060207000465563",
           "i": "",
           "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
-          "p": "2026-05-31T09:29:00.000Z",
-          "data_formatada": "31 de maio 09:29",
+          "p": "2026-06-02T07:00:04.000Z",
+          "data_formatada": "2 de junho 07:00",
           "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.abola.pt",
           "n": "A Bola"
         },
         {
-          "t": "Mais uma estrela cadente em Roland Garros: Iga Swiatek eliminada",
-          "l": "https://www.abola.pt/noticias/mais-uma-estrela-cadente-em-roland-garros-iga-swiatek-eliminada-2026053112553391066",
+          "t": "FPF promove Dia Nacional do Guarda-Redes",
+          "l": "https://www.abola.pt/noticias/fpf-promove-dia-nacional-do-guarda-redes-2026060110552941413",
           "i": "",
           "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
-          "p": "2026-05-31T13:21:50.000Z",
-          "data_formatada": "31 de maio 13:21",
+          "p": "2026-06-01T10:55:29.000Z",
+          "data_formatada": "1 de junho 10:55",
           "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.abola.pt",
           "n": "A Bola"
         },
         {
-          "t": "Mulher de Safonov improvisa bandeira russa para os festejos do PSG",
-          "l": "https://www.abola.pt/noticias/mulher-de-safonov-improvisa-bandeira-russa-para-os-festejos-do-psg-2026053109180442668",
+          "t": "«Luis Enrique coloca dois atletas de costas voltadas a lutarem do mesmo lado»",
+          "l": "https://www.abola.pt/video/luis-enrique-coloca-dois-atletas-de-costas-voltadas-a-lutarem-do-mesmo-lado-2026053020315681126",
           "i": "",
           "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
-          "p": "2026-05-31T09:18:04.000Z",
-          "data_formatada": "31 de maio 09:18",
+          "p": "2026-05-31T08:35:00.000Z",
+          "data_formatada": "31 de maio 08:35",
           "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.abola.pt",
           "n": "A Bola"
         },
         {
-          "t": "Já imaginou Lewandowski a falar do Torreense? Aconteceu na Polónia (vídeo)",
-          "l": "https://www.abola.pt/noticias/ja-imaginou-lewandowski-a-falar-do-torreense-aconteceu-na-polonia-video-2026053116334307690",
+          "t": "Benfica segura filho de antigo guarda-redes do clube",
+          "l": "https://www.abola.pt/noticias/benfica-segura-filho-de-antigo-guarda-redes-do-clube-2026060113250003973",
           "i": "",
           "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
-          "p": "2026-05-31T16:44:00.000Z",
-          "data_formatada": "31 de maio 16:44",
+          "p": "2026-06-01T13:25:00.000Z",
+          "data_formatada": "1 de junho 13:25",
           "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.abola.pt",
           "n": "A Bola"
         },
         {
-          "t": "Nova regra das substituições já deixa marca: demorou a sair e causou 'estragos' (vídeo)",
-          "l": "https://www.abola.pt/noticias/nova-regra-das-substituicoes-ja-deixa-marca-demorou-a-sair-e-causou-estragos-video-2026053115374874279",
+          "t": "Atenção, Portugal: Luis Suárez com pontaria afinada antes do Mundial",
+          "l": "https://www.abola.pt/noticias/atencao-portugal-luis-suarez-com-pontaria-afinada-antes-do-mundial-2026060206390077051",
           "i": "",
           "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
-          "p": "2026-05-31T16:23:00.000Z",
-          "data_formatada": "31 de maio 16:23",
+          "p": "2026-06-02T06:39:00.000Z",
+          "data_formatada": "2 de junho 06:39",
           "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.abola.pt",
           "n": "A Bola"
         },
         {
-          "t": "«O sonho de um povo 'celeste'»: Uruguai anunciou assim os convocados para o Mundial",
-          "l": "https://www.abola.pt/video/o-sonho-de-um-povo-celeste-uruguai-anunciou-assim-os-convocados-para-o-mundial-2026053117492019648",
+          "t": "Mercado: Santa Clara rejeita proposta por Paulo Victor",
+          "l": "https://www.abola.pt/noticias/mercado-santa-clara-rejeita-proposta-por-paulo-victor-2026060111293766258",
           "i": "",
           "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
-          "p": "2026-05-31T14:22:00.000Z",
-          "data_formatada": "31 de maio 14:22",
+          "p": "2026-06-01T11:34:41.000Z",
+          "data_formatada": "1 de junho 11:34",
           "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.abola.pt",
           "n": "A Bola"
         }
