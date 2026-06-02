@@ -105,15 +105,21 @@ function getFav(url) {
     } catch (e) { return ""; }
 }
 
-// Tradutor em background usando a API estável do Google Translate (sem necessidade de chaves)
+// Tradutor otimizado com Timeout de segurança para evitar que o robô bloqueie
 async function traduzirTexto(texto) {
     try {
         const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=pt&dt=t&q=${encodeURIComponent(texto)}`;
+        
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 3000); // Máximo 3 segundos por tradução
+        
         const res = await fetchUrl(url);
+        clearTimeout(timeoutId);
+        
         const json = JSON.parse(res);
         return json[0][0][0];
     } catch (e) {
-        return texto; // Se falhar, mantém o original por segurança
+        return texto; // Se demorar ou falhar, mantém o original instantaneamente e segue em frente
     }
 }
 
@@ -127,19 +133,23 @@ function formatarData(dateObj) {
     return `${dia} de ${mes} ${hora}:${min}`;
 }
 
-// Regex para capturar a primeira imagem de uma descrição/conteúdo caso não haja enclosure
+// Regex aprimorada e ultra-abrangente para extrair imagens escondidas em descrições HTML
 function extrairImagemDoTexto(texto) {
     if (!texto) return "";
     
-    // 1. Tenta apanhar qualquer atributo clássico de imagem (src, data-src, url, etc.)
-    const imgRegex = /<img[^>]+(?:src|data-src|data-lazy-src|data-original|url)=["']([^"']+)["']/i;
+    // Captura tags <img ... src="..."> lidando com qualquer tipo de aspas ou atributos extras intermédios
+    const imgRegex = /<img[^>]+?\b(?:src|data-src|data-lazy-src|data-original|url)\s*=\s*["']([^"'\s>]+)/i;
     let match = texto.match(imgRegex);
-    if (match && match[1] && match[1].length > 10) return match[1].trim();
+    if (match && match[1] && match[1].length > 10 && !match[1].includes("favicon")) {
+        return match[1].trim().replace(/&amp;/g, "&");
+    }
 
-    // 2. Se falhar, procura por links diretos de imagens (.jpg, .jpeg, .png, .webp) escondidos no texto
+    // Se falhar, captura links diretos de imagens estáticas no texto
     const urlRegex = /(https?:\/\/[^"'\s<>]+?\.(?:jpg|jpeg|png|webp|gif))/i;
     match = texto.match(urlRegex);
-    if (match && match[1]) return match[1].trim();
+    if (match && match[1]) {
+        return match[1].trim();
+    }
 
     return "";
 }
@@ -175,7 +185,7 @@ async function processarFeed(feed) {
             }
             if (!title) continue;
 
-            // 2. Repara os acentos corrompidos resultantes do Double-Encoding do Record/FeedBurner
+            // 2. Repara os acentos corrompidos resultantes do Double-Encoding
             title = title
                 .replace(/Ã³/g, "ó").replace(/Ã³/g, "ó")
                 .replace(/Ã\u00a7/g, "ç").replace(/Ã§/g, "ç")
@@ -195,10 +205,10 @@ async function processarFeed(feed) {
                 .replace(/Ãƒ/g, "Ã").replace(/â€“/g, "—")
                 .replace(/â€œ/g, '"').replace(/â€\u009d/g, '"');
 
-            // 3. Limpeza final e cirúrgica de resíduos CDATA remanescentes no título
+            // 3. Limpeza final de resíduos CDATA
             title = title.replace(/<!\[CDATA\[/gi, "").replace(/\]\]>/gi, "").trim();
 
-            // 4. Procura por <link> ou <LINK> de forma insensível
+            // 4. Procura pelo link do artigo
             const linkMatch = itemXml.match(/<link[^>]*>([\s\S]*?)<\/link>/i);
             const link = linkMatch ? linkMatch[1].trim() : "";
 
@@ -211,26 +221,35 @@ async function processarFeed(feed) {
                 title = await traduzirTexto(title);
             }
 
-            // 7. Captura de imagens ultra-agressiva lendo todas as tags possíveis do item
+            // 7. NOVO ALGORITMO DE EXTRAÇÃO EXTRA-AGRESSIVO DE IMAGENS FEITO PARA PORTUGAL
             let thumb = "";
             
-            // Estratégia A: Procura nas tags nativas de média/enclosure
-            const mediaMatch = itemXml.match(/<media:content[^>]+url=["']([^"']+)["']/i) || 
-                               itemXml.match(/<enclosure[^>]+url=["']([^"']+)["']/i) || 
-                               itemXml.match(/<media:thumbnail[^>]+url=["']([^"']+)["']/i);
-            
-            if (mediaMatch && mediaMatch[1]) {
-                thumb = mediaMatch[1];
-            } else {
-                // Estratégia B: Se não houver tag de média, extrai o conteúdo da descrição ou do content do item
+            // Tenta obter de qualquer variação de tag de média ou enclosure (com suporte a namespaces dinâmicos)
+            const urlImgRegex = /\burl\s*=\s*["']([^"'\s>]+)/i;
+            const enclosureMatch = itemXml.match(/<enclosure[^>]+?url\s*=\s*["']([^"'\s>]+)/i) ||
+                                  itemXml.match(/<media:content[^>]+?url\s*=\s*["']([^"'\s>]+)/i) ||
+                                  itemXml.match(/<media:thumbnail[^>]+?url\s*=\s*["']([^"'\s>]+)/i) ||
+                                  itemXml.match(/<image[^>]*>([\s\S]*?)<\/image>/i);
+
+            if (enclosureMatch) {
+                if (enclosureMatch[1] && enclosureMatch[1].length > 10) {
+                    thumb = enclosureMatch[1].trim();
+                } else if (enclosureMatch[1]) {
+                    // Se capturou a tag de imagem interna complexa, limpa o seu conteúdo
+                    const subUrl = enclosureMatch[1].match(/<url[^>]*>([\s\S]*?)<\/url>/i);
+                    if (subUrl) thumb = subUrl[1].trim();
+                }
+            }
+
+            // Se as tags estruturadas falharem, varre o texto descritivo por tags HTML de imagem
+            if (!thumb || thumb.includes("favicon") || thumb.length < 10) {
                 const descMatch = itemXml.match(/<description[^>]*>([\s\S]*?)<\/description>/i);
                 const contentMatch = itemXml.match(/<content:encoded[^>]*>([\s\S]*?)<\/content:encoded>/i);
-                
                 const textoParaProcurar = (descMatch ? descMatch[1] : "") + (contentMatch ? contentMatch[1] : "");
                 thumb = extrairImagemDoTexto(textoParaProcurar);
             }
 
-            // Fallbacks de imagens fixas baseadas no nome da fonte
+            // Fallbacks de imagens fixas de alta resolução baseadas na fonte
             let fallbackImg = `https://images.weserv.nl/?url=${encodeURIComponent(getFav(feed.u))}&w=120&h=120&fit=contain`;
             const domain = feed.n.toLowerCase();
             if (domain.includes("magazine hd") || domain.includes("magazinehd")) fallbackImg = "https://images.weserv.nl/?url=www.magazine-hd.com/apps/wp/wp-content/uploads/2023/01/mhd-logo.jpg";
@@ -243,7 +262,7 @@ async function processarFeed(feed) {
             artigos.push({
                 t: title,
                 l: link,
-                i: (thumb && !thumb.includes("favicon") && thumb.length > 10) ? thumb : "",
+                i: (thumb && !thumb.includes("favicon") && thumb.length > 10) ? thumb.replace(/&amp;/g, "&") : "",
                 fallback: fallbackImg,
                 p: pubDate.toISOString(),
                 data_formatada: formatarData(pubDate),
