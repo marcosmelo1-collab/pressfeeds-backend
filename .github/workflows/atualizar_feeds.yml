@@ -31,20 +31,10 @@ jobs:
     - name: Executar o script de notícias
       run: node processar_feeds.js
 
-    - name: Guardar e enviar alterações de forma limpa para o GitHub
+    - name: Atualizar o Gist Público para o Blogger
       run: |
-        git config --global user.name "GitHub Action Bot"
-        git config --global user.email "actions@github.com"
-        
-        # 1. Adiciona o arquivo gerado pelo script nesta execução
-        git add noticias_final.json
-        
-        # 2. Verifica se houve alterações reais no JSON.
-        # Se houver modificações, cria o commit e força a gravação absoluta.
-        # Caso contrário, exibe uma mensagem limpa via echo.
-        if ! git diff --cached --quiet; then
-          git commit -m "🤖 Atualização automática de notícias [Skip CI]"
-          git push origin main --force
-        else
-          echo "Nenhuma noticia nova detetada nesta rodada. Finalizado com sucesso."
-        fi
+        curl -X PATCH \
+          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/gists/a6564ddeec0f72ffeb9918cb5c16a873 \
+          -d "{\"files\": {\"noticias_final.json\": {\"content\": $(node -e "console.log(JSON.stringify(require('fs').readFileSync('noticias_final.json', 'utf8')))")}}}"
