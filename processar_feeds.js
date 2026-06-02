@@ -67,7 +67,6 @@ function fetchUrl(url) {
 }
 
 // Função perfeitamente calibrada para limpar CDATA e tags HTML (Garante compatibilidade total com o Record)
-// Substitua APENAS a função cleanText no seu Node.js por esta versão implacável:
 function cleanText(txt) {
     if (!txt) return "";
     
@@ -179,16 +178,16 @@ async function processarFeed(feed) {
             // 2. Repara os acentos corrompidos resultantes do Double-Encoding do Record/FeedBurner
             title = title
                 .replace(/Ã³/g, "ó").replace(/Ã³/g, "ó")
-                .replace(/Ã§/g, "ç").replace(/Ã§/g, "ç")
-                .replace(/Ã£/g, "ã").replace(/Ã£/g, "ã")
-                .replace(/Ã©/g, "é").replace(/Ã©/g, "é")
-                .replace(/Ã¡/g, "á").replace(/Ã¡/g, "á")
-                .replace(/Ã­/g, "í").replace(/Ã\u00ad/g, "í")
+                .replace(/Ã\u00a7/g, "ç").replace(/Ã§/g, "ç")
+                .replace(/Ã\u00a3/g, "ã").replace(/Ã£/g, "ã")
+                .replace(/Ã\u00a9/g, "é").replace(/Ã©/g, "é")
+                .replace(/Ã\u00a1/g, "á").replace(/Ã¡/g, "á")
+                .replace(/Ã\u00ad/g, "í").replace(/Ã\u00ad/g, "í")
                 .replace(/Ã¢/g, "â").replace(/Ã¢/g, "â")
                 .replace(/Ãª/g, "ê").replace(/Ãª/g, "ê")
                 .replace(/Ãµ/g, "õ").replace(/Ãµ/g, "õ")
                 .replace(/Ãº/g, "ú").replace(/Ãº/g, "ú")
-                .replace(/Ã /g, "à").replace(/Ã /g, "à")
+                .replace(/Ã\u00a0/g, "à").replace(/Ã /g, "à")
                 .replace(/Âº/g, "º").replace(/Âº/g, "º")
                 .replace(/Âª/g, "ª").replace(/Âª/g, "ª")
                 .replace(/Ã“/g, "Ó").replace(/Ã‡/g, "Ç")
@@ -212,8 +211,7 @@ async function processarFeed(feed) {
                 title = await traduzirTexto(title);
             }
 
-            // 7. Tenta encontrar imagens nas tags conhecidas
-            // 7. CORREÇÃO: Captura de imagens ultra-agressiva lendo todas as tags possíveis do item
+            // 7. Captura de imagens ultra-agressiva lendo todas as tags possíveis do item
             let thumb = "";
             
             // Estratégia A: Procura nas tags nativas de média/enclosure
@@ -253,7 +251,6 @@ async function processarFeed(feed) {
                 n: feed.n
             });
             contador++;
-        } // <-- Aqui fecha o loop while do seu código
         }
 
         return artigos;
