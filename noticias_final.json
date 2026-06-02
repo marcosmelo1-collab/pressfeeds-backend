@@ -1,5 +1,5 @@
 {
-  "ultimasAtualizacao": "2026-06-02T08:11:00.854Z",
+  "ultimasAtualizacao": "2026-06-02T08:15:48.714Z",
   "fontesAtivas": [
     {
       "n": "SIC Notícias",
@@ -298,6 +298,16 @@
   ],
   "todosArtigosPlanos": [
     {
+      "t": "Mais de 40% dos profissionais identificam IA como prioridade",
+      "l": "https://www.noticiasaominuto.com/tech/2999516/mais-de-40-dos-profissionais-identificam-ia-como-prioridade#utm_source=rss-ultima-hora&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
+      "i": "https://media-manager.noticiasaominuto.com/640/naom_64b7cb9c91da5.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoyNTI5LCJjcm9wSGVpZ2h0IjoxNDIzLCJjcm9wWCI6MTUsImNyb3BZIjo4NX0sInBvcnRyYWl0Ijp7ImNyb3BXaWR0aCI6OTQ5LCJjcm9wSGVpZ2h0IjoxNjg3LCJjcm9wWCI6MTEzNCwiY3JvcFkiOjEyfX0=",
+      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
+      "p": "2026-06-02T09:10:59.000Z",
+      "data_formatada": "2 de junho 09:10",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
+      "n": "Notícias ao Minuto"
+    },
+    {
       "t": "Kevin Smith presta homenagem à mãe seis meses após a sua morte",
       "l": "https://www.noticiasaominuto.com/fama/2999514/kevin-smith-presta-homenagem-a-mae-6-meses-apos-a-sua-morte#utm_source=rss-ultima-hora&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
       "i": "https://media-manager.noticiasaominuto.com/640/naom_630614cc8761c.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoyNDcyLCJjcm9wSGVpZ2h0IjoxMzkxLCJjcm9wWCI6NTUsImNyb3BZIjoyMn0sInBvcnRyYWl0Ijp7ImNyb3BXaWR0aCI6OTI5LCJjcm9wSGVpZ2h0IjoxNjUyLCJjcm9wWCI6NzEzLCJjcm9wWSI6MjJ9fQ==",
@@ -458,16 +468,6 @@
       "n": "Notícias ao Minuto"
     },
     {
-      "t": "Ana Castela esclarece fãs após ida ao hospital e diz que adiou cirurgia",
-      "l": "https://www.noticiasaominuto.com/fama/2999494/ana-castela-esclarece-fas-apos-ida-ao-hospital-e-diz-que-adiou-cirurgia#utm_source=rss-ultima-hora&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
-      "i": "https://media-manager.noticiasaominuto.com/640/naom_6a1e89248e235.webp",
-      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
-      "p": "2026-06-02T08:47:06.000Z",
-      "data_formatada": "2 de junho 08:47",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
-      "n": "Notícias ao Minuto"
-    },
-    {
       "t": "Manchester United farto. Rashford deixa relação com Barcelona por um fio",
       "l": "https://www.noticiasaominuto.com/desporto/2999500/manchester-united-farto-rashford-deixa-relacao-com-barcelona-por-um-fio#utm_source=rss-desporto&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
       "i": "https://media-manager.noticiasaominuto.com/640/naom_689dc1777475b.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoyNTYwLCJjcm9wSGVpZ2h0IjoxNDQwLCJjcm9wWCI6MCwiY3JvcFkiOjI5fX0=",
@@ -568,6 +568,26 @@
       "n": "RTP Desporto"
     },
     {
+      "t": "Tarifa do gás natural sobe 6,4% a partir de outubro no mercado regulado",
+      "l": "https://sicnoticias.pt/economia/2026-06-02-tarifa-do-gas-natural-sobe-64-a-partir-de-outubro-no-mercado-regulado-b0ed2b4e",
+      "i": "https://images.impresa.pt/sicnot/2025-10-09-gas-natural-3cde2f27/1.91x1/mw-1200?outputFormat=jpeg",
+      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Drss.impresa.pt&w=120&h=120&fit=contain",
+      "p": "2026-06-02T08:10:12.000Z",
+      "data_formatada": "2 de junho 08:10",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=rss.impresa.pt",
+      "n": "SIC Notícias"
+    },
+    {
+      "t": "Mundial 2026: conheça os convocados de todas as 48 seleções",
+      "l": "https://maisfutebol.iol.pt/internacional/mundial-2026/mundial-2026-conheca-os-convocados-de-todas-as-48-selecoes",
+      "i": "",
+      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dmaisfutebol.iol.pt&w=120&h=120&fit=contain",
+      "p": "2026-06-02T08:10:00.000Z",
+      "data_formatada": "2 de junho 08:10",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=maisfutebol.iol.pt",
+      "n": "Maisfutebol"
+    },
+    {
       "t": "Anthropic autoriza Agência de Cibersegurança da UE a aceder ao Mythos",
       "l": "https://www.noticiasaominuto.com/tech/2999194/anthropic-autoriza-agencia-de-ciberseguranca-da-ue-a-aceder-ao-mythos#utm_source=rss-tech&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
       "i": "https://media-manager.noticiasaominuto.com/640/naom_69f3175e74d73.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoyMjUwLCJjcm9wSGVpZ2h0IjoxMjY1LCJjcm9wWCI6MTU4LCJjcm9wWSI6NDIwfSwicG9ydHJhaXQiOnsiY3JvcFdpZHRoIjo5NDgsImNyb3BIZWlnaHQiOjE2ODUsImNyb3BYIjo4OTYsImNyb3BZIjoxMX19",
@@ -576,6 +596,16 @@
       "data_formatada": "2 de junho 08:09",
       "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
       "n": "Tech"
+    },
+    {
+      "t": "Mundial 2026: Carlos Queiroz anuncia os 26 convocados do Gana",
+      "l": "https://maisfutebol.iol.pt/mundial-2026/mundial2026/mundial-2026-carlos-queiroz-anuncia-os-26-convocados-do-gana",
+      "i": "",
+      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dmaisfutebol.iol.pt&w=120&h=120&fit=contain",
+      "p": "2026-06-02T08:08:00.000Z",
+      "data_formatada": "2 de junho 08:08",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=maisfutebol.iol.pt",
+      "n": "Maisfutebol"
     },
     {
       "t": "Calor dá lugar a mudança brusca do tempo: temperaturas descem até sete graus e vem aí vento forte",
@@ -1418,16 +1448,6 @@
       "n": "SIC Notícias"
     },
     {
-      "t": "Tufão Jangmi deixa nove feridos e 47 mil casas sem energia no Japão",
-      "l": "https://sicnoticias.pt/mundo/2026-06-02-tufao-jangmi-deixa-nove-feridos-e-47-mil-casas-sem-energia-no-japao-8d57fee6",
-      "i": "https://images.impresa.pt/sicnot/2026-06-02-ap23336278147881.jpg-c2347ff5/1.91x1/mw-1200?outputFormat=jpeg",
-      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Drss.impresa.pt&w=120&h=120&fit=contain",
-      "p": "2026-06-02T06:23:29.000Z",
-      "data_formatada": "2 de junho 06:23",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=rss.impresa.pt",
-      "n": "SIC Notícias"
-    },
-    {
       "t": "Jade Baraldo fala ao TMDQA! sobre o seu disco mais pessoal: &#8220;foi uma espécie de terapia&#8221;",
       "l": "https://www.tenhomaisdiscosqueamigos.com/2026/06/02/jade-baraldo-fala-sobre-disco-mais-pessoal/",
       "i": "https://www.youtube.com/embed/iURaCqxX-sU",
@@ -2088,16 +2108,6 @@
       "n": "Bola na Rede"
     },
     {
-      "t": "OFICIAL: Tozé Marreco regressa ao ativo e ruma à Tunísia",
-      "l": "https://maisfutebol.iol.pt/tunisia/internacional/oficial-toze-marreco-regressa-ao-ativo-e-ruma-a-tunisia",
-      "i": "",
-      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dmaisfutebol.iol.pt&w=120&h=120&fit=contain",
-      "p": "2026-06-01T21:55:00.000Z",
-      "data_formatada": "1 de junho 21:55",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=maisfutebol.iol.pt",
-      "n": "Maisfutebol"
-    },
-    {
       "t": "A regra dos 50% nos eletrodomésticos: reparar ou comprar um novo?",
       "l": "https://www.leak.pt/reparar-eletrodomesticos/",
       "i": "https://www.leak.pt/wp-content/uploads/2025/10/frigorifico-respira-1200x800.jpg",
@@ -2116,16 +2126,6 @@
       "data_formatada": "1 de junho 21:53",
       "fav": "https://www.google.com/s2/favicons?sz=64&domain=bolanarede.pt",
       "n": "Bola na Rede"
-    },
-    {
-      "t": "FOTO: amigos Jorge Jesus e Leonardo Jardim almoçaram juntos no Rio de Janeiro",
-      "l": "https://maisfutebol.iol.pt/brasil/made-in/foto-amigos-jorge-jesus-e-leonardo-jardim-almocaram-juntos-no-rio-de-janeiro",
-      "i": "",
-      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dmaisfutebol.iol.pt&w=120&h=120&fit=contain",
-      "p": "2026-06-01T21:52:03.000Z",
-      "data_formatada": "1 de junho 21:52",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=maisfutebol.iol.pt",
-      "n": "Maisfutebol"
     },
     {
       "t": "Contagem regressiva do Top 10 da Billboard Hot 100 para 6 de junho de 2026 | ",
@@ -4836,6 +4836,16 @@
       "categoria": "Atualidade",
       "artigos": [
         {
+          "t": "Mais de 40% dos profissionais identificam IA como prioridade",
+          "l": "https://www.noticiasaominuto.com/tech/2999516/mais-de-40-dos-profissionais-identificam-ia-como-prioridade#utm_source=rss-ultima-hora&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
+          "i": "https://media-manager.noticiasaominuto.com/640/naom_64b7cb9c91da5.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoyNTI5LCJjcm9wSGVpZ2h0IjoxNDIzLCJjcm9wWCI6MTUsImNyb3BZIjo4NX0sInBvcnRyYWl0Ijp7ImNyb3BXaWR0aCI6OTQ5LCJjcm9wSGVpZ2h0IjoxNjg3LCJjcm9wWCI6MTEzNCwiY3JvcFkiOjEyfX0=",
+          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
+          "p": "2026-06-02T09:10:59.000Z",
+          "data_formatada": "2 de junho 09:10",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
+          "n": "Notícias ao Minuto"
+        },
+        {
           "t": "Kevin Smith presta homenagem à mãe seis meses após a sua morte",
           "l": "https://www.noticiasaominuto.com/fama/2999514/kevin-smith-presta-homenagem-a-mae-6-meses-apos-a-sua-morte#utm_source=rss-ultima-hora&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
           "i": "https://media-manager.noticiasaominuto.com/640/naom_630614cc8761c.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoyNDcyLCJjcm9wSGVpZ2h0IjoxMzkxLCJjcm9wWCI6NTUsImNyb3BZIjoyMn0sInBvcnRyYWl0Ijp7ImNyb3BXaWR0aCI6OTI5LCJjcm9wSGVpZ2h0IjoxNjUyLCJjcm9wWCI6NzEzLCJjcm9wWSI6MjJ9fQ==",
@@ -4911,16 +4921,6 @@
           "i": "https://media-manager.noticiasaominuto.com/640/naom_560168b788c7f.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjo2MDMxLCJjcm9wSGVpZ2h0IjozMzkyLCJjcm9wWCI6MzcsImNyb3BZIjoyNzZ9LCJwb3J0cmFpdCI6eyJjcm9wV2lkdGgiOjIyMDIsImNyb3BIZWlnaHQiOjM5MTUsImNyb3BYIjoyNjQyLCJjcm9wWSI6OTB9fQ==",
           "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
           "p": "2026-06-02T08:47:45.000Z",
-          "data_formatada": "2 de junho 08:47",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
-          "n": "Notícias ao Minuto"
-        },
-        {
-          "t": "Ana Castela esclarece fãs após ida ao hospital e diz que adiou cirurgia",
-          "l": "https://www.noticiasaominuto.com/fama/2999494/ana-castela-esclarece-fas-apos-ida-ao-hospital-e-diz-que-adiou-cirurgia#utm_source=rss-ultima-hora&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
-          "i": "https://media-manager.noticiasaominuto.com/640/naom_6a1e89248e235.webp",
-          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
-          "p": "2026-06-02T08:47:06.000Z",
           "data_formatada": "2 de junho 08:47",
           "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
           "n": "Notícias ao Minuto"
@@ -5028,6 +5028,16 @@
       "categoria": "Atualidade",
       "artigos": [
         {
+          "t": "Tarifa do gás natural sobe 6,4% a partir de outubro no mercado regulado",
+          "l": "https://sicnoticias.pt/economia/2026-06-02-tarifa-do-gas-natural-sobe-64-a-partir-de-outubro-no-mercado-regulado-b0ed2b4e",
+          "i": "https://images.impresa.pt/sicnot/2025-10-09-gas-natural-3cde2f27/1.91x1/mw-1200?outputFormat=jpeg",
+          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Drss.impresa.pt&w=120&h=120&fit=contain",
+          "p": "2026-06-02T08:10:12.000Z",
+          "data_formatada": "2 de junho 08:10",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=rss.impresa.pt",
+          "n": "SIC Notícias"
+        },
+        {
           "t": "Burla nas peças de aviões custa mais de seis milhões de euros à TAP",
           "l": "https://sicnoticias.pt/pais/2026-06-02-burla-nas-pecas-de-avioes-custa-mais-de-seis-milhoes-de-euros-a-tap-6321df52",
           "i": "https://images.impresa.pt/sicnot/2024-05-10-tap-82e9a807-1/1.91x1/mw-1200?outputFormat=jpeg",
@@ -5104,16 +5114,6 @@
           "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Drss.impresa.pt&w=120&h=120&fit=contain",
           "p": "2026-06-02T06:28:50.000Z",
           "data_formatada": "2 de junho 06:28",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=rss.impresa.pt",
-          "n": "SIC Notícias"
-        },
-        {
-          "t": "Tufão Jangmi deixa nove feridos e 47 mil casas sem energia no Japão",
-          "l": "https://sicnoticias.pt/mundo/2026-06-02-tufao-jangmi-deixa-nove-feridos-e-47-mil-casas-sem-energia-no-japao-8d57fee6",
-          "i": "https://images.impresa.pt/sicnot/2026-06-02-ap23336278147881.jpg-c2347ff5/1.91x1/mw-1200?outputFormat=jpeg",
-          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Drss.impresa.pt&w=120&h=120&fit=contain",
-          "p": "2026-06-02T06:23:29.000Z",
-          "data_formatada": "2 de junho 06:23",
           "fav": "https://www.google.com/s2/favicons?sz=64&domain=rss.impresa.pt",
           "n": "SIC Notícias"
         }
@@ -7646,6 +7646,26 @@
       "categoria": "Desporto",
       "artigos": [
         {
+          "t": "Mundial 2026: conheça os convocados de todas as 48 seleções",
+          "l": "https://maisfutebol.iol.pt/internacional/mundial-2026/mundial-2026-conheca-os-convocados-de-todas-as-48-selecoes",
+          "i": "",
+          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dmaisfutebol.iol.pt&w=120&h=120&fit=contain",
+          "p": "2026-06-02T08:10:00.000Z",
+          "data_formatada": "2 de junho 08:10",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=maisfutebol.iol.pt",
+          "n": "Maisfutebol"
+        },
+        {
+          "t": "Mundial 2026: Carlos Queiroz anuncia os 26 convocados do Gana",
+          "l": "https://maisfutebol.iol.pt/mundial-2026/mundial2026/mundial-2026-carlos-queiroz-anuncia-os-26-convocados-do-gana",
+          "i": "",
+          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dmaisfutebol.iol.pt&w=120&h=120&fit=contain",
+          "p": "2026-06-02T08:08:00.000Z",
+          "data_formatada": "2 de junho 08:08",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=maisfutebol.iol.pt",
+          "n": "Maisfutebol"
+        },
+        {
           "t": "Atenção, Portugal: Colômbia vence com golos de Díaz e Suárez",
           "l": "https://maisfutebol.iol.pt/mundial-2026/mundial2026/atencao-portugal-colombia-vence-com-golos-de-diaz-e-suarez",
           "i": "",
@@ -7712,26 +7732,6 @@
           "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dmaisfutebol.iol.pt&w=120&h=120&fit=contain",
           "p": "2026-06-01T22:13:25.000Z",
           "data_formatada": "1 de junho 22:13",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=maisfutebol.iol.pt",
-          "n": "Maisfutebol"
-        },
-        {
-          "t": "OFICIAL: Tozé Marreco regressa ao ativo e ruma à Tunísia",
-          "l": "https://maisfutebol.iol.pt/tunisia/internacional/oficial-toze-marreco-regressa-ao-ativo-e-ruma-a-tunisia",
-          "i": "",
-          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dmaisfutebol.iol.pt&w=120&h=120&fit=contain",
-          "p": "2026-06-01T21:55:00.000Z",
-          "data_formatada": "1 de junho 21:55",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=maisfutebol.iol.pt",
-          "n": "Maisfutebol"
-        },
-        {
-          "t": "FOTO: amigos Jorge Jesus e Leonardo Jardim almoçaram juntos no Rio de Janeiro",
-          "l": "https://maisfutebol.iol.pt/brasil/made-in/foto-amigos-jorge-jesus-e-leonardo-jardim-almocaram-juntos-no-rio-de-janeiro",
-          "i": "",
-          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dmaisfutebol.iol.pt&w=120&h=120&fit=contain",
-          "p": "2026-06-01T21:52:03.000Z",
-          "data_formatada": "1 de junho 21:52",
           "fav": "https://www.google.com/s2/favicons?sz=64&domain=maisfutebol.iol.pt",
           "n": "Maisfutebol"
         }
