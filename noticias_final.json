@@ -1,5 +1,5 @@
 {
-  "ultimasAtualizacao": "2026-06-02T16:30:15.642Z",
+  "ultimasAtualizacao": "2026-06-02T16:34:47.058Z",
   "fontesAtivas": [
     {
       "n": "SIC Notícias",
@@ -300,7 +300,7 @@
     {
       "t": "Trump destrata Netanyahu devido a ofensiva israelita no Líbano",
       "l": "https://www.noticiasaominuto.com/mundo/2999868/trump-destrata-netanyahu-devido-a-ofensiva-israelita-no-libano#utm_source=rss-ultima-hora&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
-      "i": "https://media-manager.noticiasaominuto.com/640/45751889.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoyNTE2LCJjcm9wSGVpZ2h0IjoxNDE1LCJjcm9wWCI6MjcsImNyb3BZIjo1OH19",
+      "i": "https://media-manager.noticiasaominuto.com/640/45751889.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoyNTE2LCJjcm9wSGVpZ2h0IjoxNDE1LCJjcm9wWCI6MjcsImNyb3BZIjo1OH0sInBvcnRyYWl0Ijp7ImNyb3BXaWR0aCI6OTYxLCJjcm9wSGVpZ2h0IjoxNzA4LCJjcm9wWCI6NzkyLCJjcm9wWSI6MH19",
       "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
       "p": "2026-06-02T17:25:23.000Z",
       "data_formatada": "2 de junho 17:25",
@@ -508,6 +508,16 @@
       "n": "Desporto"
     },
     {
+      "t": "Veja onde comprar ingressos acessíveis para o John Summit’s 2026 CTRL ESCAPE Arena Tour on-line",
+      "l": "https://www.billboard.com/culture/product-recommendations/john-summit-2026-tour-tickets-cheap-buy-online-1236261271/",
+      "i": "https://www.billboard.com/wp-content/uploads/2022/11/ticketmaster-logo-2022-billboard-pro-1260.jpg?w=942&amp;h=623&amp;crop=1",
+      "fallback": "https://www.billboard.com/wp-content/themes/vip/pmc-billboard-2021/assets/public/lazyload.png",
+      "p": "2026-06-02T16:34:16.000Z",
+      "data_formatada": "2 de junho 16:34",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.billboard.com",
+      "n": "Billboard"
+    },
+    {
       "t": "16h CAP descontente, acusa governo de quebra de confiança",
       "l": "https://www.rtp.pt/noticias/noticiario-antena1/16h-cap-descontente-acusa-governo-de-quebra-de-confianca_a1_1745024",
       "i": "https://cdn-images.rtp.pt/noticias/images/antena1_default.png?w=350&amp;q=50&amp;auto=format",
@@ -526,6 +536,36 @@
       "data_formatada": "2 de junho 16:30",
       "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.noticiasaominuto.com",
       "n": "Desporto"
+    },
+    {
+      "t": "Há 3 novos jogos grátis esta semana na Steam",
+      "l": "https://www.magazine-hd.com/apps/wp/steam-novos-jogos-gratis-semana-gravity-circuit/",
+      "i": "",
+      "fallback": "https://images.weserv.nl/?url=www.magazine-hd.com/apps/wp/wp-content/uploads/2023/01/mhd-logo.jpg",
+      "p": "2026-06-02T16:30:11.000Z",
+      "data_formatada": "2 de junho 16:30",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.magazine-hd.com",
+      "n": "Magazine HD"
+    },
+    {
+      "t": "O subsídio da Segurança Social que podes acumular ao teu ordenado e não sabias",
+      "l": "https://4gnews.pt/o-apoio-da-seguranca-social-que-podes-acumular-com-o-teu-ordenado-e-nem-sabias/",
+      "i": "https://cdn.4gnews.pt/imagens/o-apoio-da-seguranca-social-que-podes-acumular-com-o-teu-ordenado-e-nem-sabias-og.jpg",
+      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3D4gnews.pt&w=120&h=120&fit=contain",
+      "p": "2026-06-02T16:30:01.000Z",
+      "data_formatada": "2 de junho 16:30",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=4gnews.pt",
+      "n": "4gnews"
+    },
+    {
+      "t": "Esses quatro artistas não são elegíveis para indicações ao Grammy de Melhor Novo Artista em 2027: Eis o porquê",
+      "l": "https://www.billboard.com/music/awards/grammys-best-new-artist-nomination-2027-not-eligible-1236262170/",
+      "i": "https://www.billboard.com/wp-content/uploads/2026/02/P103YPPE-e1772162615499.jpg?w=237&#038;h=147&#038;crop=1",
+      "fallback": "https://www.billboard.com/wp-content/themes/vip/pmc-billboard-2021/assets/public/lazyload.png",
+      "p": "2026-06-02T16:29:10.000Z",
+      "data_formatada": "2 de junho 16:29",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.billboard.com",
+      "n": "Billboard"
     },
     {
       "t": "Oficial: Kaíque de saída do Nacional após período de empréstimo",
@@ -558,6 +598,16 @@
       "n": "RTP"
     },
     {
+      "t": "Sidny Lopes Cabral de saída do Benfica: eis os detalhes do negócio",
+      "l": "https://bolanarede.pt/especial-bola-na-rede/atualidade/sidny-lopes-cabral-de-saida-do-benfica-eis-os-detalhes-do-negocio/",
+      "i": "",
+      "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
+      "p": "2026-06-02T16:25:19.000Z",
+      "data_formatada": "2 de junho 16:25",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=bolanarede.pt",
+      "n": "Bola na Rede"
+    },
+    {
       "t": "Gabriel Rodrigues ainda não jogou oficialmente pelo Estrela mas deve ter nova oportunidade",
       "l": "https://www.record.pt/futebol/futebol-nacional/liga-betclic/e--amadora/detalhe/gabriel-rodrigues-ainda-nao-jogou-oficialmente-pelo-estrela-mas-deve-ter-nova-oportunidade",
       "i": "https://cdn.record.pt/images/2026-01/img_220x220uu2026-01-07-19-07-05-2413370.jpg",
@@ -566,6 +616,16 @@
       "data_formatada": "2 de junho 16:25",
       "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.record.pt",
       "n": "Record"
+    },
+    {
+      "t": "Cidade Negra, Veigh e Buchecha farão show gratuito na Praia de Itaúna, em Saquarema",
+      "l": "https://rollingstone.com.br/musica/cidade-negra-veigh-e-buchecha-show-gratuito-praia-de-itauna-saquarema/",
+      "i": "https://rollingstone.com.br/wp-content/uploads/2026/06/Cidade-Negra-Veigh-e-Buchecha-farao-show-gratuito-na-Praia-de-Itauna-em-Saquarema-406x228.jpg",
+      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Drollingstone.com.br&w=120&h=120&fit=contain",
+      "p": "2026-06-02T16:24:44.000Z",
+      "data_formatada": "2 de junho 16:24",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=rollingstone.com.br",
+      "n": "Rolling Stone Brasil"
     },
     {
       "t": "Keznamdi revela datas da turnê Blxxd & Fyah nos EUA; ",
@@ -586,6 +646,16 @@
       "data_formatada": "2 de junho 16:22",
       "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.record.pt",
       "n": "Record"
+    },
+    {
+      "t": "O cântico patriota que fez Black Crowes se desentender com fãs em show nos EUA",
+      "l": "https://rollingstone.com.br/musica/black-crowes-cantico-patriota-desentendimento-fas-eua/",
+      "i": "https://rollingstone.com.br/wp-content/uploads/2026/06/chris-robinson-black-crowes-2026-foto-Jason-Kempin-Getty-Images-2277588339-406x228.jpg",
+      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Drollingstone.com.br&w=120&h=120&fit=contain",
+      "p": "2026-06-02T16:21:10.000Z",
+      "data_formatada": "2 de junho 16:21",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=rollingstone.com.br",
+      "n": "Rolling Stone Brasil"
     },
     {
       "t": "As notícias das 17h",
@@ -778,6 +848,16 @@
       "n": "Billboard"
     },
     {
+      "t": "Fechado: Marco Silva é o novo treinador do Benfica",
+      "l": "https://bolanarede.pt/especial-bola-na-rede/atualidade/fechado-marco-silva-e-o-novo-treinador-do-benfica/",
+      "i": "https://s.w.org/images/core/emoji/17.0.2/72x72/1f6a8.png",
+      "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
+      "p": "2026-06-02T16:03:28.000Z",
+      "data_formatada": "2 de junho 16:03",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=bolanarede.pt",
+      "n": "Bola na Rede"
+    },
+    {
       "t": "Mercado a mexer: conheça as principais novidades de hoje em menos de um minuto",
       "l": "https://www.record.pt/multimedia/videos/detalhe/20260602-170359-mercado-a-mexer-conheca-as-principais-novidades-de-hoje-em-menos-de-um-minuto",
       "i": "https://cdn.record.pt/images/2026-06/img_220x220uu2026-06-02-16-56-21-2442465.png",
@@ -798,6 +878,16 @@
       "n": "TMDQA"
     },
     {
+      "t": "Marco Silva diz adeus ao Fulham: «Estará sempre no meu coração»",
+      "l": "https://bolanarede.pt/especial-bola-na-rede/atualidade/marco-silva-diz-adeus-ao-fulham-estara-sempre-no-meu-coracao/",
+      "i": "",
+      "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
+      "p": "2026-06-02T16:00:23.000Z",
+      "data_formatada": "2 de junho 16:00",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=bolanarede.pt",
+      "n": "Bola na Rede"
+    },
+    {
       "t": "Google Fotos recebe melhoria que facilita a vida a quem faz backups",
       "l": "https://4gnews.pt/google-fotos-recebe-melhoria-que-facilita-a-vida-a-quem-faz-backups/",
       "i": "https://cdn.4gnews.pt/imagens/google-fotos-recebe-melhoria-que-facilita-a-vida-a-quem-faz-backups-og.jpg",
@@ -816,6 +906,16 @@
       "data_formatada": "2 de junho 16:00",
       "fav": "https://www.google.com/s2/favicons?sz=64&domain=rss.impresa.pt",
       "n": "SIC Notícias"
+    },
+    {
+      "t": "As 10 músicas essenciais de Kylie Minogue",
+      "l": "https://www.vagalume.com.br/news/2026/06/02/as-10-musicas-essenciais-de-kylie-minogue.html",
+      "i": "https://www.vagalume.com.br/dynimage/news56361-big.webp",
+      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.vagalume.com.br&w=120&h=120&fit=contain",
+      "p": "2026-06-02T16:00:00.000Z",
+      "data_formatada": "2 de junho 16:00",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.vagalume.com.br",
+      "n": "Vagalume"
     },
     {
       "t": "Assinado: Cara Delevigne lançará álbum de estreia pela Warner Records; ",
@@ -1008,6 +1108,16 @@
       "n": "Rolling Stone Brasil"
     },
     {
+      "t": "Sidny Lopes Cabral no Trabzonspor: Eis quando o jogador do Benfica viaja para a Turquia",
+      "l": "https://bolanarede.pt/especial-bola-na-rede/atualidade/sidny-lopes-cabral-no-trabzonspor-eis-quando-o-jogador-do-benfica-viaja-para-a-turquia/",
+      "i": "",
+      "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
+      "p": "2026-06-02T15:46:39.000Z",
+      "data_formatada": "2 de junho 15:46",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=bolanarede.pt",
+      "n": "Bola na Rede"
+    },
+    {
       "t": "Florida processa empresa que detém ChatGPT e CEO Sam Altman",
       "l": "https://observador.pt/2026/06/02/florida-processa-empresa-openai-e-ceo-sam-altman-por-considerar-chatgpt-um-produto-perigoso/",
       "i": "https://bordalo.observador.pt/v2/rs:fill:770:403/c:2000:1125:nowe:0:59/q:70/plain/https://s3.observador.pt/wp-content/uploads/2025/07/14172150/44344036.jpg",
@@ -1176,6 +1286,16 @@
       "data_formatada": "2 de junho 15:35",
       "fav": "https://www.google.com/s2/favicons?sz=64&domain=rss.impresa.pt",
       "n": "Expresso"
+    },
+    {
+      "t": "Atenção, Benfica: Fulham comunica saída de Marco Silva",
+      "l": "https://bolanarede.pt/especial-bola-na-rede/atualidade/atencao-benfica-fulham-comunica-saida-de-marco-silva/",
+      "i": "",
+      "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
+      "p": "2026-06-02T15:34:35.000Z",
+      "data_formatada": "2 de junho 15:34",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=bolanarede.pt",
+      "n": "Bola na Rede"
     },
     {
       "t": "Lando Norris aponta Ferrari como favorita à pole position no Mónaco",
@@ -1638,6 +1758,16 @@
       "n": "Expresso"
     },
     {
+      "t": "Dexter Wansel (1950-2026)",
+      "l": "https://soulbounce.com/2026/06/dexter-wansel-1950-2026/",
+      "i": "https://soulbounce.com/wp-content/uploads/2026/06/dexter-wansel-studio-1200-800x450.jpeg",
+      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dsoulbounce.com&w=120&h=120&fit=contain",
+      "p": "2026-06-02T15:00:00.000Z",
+      "data_formatada": "2 de junho 15:00",
+      "fav": "https://www.google.com/s2/favicons?sz=64&domain=soulbounce.com",
+      "n": "SoulBounce"
+    },
+    {
       "t": "O grande erro dos fãs de rock nos últimos 15 anos, segundo Yungblud",
       "l": "https://rollingstone.com.br/musica/yungblud-grande-erro-dos-fas-de-rock-nos-ultimos-15-anos/",
       "i": "https://rollingstone.com.br/wp-content/uploads/2025/12/yungblud-Mariano-Regidor-Redferns-foto-jornalistica-2240484104-406x228.jpg",
@@ -1706,16 +1836,6 @@
       "data_formatada": "2 de junho 14:55",
       "fav": "https://www.google.com/s2/favicons?sz=64&domain=maisfutebol.iol.pt",
       "n": "Maisfutebol"
-    },
-    {
-      "t": "Steve Lukather detalha novo projeto com músicas perdidas de Eddie Van Halen",
-      "l": "https://rollingstone.com.br/musica/steve-lukather-detalha-novo-projeto-com-musicas-perdidas-de-eddie-van-halen/",
-      "i": "https://rollingstone.com.br/wp-content/uploads/2025/05/eddie-van-halen-van-halen-1979-foto-paul-natkin-getty-images-1279045563.jpg",
-      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Drollingstone.com.br&w=120&h=120&fit=contain",
-      "p": "2026-06-02T14:54:53.000Z",
-      "data_formatada": "2 de junho 14:54",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=rollingstone.com.br",
-      "n": "Rolling Stone Brasil"
     },
     {
       "t": "\"Deixem os portugueses trabalhar\", repete Montenegro sobre greve geral",
@@ -1828,16 +1948,6 @@
       "n": "Bola na Rede"
     },
     {
-      "t": "Separação da Live Nation, processo da mansão Katy Perry, caso J. Cole-Cam’ron e mais notícias sobre legislação musical",
-      "l": "https://www.billboard.com/pro/legal-beat-live-nation-breakup-katy-perry-mansion-lawsuit/",
-      "i": "https://www.billboard.com/wp-content/uploads/2026/04/2265635558-e1777051518830.jpg?w=237&#038;h=147&#038;crop=1",
-      "fallback": "https://www.billboard.com/wp-content/themes/vip/pmc-billboard-2021/assets/public/lazyload.png",
-      "p": "2026-06-02T14:47:40.000Z",
-      "data_formatada": "2 de junho 14:47",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.billboard.com",
-      "n": "Billboard"
-    },
-    {
       "t": "“Quem diabos é John Summit?” ",
       "l": "https://www.nme.com/news/music/who-the-fuck-is-john-summit-artist-responds-ahead-of-headlining-lollapalooza-3948828?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=who-the-fuck-is-john-summit-artist-responds-ahead-of-headlining-lollapalooza",
       "i": "https://www.nme.com/wp-content/uploads/2026/06/john-summit@2000x1270.jpg",
@@ -1846,16 +1956,6 @@
       "data_formatada": "2 de junho 14:45",
       "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.nme.com",
       "n": "NME"
-    },
-    {
-      "t": "Veja como Jack Whitehall se sente sobre a faixa dissimulada de Becky Hill sobre ele",
-      "l": "https://www.billboard.com/music/music-news/jack-whitehall-reacts-becky-hill-diss-track-about-him-1236262064/",
-      "i": "https://i.imgur.com/2HpFicp.png",
-      "fallback": "https://www.billboard.com/wp-content/themes/vip/pmc-billboard-2021/assets/public/lazyload.png",
-      "p": "2026-06-02T14:44:31.000Z",
-      "data_formatada": "2 de junho 14:44",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.billboard.com",
-      "n": "Billboard"
     },
     {
       "t": "Pode colocar chapéu de sol em frente às concessões? Eis a resposta oficial",
@@ -1886,16 +1986,6 @@
       "data_formatada": "2 de junho 14:39",
       "fav": "https://www.google.com/s2/favicons?sz=64&domain=feeds.feedburner.com",
       "n": "Público"
-    },
-    {
-      "t": "Deniz Gul vai ao Mundial: Eis a lista final de convocados da Turquia",
-      "l": "https://bolanarede.pt/especial-bola-na-rede/atualidade/deniz-gul-vai-ao-mundial-eis-a-lista-final-de-convocados-da-turquia/",
-      "i": "",
-      "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
-      "p": "2026-06-02T14:39:10.000Z",
-      "data_formatada": "2 de junho 14:39",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=bolanarede.pt",
-      "n": "Bola na Rede"
     },
     {
       "t": "Apple quer facilitar dividir contas no iPhone",
@@ -1988,16 +2078,6 @@
       "n": "Leak"
     },
     {
-      "t": "Quem convocou Carlos Queiroz para o Mundial 2026? Eis a lista final da Gana",
-      "l": "https://bolanarede.pt/especial-bola-na-rede/atualidade/quem-convocou-carlos-queiroz-para-o-mundial-2026-eis-a-lista-final-da-gana/",
-      "i": "",
-      "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
-      "p": "2026-06-02T14:30:01.000Z",
-      "data_formatada": "2 de junho 14:30",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=bolanarede.pt",
-      "n": "Bola na Rede"
-    },
-    {
       "t": "“Backrooms: Um Não-Lugar” supera “Michael” e “O Diabo Veste Prada 2” e estreia em 1º no Brasil",
       "l": "https://www.papelpop.com/2026/06/backrooms-um-nao-lugar-supera-michael-e-o-diabo-veste-prada-2-e-estreia-em-1o-no-brasil/",
       "i": "https://assets.papelpop.com/wp-content/uploads/2026/06/nwlTTCHTIBtkvb70762Ug25khlV-_1_-1-1-400x261.png",
@@ -2058,16 +2138,6 @@
       "n": "Tek Sapo"
     },
     {
-      "t": "Bruno Fernandes com elogios para Michael Carrick: «Trouxe uma energia muito positiva para a equipa»",
-      "l": "https://bolanarede.pt/especial-bola-na-rede/atualidade/bruno-fernandes-com-elogios-para-michael-carrick-trouxe-uma-energia-muito-positiva-para-a-equipa/",
-      "i": "https://binny-bolanarede.b-cdn.net/wp-content/uploads/2026/05/Michael-Carrick-Manchester-United-1024x576.jpg",
-      "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
-      "p": "2026-06-02T14:21:29.000Z",
-      "data_formatada": "2 de junho 14:21",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=bolanarede.pt",
-      "n": "Bola na Rede"
-    },
-    {
       "t": "Fadista Silvana Peres faz apelo contra a violência em novo álbum",
       "l": "https://www.noticiasaominuto.com/cultura/2999695/fadista-silvana-peres-faz-apelo-contra-a-violencia-em-novo-album#utm_source=rss-cultura&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
       "i": "https://media-manager.noticiasaominuto.com/640/naom_5f02ff1e9e5ac.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoyNTYwLCJjcm9wSGVpZ2h0IjoxNDQwLCJjcm9wWCI6MCwiY3JvcFkiOi0xfSwicG9ydHJhaXQiOnsiY3JvcFdpZHRoIjo4MTEsImNyb3BIZWlnaHQiOjE0NDEsImNyb3BYIjoxMDM3LCJjcm9wWSI6LTF9fQ==",
@@ -2088,16 +2158,6 @@
       "n": "Pitchfork"
     },
     {
-      "t": "Selecionador da Polónia encantado com Oskar Pietuszewski: «Estas são qualidades de jogadores excecionais»",
-      "l": "https://bolanarede.pt/especial-bola-na-rede/atualidade/selecionador-da-polonia-encantado-com-oskar-pietuszewski-estas-sao-qualidades-de-jogadores-excecionais/",
-      "i": "",
-      "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
-      "p": "2026-06-02T14:18:56.000Z",
-      "data_formatada": "2 de junho 14:18",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=bolanarede.pt",
-      "n": "Bola na Rede"
-    },
-    {
       "t": "Heranças indivisas: novas soluções e novos conflitos",
       "l": "https://cnnportugal.iol.pt/habitacao/herancas/rita-lobo-xavier-herancas-indivisas-novas-solucoes-e-novos-conflitos/20260602/6a1ed6e2d34e28842c84bd49",
       "i": "",
@@ -2106,16 +2166,6 @@
       "data_formatada": "2 de junho 14:18",
       "fav": "https://www.google.com/s2/favicons?sz=64&domain=cnnportugal.iol.pt",
       "n": "CNN PT"
-    },
-    {
-      "t": "Atenção, Sporting: Morten Hjulmand deixa Seleção da Dinamarca por lesão",
-      "l": "https://bolanarede.pt/especial-bola-na-rede/atualidade/atencao-sporting-morten-hjulmand-deixa-selecao-da-dinamarca-por-lesao/",
-      "i": "",
-      "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
-      "p": "2026-06-02T14:16:57.000Z",
-      "data_formatada": "2 de junho 14:16",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=bolanarede.pt",
-      "n": "Bola na Rede"
     },
     {
       "t": "Candidatos ao TC evitam falar de aborto e nacionalidade. Nome do Chega recusa prisão perpétua",
@@ -2578,16 +2628,6 @@
       "n": "Leak"
     },
     {
-      "t": "Consumo de Internet móvel dispara em Portugal e Digi continua a ganhar clientes",
-      "l": "https://4gnews.pt/consumo-de-internet-movel-dispara-em-portugal-e-digi-continua-a-ganhar-clientes/",
-      "i": "https://cdn.4gnews.pt/imagens/consumo-de-internet-movel-dispara-em-portugal-e-digi-continua-a-ganhar-clientes-og.jpg",
-      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3D4gnews.pt&w=120&h=120&fit=contain",
-      "p": "2026-06-02T12:30:01.000Z",
-      "data_formatada": "2 de junho 12:30",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=4gnews.pt",
-      "n": "4gnews"
-    },
-    {
       "t": "Jack Whitehall “homenageado” pela faixa dissimulada de Becky Hill após o comentário de “Wetherspoons Whitney” do BRIT",
       "l": "https://www.nme.com/news/music/jack-whitehall-honoured-by-becky-hills-diss-track-after-brits-wetherspoons-whitney-comment-3948795?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=jack-whitehall-honoured-by-becky-hills-diss-track-after-brits-wetherspoons-whitney-comment",
       "i": "https://www.nme.com/wp-content/uploads/2026/06/Alan_Chapman_Joseph_Okpako.jpg",
@@ -2606,16 +2646,6 @@
       "data_formatada": "2 de junho 12:26",
       "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.zerozero.pt",
       "n": "ZeroZero"
-    },
-    {
-      "t": "Sabrina Carpenter obtém ordem de restrição após incidente ‘profundamente alarmante’ com suposto perseguidor",
-      "l": "https://rollingstone.com.br/musica/sabrina-carpenter-obtem-ordem-de-restricao-apos-incidente-profundamente-alarmante-com-suposto-perseguidor/",
-      "i": "https://rollingstone.com.br/wp-content/uploads/2025/11/sabrina-carpenter-XNY-Star-Max-GC-Images-foto-jornalistica-2245084194-e1762946415527-362x228.jpg",
-      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Drollingstone.com.br&w=120&h=120&fit=contain",
-      "p": "2026-06-02T12:26:17.000Z",
-      "data_formatada": "2 de junho 12:26",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=rollingstone.com.br",
-      "n": "Rolling Stone Brasil"
     },
     {
       "t": "Concertos gratuitos entre junho e setembro no jardim do Morro em Gaia",
@@ -3458,16 +3488,6 @@
       "n": "TMDQA"
     },
     {
-      "t": "Depois de BRAT, Charli XCX anuncia novo álbum com Martin Scorsese, John Cale e Marc Jacobs",
-      "l": "https://www.magazine-hd.com/apps/wp/depois-brat-charli-xcx-anuncia-novo-album-com-martin-scorsese-john-cale-marc-jacobs/",
-      "i": "",
-      "fallback": "https://images.weserv.nl/?url=www.magazine-hd.com/apps/wp/wp-content/uploads/2023/01/mhd-logo.jpg",
-      "p": "2026-06-01T20:36:04.000Z",
-      "data_formatada": "1 de junho 20:36",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.magazine-hd.com",
-      "n": "Magazine HD"
-    },
-    {
       "t": "Paris Jackson revela qual disco do Radiohead mudou sua vida",
       "l": "https://www.tenhomaisdiscosqueamigos.com/2026/06/01/paris-jackson-melhor-disco-radiohead/",
       "i": "https://www.tenhomaisdiscosqueamigos.com/uploads.tenhomaisdiscosqueamigos.com/2026/06/sepultura-dave-grohl-180x180.jpg",
@@ -3978,16 +3998,6 @@
       "n": "Mais Tecnologia"
     },
     {
-      "t": "Rock in Rio 2026 anuncia Calvin Harris e Black Eyed Peas; veja a programação dos dias 6 e 13",
-      "l": "https://www.vagalume.com.br/news/2026/05/30/rock-in-rio-2026-anuncia-calvin-harris-e-black-eyed-peas-veja-a-programacao-dos-dias-6-e-13.html",
-      "i": "https://www.vagalume.com.br/dynimage/news56377-big.webp",
-      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.vagalume.com.br&w=120&h=120&fit=contain",
-      "p": "2026-05-31T01:11:38.000Z",
-      "data_formatada": "31 de maio 01:11",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.vagalume.com.br",
-      "n": "Vagalume"
-    },
-    {
       "t": "O cantor de R&B/Soul Willie Clayton lança novo álbum “Evolution” | ",
       "l": "https://news.theurbanmusicscene.com/2026/05/willie-clayton-releases-new-album-evolution/",
       "i": "https://news.theurbanmusicscene.com/wp-content/uploads/2026/05/Willie-Clayton-Evolution-The-Album-1024x968.jpg",
@@ -4374,16 +4384,6 @@
       "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dsoulbounce.com&w=120&h=120&fit=contain",
       "p": "2026-05-28T01:00:00.000Z",
       "data_formatada": "28 de maio 01:00",
-      "fav": "https://www.google.com/s2/favicons?sz=64&domain=soulbounce.com",
-      "n": "SoulBounce"
-    },
-    {
-      "t": "Jungle está pronto para nos fazer dançar novamente com ‘The Wave’",
-      "l": "https://soulbounce.com/2026/05/jungle-the-wave/",
-      "i": "https://soulbounce.com/wp-content/uploads/2026/05/Jungle-White-T-Shirts-Hero-800x450.jpg",
-      "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dsoulbounce.com&w=120&h=120&fit=contain",
-      "p": "2026-05-27T22:00:00.000Z",
-      "data_formatada": "27 de maio 22:00",
       "fav": "https://www.google.com/s2/favicons?sz=64&domain=soulbounce.com",
       "n": "SoulBounce"
     },
@@ -4838,7 +4838,7 @@
         {
           "t": "Trump destrata Netanyahu devido a ofensiva israelita no Líbano",
           "l": "https://www.noticiasaominuto.com/mundo/2999868/trump-destrata-netanyahu-devido-a-ofensiva-israelita-no-libano#utm_source=rss-ultima-hora&amp;utm_medium=rss&amp;utm_campaign=rssfeed",
-          "i": "https://media-manager.noticiasaominuto.com/640/45751889.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoyNTE2LCJjcm9wSGVpZ2h0IjoxNDE1LCJjcm9wWCI6MjcsImNyb3BZIjo1OH19",
+          "i": "https://media-manager.noticiasaominuto.com/640/45751889.webp?crop_params=eyJsYW5kc2NhcGUiOnsiY3JvcFdpZHRoIjoyNTE2LCJjcm9wSGVpZ2h0IjoxNDE1LCJjcm9wWCI6MjcsImNyb3BZIjo1OH0sInBvcnRyYWl0Ijp7ImNyb3BXaWR0aCI6OTYxLCJjcm9wSGVpZ2h0IjoxNzA4LCJjcm9wWCI6NzkyLCJjcm9wWSI6MH19",
           "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.noticiasaominuto.com&w=120&h=120&fit=contain",
           "p": "2026-06-02T17:25:23.000Z",
           "data_formatada": "2 de junho 17:25",
@@ -4932,6 +4932,16 @@
       "categoria": "Música",
       "artigos": [
         {
+          "t": "As 10 músicas essenciais de Kylie Minogue",
+          "l": "https://www.vagalume.com.br/news/2026/06/02/as-10-musicas-essenciais-de-kylie-minogue.html",
+          "i": "https://www.vagalume.com.br/dynimage/news56361-big.webp",
+          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.vagalume.com.br&w=120&h=120&fit=contain",
+          "p": "2026-06-02T16:00:00.000Z",
+          "data_formatada": "2 de junho 16:00",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.vagalume.com.br",
+          "n": "Vagalume"
+        },
+        {
           "t": "Cabeleireiro das estrelas, Chris Appleton cuida do visual de Britney Spears e exalta a artista",
           "l": "https://www.vagalume.com.br/news/2026/06/02/cabeleireiro-das-estrelas-chris-appleton-cuida-do-visual-de-britney-spears-e-exalta-a-artista.html",
           "i": "https://www.vagalume.com.br/dynimage/news56385-big.webp",
@@ -5008,16 +5018,6 @@
           "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.vagalume.com.br&w=120&h=120&fit=contain",
           "p": "2026-05-31T10:14:52.000Z",
           "data_formatada": "31 de maio 10:14",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.vagalume.com.br",
-          "n": "Vagalume"
-        },
-        {
-          "t": "Rock in Rio 2026 anuncia Calvin Harris e Black Eyed Peas; veja a programação dos dias 6 e 13",
-          "l": "https://www.vagalume.com.br/news/2026/05/30/rock-in-rio-2026-anuncia-calvin-harris-e-black-eyed-peas-veja-a-programacao-dos-dias-6-e-13.html",
-          "i": "https://www.vagalume.com.br/dynimage/news56377-big.webp",
-          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dwww.vagalume.com.br&w=120&h=120&fit=contain",
-          "p": "2026-05-31T01:11:38.000Z",
-          "data_formatada": "31 de maio 01:11",
           "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.vagalume.com.br",
           "n": "Vagalume"
         }
@@ -5180,6 +5180,16 @@
       "categoria": "Cultura",
       "artigos": [
         {
+          "t": "Há 3 novos jogos grátis esta semana na Steam",
+          "l": "https://www.magazine-hd.com/apps/wp/steam-novos-jogos-gratis-semana-gravity-circuit/",
+          "i": "",
+          "fallback": "https://images.weserv.nl/?url=www.magazine-hd.com/apps/wp/wp-content/uploads/2023/01/mhd-logo.jpg",
+          "p": "2026-06-02T16:30:11.000Z",
+          "data_formatada": "2 de junho 16:30",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.magazine-hd.com",
+          "n": "Magazine HD"
+        },
+        {
           "t": "Anna Kendrick assume a próxima grande adaptação da Netflix",
           "l": "https://www.magazine-hd.com/apps/wp/anna-kendrick-assume-proxima-grande-adaptacao-netflix/",
           "i": "",
@@ -5256,16 +5266,6 @@
           "fallback": "https://images.weserv.nl/?url=www.magazine-hd.com/apps/wp/wp-content/uploads/2023/01/mhd-logo.jpg",
           "p": "2026-06-02T06:30:45.000Z",
           "data_formatada": "2 de junho 06:30",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.magazine-hd.com",
-          "n": "Magazine HD"
-        },
-        {
-          "t": "Depois de BRAT, Charli XCX anuncia novo álbum com Martin Scorsese, John Cale e Marc Jacobs",
-          "l": "https://www.magazine-hd.com/apps/wp/depois-brat-charli-xcx-anuncia-novo-album-com-martin-scorsese-john-cale-marc-jacobs/",
-          "i": "",
-          "fallback": "https://images.weserv.nl/?url=www.magazine-hd.com/apps/wp/wp-content/uploads/2023/01/mhd-logo.jpg",
-          "p": "2026-06-01T20:36:04.000Z",
-          "data_formatada": "1 de junho 20:36",
           "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.magazine-hd.com",
           "n": "Magazine HD"
         }
@@ -5660,6 +5660,26 @@
       "categoria": "Música",
       "artigos": [
         {
+          "t": "Veja onde comprar ingressos acessíveis para o John Summit’s 2026 CTRL ESCAPE Arena Tour on-line",
+          "l": "https://www.billboard.com/culture/product-recommendations/john-summit-2026-tour-tickets-cheap-buy-online-1236261271/",
+          "i": "https://www.billboard.com/wp-content/uploads/2022/11/ticketmaster-logo-2022-billboard-pro-1260.jpg?w=942&amp;h=623&amp;crop=1",
+          "fallback": "https://www.billboard.com/wp-content/themes/vip/pmc-billboard-2021/assets/public/lazyload.png",
+          "p": "2026-06-02T16:34:16.000Z",
+          "data_formatada": "2 de junho 16:34",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.billboard.com",
+          "n": "Billboard"
+        },
+        {
+          "t": "Esses quatro artistas não são elegíveis para indicações ao Grammy de Melhor Novo Artista em 2027: Eis o porquê",
+          "l": "https://www.billboard.com/music/awards/grammys-best-new-artist-nomination-2027-not-eligible-1236262170/",
+          "i": "https://www.billboard.com/wp-content/uploads/2026/02/P103YPPE-e1772162615499.jpg?w=237&#038;h=147&#038;crop=1",
+          "fallback": "https://www.billboard.com/wp-content/themes/vip/pmc-billboard-2021/assets/public/lazyload.png",
+          "p": "2026-06-02T16:29:10.000Z",
+          "data_formatada": "2 de junho 16:29",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.billboard.com",
+          "n": "Billboard"
+        },
+        {
           "t": "Keznamdi revela datas da turnê Blxxd & Fyah nos EUA; ",
           "l": "https://www.billboard.com/music/music-news/keznamdi-blxxd-fyah-tour-dates-new-album-tease-1236262108/",
           "i": "https://www.billboard.com/wp-content/uploads/2025/02/Keznamdi-cr-Ivor-McCray-press-2025-billboard-1548.jpg?w=237&#038;h=147&#038;crop=1",
@@ -5726,26 +5746,6 @@
           "fallback": "https://www.billboard.com/wp-content/themes/vip/pmc-billboard-2021/assets/public/lazyload.png",
           "p": "2026-06-02T15:19:02.000Z",
           "data_formatada": "2 de junho 15:19",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.billboard.com",
-          "n": "Billboard"
-        },
-        {
-          "t": "Separação da Live Nation, processo da mansão Katy Perry, caso J. Cole-Cam’ron e mais notícias sobre legislação musical",
-          "l": "https://www.billboard.com/pro/legal-beat-live-nation-breakup-katy-perry-mansion-lawsuit/",
-          "i": "https://www.billboard.com/wp-content/uploads/2026/04/2265635558-e1777051518830.jpg?w=237&#038;h=147&#038;crop=1",
-          "fallback": "https://www.billboard.com/wp-content/themes/vip/pmc-billboard-2021/assets/public/lazyload.png",
-          "p": "2026-06-02T14:47:40.000Z",
-          "data_formatada": "2 de junho 14:47",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.billboard.com",
-          "n": "Billboard"
-        },
-        {
-          "t": "Veja como Jack Whitehall se sente sobre a faixa dissimulada de Becky Hill sobre ele",
-          "l": "https://www.billboard.com/music/music-news/jack-whitehall-reacts-becky-hill-diss-track-about-him-1236262064/",
-          "i": "https://i.imgur.com/2HpFicp.png",
-          "fallback": "https://www.billboard.com/wp-content/themes/vip/pmc-billboard-2021/assets/public/lazyload.png",
-          "p": "2026-06-02T14:44:31.000Z",
-          "data_formatada": "2 de junho 14:44",
           "fav": "https://www.google.com/s2/favicons?sz=64&domain=www.billboard.com",
           "n": "Billboard"
         }
@@ -5948,6 +5948,26 @@
       "categoria": "Música",
       "artigos": [
         {
+          "t": "Cidade Negra, Veigh e Buchecha farão show gratuito na Praia de Itaúna, em Saquarema",
+          "l": "https://rollingstone.com.br/musica/cidade-negra-veigh-e-buchecha-show-gratuito-praia-de-itauna-saquarema/",
+          "i": "https://rollingstone.com.br/wp-content/uploads/2026/06/Cidade-Negra-Veigh-e-Buchecha-farao-show-gratuito-na-Praia-de-Itauna-em-Saquarema-406x228.jpg",
+          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Drollingstone.com.br&w=120&h=120&fit=contain",
+          "p": "2026-06-02T16:24:44.000Z",
+          "data_formatada": "2 de junho 16:24",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=rollingstone.com.br",
+          "n": "Rolling Stone Brasil"
+        },
+        {
+          "t": "O cântico patriota que fez Black Crowes se desentender com fãs em show nos EUA",
+          "l": "https://rollingstone.com.br/musica/black-crowes-cantico-patriota-desentendimento-fas-eua/",
+          "i": "https://rollingstone.com.br/wp-content/uploads/2026/06/chris-robinson-black-crowes-2026-foto-Jason-Kempin-Getty-Images-2277588339-406x228.jpg",
+          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Drollingstone.com.br&w=120&h=120&fit=contain",
+          "p": "2026-06-02T16:21:10.000Z",
+          "data_formatada": "2 de junho 16:21",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=rollingstone.com.br",
+          "n": "Rolling Stone Brasil"
+        },
+        {
           "t": "O dinamarquês que é possivelmente o maior fã de Iron Maiden do mundo",
           "l": "https://rollingstone.com.br/musica/iron-maiden-maior-fa-colecionador-mundo/",
           "i": "https://rollingstone.com.br/wp-content/uploads/2026/05/maior-fa-iron-maiden-foto-reproducao-youtube-406x228.jpg",
@@ -6014,26 +6034,6 @@
           "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Drollingstone.com.br&w=120&h=120&fit=contain",
           "p": "2026-06-02T14:59:32.000Z",
           "data_formatada": "2 de junho 14:59",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=rollingstone.com.br",
-          "n": "Rolling Stone Brasil"
-        },
-        {
-          "t": "Steve Lukather detalha novo projeto com músicas perdidas de Eddie Van Halen",
-          "l": "https://rollingstone.com.br/musica/steve-lukather-detalha-novo-projeto-com-musicas-perdidas-de-eddie-van-halen/",
-          "i": "https://rollingstone.com.br/wp-content/uploads/2025/05/eddie-van-halen-van-halen-1979-foto-paul-natkin-getty-images-1279045563.jpg",
-          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Drollingstone.com.br&w=120&h=120&fit=contain",
-          "p": "2026-06-02T14:54:53.000Z",
-          "data_formatada": "2 de junho 14:54",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=rollingstone.com.br",
-          "n": "Rolling Stone Brasil"
-        },
-        {
-          "t": "Sabrina Carpenter obtém ordem de restrição após incidente ‘profundamente alarmante’ com suposto perseguidor",
-          "l": "https://rollingstone.com.br/musica/sabrina-carpenter-obtem-ordem-de-restricao-apos-incidente-profundamente-alarmante-com-suposto-perseguidor/",
-          "i": "https://rollingstone.com.br/wp-content/uploads/2025/11/sabrina-carpenter-XNY-Star-Max-GC-Images-foto-jornalistica-2245084194-e1762946415527-362x228.jpg",
-          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Drollingstone.com.br&w=120&h=120&fit=contain",
-          "p": "2026-06-02T12:26:17.000Z",
-          "data_formatada": "2 de junho 12:26",
           "fav": "https://www.google.com/s2/favicons?sz=64&domain=rollingstone.com.br",
           "n": "Rolling Stone Brasil"
         }
@@ -6140,6 +6140,16 @@
       "categoria": "Tek",
       "artigos": [
         {
+          "t": "O subsídio da Segurança Social que podes acumular ao teu ordenado e não sabias",
+          "l": "https://4gnews.pt/o-apoio-da-seguranca-social-que-podes-acumular-com-o-teu-ordenado-e-nem-sabias/",
+          "i": "https://cdn.4gnews.pt/imagens/o-apoio-da-seguranca-social-que-podes-acumular-com-o-teu-ordenado-e-nem-sabias-og.jpg",
+          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3D4gnews.pt&w=120&h=120&fit=contain",
+          "p": "2026-06-02T16:30:01.000Z",
+          "data_formatada": "2 de junho 16:30",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=4gnews.pt",
+          "n": "4gnews"
+        },
+        {
           "t": "Google Fotos recebe melhoria que facilita a vida a quem faz backups",
           "l": "https://4gnews.pt/google-fotos-recebe-melhoria-que-facilita-a-vida-a-quem-faz-backups/",
           "i": "https://cdn.4gnews.pt/imagens/google-fotos-recebe-melhoria-que-facilita-a-vida-a-quem-faz-backups-og.jpg",
@@ -6216,16 +6226,6 @@
           "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3D4gnews.pt&w=120&h=120&fit=contain",
           "p": "2026-06-02T13:00:01.000Z",
           "data_formatada": "2 de junho 13:00",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=4gnews.pt",
-          "n": "4gnews"
-        },
-        {
-          "t": "Consumo de Internet móvel dispara em Portugal e Digi continua a ganhar clientes",
-          "l": "https://4gnews.pt/consumo-de-internet-movel-dispara-em-portugal-e-digi-continua-a-ganhar-clientes/",
-          "i": "https://cdn.4gnews.pt/imagens/consumo-de-internet-movel-dispara-em-portugal-e-digi-continua-a-ganhar-clientes-og.jpg",
-          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3D4gnews.pt&w=120&h=120&fit=contain",
-          "p": "2026-06-02T12:30:01.000Z",
-          "data_formatada": "2 de junho 12:30",
           "fav": "https://www.google.com/s2/favicons?sz=64&domain=4gnews.pt",
           "n": "4gnews"
         }
@@ -7934,6 +7934,56 @@
       "categoria": "Desporto",
       "artigos": [
         {
+          "t": "Sidny Lopes Cabral de saída do Benfica: eis os detalhes do negócio",
+          "l": "https://bolanarede.pt/especial-bola-na-rede/atualidade/sidny-lopes-cabral-de-saida-do-benfica-eis-os-detalhes-do-negocio/",
+          "i": "",
+          "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
+          "p": "2026-06-02T16:25:19.000Z",
+          "data_formatada": "2 de junho 16:25",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=bolanarede.pt",
+          "n": "Bola na Rede"
+        },
+        {
+          "t": "Fechado: Marco Silva é o novo treinador do Benfica",
+          "l": "https://bolanarede.pt/especial-bola-na-rede/atualidade/fechado-marco-silva-e-o-novo-treinador-do-benfica/",
+          "i": "https://s.w.org/images/core/emoji/17.0.2/72x72/1f6a8.png",
+          "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
+          "p": "2026-06-02T16:03:28.000Z",
+          "data_formatada": "2 de junho 16:03",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=bolanarede.pt",
+          "n": "Bola na Rede"
+        },
+        {
+          "t": "Marco Silva diz adeus ao Fulham: «Estará sempre no meu coração»",
+          "l": "https://bolanarede.pt/especial-bola-na-rede/atualidade/marco-silva-diz-adeus-ao-fulham-estara-sempre-no-meu-coracao/",
+          "i": "",
+          "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
+          "p": "2026-06-02T16:00:23.000Z",
+          "data_formatada": "2 de junho 16:00",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=bolanarede.pt",
+          "n": "Bola na Rede"
+        },
+        {
+          "t": "Sidny Lopes Cabral no Trabzonspor: Eis quando o jogador do Benfica viaja para a Turquia",
+          "l": "https://bolanarede.pt/especial-bola-na-rede/atualidade/sidny-lopes-cabral-no-trabzonspor-eis-quando-o-jogador-do-benfica-viaja-para-a-turquia/",
+          "i": "",
+          "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
+          "p": "2026-06-02T15:46:39.000Z",
+          "data_formatada": "2 de junho 15:46",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=bolanarede.pt",
+          "n": "Bola na Rede"
+        },
+        {
+          "t": "Atenção, Benfica: Fulham comunica saída de Marco Silva",
+          "l": "https://bolanarede.pt/especial-bola-na-rede/atualidade/atencao-benfica-fulham-comunica-saida-de-marco-silva/",
+          "i": "",
+          "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
+          "p": "2026-06-02T15:34:35.000Z",
+          "data_formatada": "2 de junho 15:34",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=bolanarede.pt",
+          "n": "Bola na Rede"
+        },
+        {
           "t": "Foi contactado pela Seleção Nacional e vê PSG como o seu destino preferido",
           "l": "https://bolanarede.pt/especial-bola-na-rede/atualidade/foi-contactado-pela-selecao-nacional-e-ve-psg-como-o-seu-destino-preferido/",
           "i": "https://s.w.org/images/core/emoji/17.0.2/72x72/1f6a8.png",
@@ -7970,56 +8020,6 @@
           "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
           "p": "2026-06-02T14:48:44.000Z",
           "data_formatada": "2 de junho 14:48",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=bolanarede.pt",
-          "n": "Bola na Rede"
-        },
-        {
-          "t": "Deniz Gul vai ao Mundial: Eis a lista final de convocados da Turquia",
-          "l": "https://bolanarede.pt/especial-bola-na-rede/atualidade/deniz-gul-vai-ao-mundial-eis-a-lista-final-de-convocados-da-turquia/",
-          "i": "",
-          "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
-          "p": "2026-06-02T14:39:10.000Z",
-          "data_formatada": "2 de junho 14:39",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=bolanarede.pt",
-          "n": "Bola na Rede"
-        },
-        {
-          "t": "Quem convocou Carlos Queiroz para o Mundial 2026? Eis a lista final da Gana",
-          "l": "https://bolanarede.pt/especial-bola-na-rede/atualidade/quem-convocou-carlos-queiroz-para-o-mundial-2026-eis-a-lista-final-da-gana/",
-          "i": "",
-          "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
-          "p": "2026-06-02T14:30:01.000Z",
-          "data_formatada": "2 de junho 14:30",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=bolanarede.pt",
-          "n": "Bola na Rede"
-        },
-        {
-          "t": "Bruno Fernandes com elogios para Michael Carrick: «Trouxe uma energia muito positiva para a equipa»",
-          "l": "https://bolanarede.pt/especial-bola-na-rede/atualidade/bruno-fernandes-com-elogios-para-michael-carrick-trouxe-uma-energia-muito-positiva-para-a-equipa/",
-          "i": "https://binny-bolanarede.b-cdn.net/wp-content/uploads/2026/05/Michael-Carrick-Manchester-United-1024x576.jpg",
-          "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
-          "p": "2026-06-02T14:21:29.000Z",
-          "data_formatada": "2 de junho 14:21",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=bolanarede.pt",
-          "n": "Bola na Rede"
-        },
-        {
-          "t": "Selecionador da Polónia encantado com Oskar Pietuszewski: «Estas são qualidades de jogadores excecionais»",
-          "l": "https://bolanarede.pt/especial-bola-na-rede/atualidade/selecionador-da-polonia-encantado-com-oskar-pietuszewski-estas-sao-qualidades-de-jogadores-excecionais/",
-          "i": "",
-          "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
-          "p": "2026-06-02T14:18:56.000Z",
-          "data_formatada": "2 de junho 14:18",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=bolanarede.pt",
-          "n": "Bola na Rede"
-        },
-        {
-          "t": "Atenção, Sporting: Morten Hjulmand deixa Seleção da Dinamarca por lesão",
-          "l": "https://bolanarede.pt/especial-bola-na-rede/atualidade/atencao-sporting-morten-hjulmand-deixa-selecao-da-dinamarca-por-lesao/",
-          "i": "",
-          "fallback": "https://images.weserv.nl/?url=www.abola.pt/img/og-image.png",
-          "p": "2026-06-02T14:16:57.000Z",
-          "data_formatada": "2 de junho 14:16",
           "fav": "https://www.google.com/s2/favicons?sz=64&domain=bolanarede.pt",
           "n": "Bola na Rede"
         }
@@ -8798,6 +8798,16 @@
       "categoria": "Música",
       "artigos": [
         {
+          "t": "Dexter Wansel (1950-2026)",
+          "l": "https://soulbounce.com/2026/06/dexter-wansel-1950-2026/",
+          "i": "https://soulbounce.com/wp-content/uploads/2026/06/dexter-wansel-studio-1200-800x450.jpeg",
+          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dsoulbounce.com&w=120&h=120&fit=contain",
+          "p": "2026-06-02T15:00:00.000Z",
+          "data_formatada": "2 de junho 15:00",
+          "fav": "https://www.google.com/s2/favicons?sz=64&domain=soulbounce.com",
+          "n": "SoulBounce"
+        },
+        {
           "t": "WILLOW tem um ‘Talk On The Hill’ enquanto prepara o segundo novo álbum do ano ‘The Thread’",
           "l": "https://soulbounce.com/2026/06/willow-talk-on-the-hill-audio-video-the-thread-announcement/",
           "i": "https://soulbounce.com/wp-content/uploads/2026/06/WILLOW-Talk-On-The-Hill-Photo-Hero-800x450.jpg",
@@ -8874,16 +8884,6 @@
           "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dsoulbounce.com&w=120&h=120&fit=contain",
           "p": "2026-05-28T01:00:00.000Z",
           "data_formatada": "28 de maio 01:00",
-          "fav": "https://www.google.com/s2/favicons?sz=64&domain=soulbounce.com",
-          "n": "SoulBounce"
-        },
-        {
-          "t": "Jungle está pronto para nos fazer dançar novamente com ‘The Wave’",
-          "l": "https://soulbounce.com/2026/05/jungle-the-wave/",
-          "i": "https://soulbounce.com/wp-content/uploads/2026/05/Jungle-White-T-Shirts-Hero-800x450.jpg",
-          "fallback": "https://images.weserv.nl/?url=https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fsz%3D64%26domain%3Dsoulbounce.com&w=120&h=120&fit=contain",
-          "p": "2026-05-27T22:00:00.000Z",
-          "data_formatada": "27 de maio 22:00",
           "fav": "https://www.google.com/s2/favicons?sz=64&domain=soulbounce.com",
           "n": "SoulBounce"
         }
