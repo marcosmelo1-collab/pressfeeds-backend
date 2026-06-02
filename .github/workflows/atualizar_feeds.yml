@@ -6,9 +6,8 @@ on:
       - main
   schedule:
     # Atualiza automaticamente de 2 em 2 horas, todos os dias
-    # (O GitHub corre em horário UTC, este intervalo garante rotação constante)
     - cron: '0 */2 * * *'
-  workflow_dispatch: # Mantém o botão manual ativo por segurança
+  workflow_dispatch: # Botão manual ativo por segurança
 
 jobs:
   build:
@@ -17,6 +16,8 @@ jobs:
     steps:
     - name: Copiar o código do repositório
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0 # Garante o histórico completo para evitar rejeições
 
     - name: Configurar o Node.js
       uses: actions/setup-node@v4
@@ -34,7 +35,12 @@ jobs:
       run: |
         git config --global user.name "GitHub Action Bot"
         git config --global user.email "actions@github.com"
+        
+        # 1. Fazemos o pull antes de adicionar o JSON para garantir sincronização limpa
+        git pull origin main
+        
+        # 2. Adicionamos o novo ficheiro gerado pelo script
         git add noticias_final.json
         
-        # CORREÇÃO: Pull com rebase força a sincronização das alterações do repositório antes do push
-        git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Atualização automática de notícias [Skip CI]" && git pull --rebase origin main && git push origin main)
+        # 3. Fazemos o commit e o push limpo. Se não houver alterações, ele ignora sem dar erro
+        git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Atualização automática de notícias [Skip CI]" && git push origin main)
