@@ -13,7 +13,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps:
+  steps:
     - name: Copiar o código do repositório
       uses: actions/checkout@v4
       with:
@@ -31,10 +31,21 @@ jobs:
     - name: Executar o script de notícias
       run: node processar_feeds.js
 
+    - name: Preparar payload do Gist de forma segura
+      run: |
+        # Transforma o conteúdo do arquivo JSON gerado em uma string JSON segura para a API do GitHub
+        node -e "
+          const fs = require('fs');
+          const content = fs.readFileSync('noticias_final.json', 'utf8');
+          const payload = { files: { 'noticias_final.json': { content: content } } };
+          fs.writeFileSync('gist_payload.json', JSON.stringify(payload));
+        "
+
     - name: Atualizar o Gist Público para o Blogger
       run: |
         curl -X PATCH \
           -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
           -H "Accept: application/vnd.github.v3+json" \
-          https://api.github.com/gists/a6564ddeec0f72ffeb9918cb5c16a873 \
-          -d "{\"files\": {\"noticias_final.json\": {\"content\": $(node -e "console.log(JSON.stringify(require('fs').readFileSync('noticias_final.json', 'utf8')))")}}}"
+          -H "Content-Type: application/json" \
+          --data-binary @gist_payload.json \
+          https://api.github.com/gists/a6564ddeec0f72ffeb9918cb5c16a873
