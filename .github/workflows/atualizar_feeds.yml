@@ -21,14 +21,14 @@ jobs:
     - name: Configurar o Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '20' # <--- Corrigido aqui de "node-node-version" para "node-version"
+        node-version: '20'
 
     - name: Instalar dependências se sobrarem
       run: |
         if [ -f package.json ]; then npm install; fi
 
     - name: Executar o script de notícias
-      run: node noticias.js
+      run: node noticia.js # <--- Corrigido de "noticias.js" para "noticia.js" (no singular)
 
     - name: Guardar e enviar alterações para o GitHub
       run: |
