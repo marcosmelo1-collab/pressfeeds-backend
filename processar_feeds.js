@@ -66,7 +66,7 @@ function fetchUrl(url) {
     });
 }
 
-// Função perfeitamente calibrada para limpar CDATA e tags HTML (Garante compatibilidade total com o Record)
+// Função perfeitamente calibrada para limpar CDATA e tags HTML
 function cleanText(txt) {
     if (!txt) return "";
     
@@ -133,11 +133,11 @@ function formatarData(dateObj) {
     return `${dia} de ${mes} ${hora}:${min}`;
 }
 
-// Regex aprimorada e ultra-abrangente para extrair imagens escondidas em descrições HTML
+// Regex aprimorada e flexível para extrair imagens ocultas dentro de blocos de texto HTML
 function extrairImagemDoTexto(texto) {
     if (!texto) return "";
     
-    // Captura tags <img ... src="..."> lidando com qualquer tipo de aspas ou atributos extras intermédios
+    // Captura tags <img ... src="..."> lidando com qualquer atributo extra de forma maleável
     const imgRegex = /<img[^>]+?\b(?:src|data-src|data-lazy-src|data-original|url)\s*=\s*["']([^"'\s>]+)/i;
     let match = texto.match(imgRegex);
     if (match && match[1] && match[1].length > 10 && !match[1].includes("favicon")) {
@@ -221,35 +221,30 @@ async function processarFeed(feed) {
                 title = await traduzirTexto(title);
             }
 
-            // 7. NOVO ALGORITMO DE EXTRAÇÃO EXTRA-AGRESSIVO DE IMAGENS FEITO PARA PORTUGAL
+            // 7. EXTRATOR INDEPENDENTE DE ORDEM DE ATRIBUTOS (Resolve Observador, SIC Notícias e Enclosures)
             let thumb = "";
             
-            // Tenta obter de qualquer variação de tag de média ou enclosure (com suporte a namespaces dinâmicos)
-            const urlImgRegex = /\burl\s*=\s*["']([^"'\s>]+)/i;
-            const enclosureMatch = itemXml.match(/<enclosure[^>]+?url\s*=\s*["']([^"'\s>]+)/i) ||
-                                  itemXml.match(/<media:content[^>]+?url\s*=\s*["']([^"'\s>]+)/i) ||
-                                  itemXml.match(/<media:thumbnail[^>]+?url\s*=\s*["']([^"'\s>]+)/i) ||
-                                  itemXml.match(/<image[^>]*>([\s\S]*?)<\/image>/i);
-
-            if (enclosureMatch) {
-                if (enclosureMatch[1] && enclosureMatch[1].length > 10) {
-                    thumb = enclosureMatch[1].trim();
-                } else if (enclosureMatch[1]) {
-                    // Se capturou a tag de imagem interna complexa, limpa o seu conteúdo
-                    const subUrl = enclosureMatch[1].match(/<url[^>]*>([\s\S]*?)<\/url>/i);
-                    if (subUrl) thumb = subUrl[1].trim();
+            // Procura de forma isolada e flexível qualquer tag de imagem estruturada do RSS
+            const tagsImagem = itemXml.match(/<(?:media:content|enclosure|media:thumbnail)[^>]+>/gi);
+            if (tagsImagem && tagsImagem.length > 0) {
+                for (const tag de tagsImagem) {
+                    const urlMatch = tag.match(/\burl\s*=\s*["']([^"'\s>]+)/i);
+                    if (urlMatch && urlMatch[1] && urlMatch[1].length > 10 && !urlMatch[1].includes("favicon")) {
+                        thumb = urlMatch[1].trim();
+                        break;
+                    }
                 }
             }
 
-            // Se as tags estruturadas falharem, varre o texto descritivo por tags HTML de imagem
-            if (!thumb || thumb.includes("favicon") || thumb.length < 10) {
+            // Se as tags estruturadas não existirem ou falharem, varre o HTML descritivo
+            if (!thumb) {
                 const descMatch = itemXml.match(/<description[^>]*>([\s\S]*?)<\/description>/i);
                 const contentMatch = itemXml.match(/<content:encoded[^>]*>([\s\S]*?)<\/content:encoded>/i);
                 const textoParaProcurar = (descMatch ? descMatch[1] : "") + (contentMatch ? contentMatch[1] : "");
                 thumb = extrairImagemDoTexto(textoParaProcurar);
             }
 
-            // Fallbacks de imagens fixas de alta resolução baseadas na fonte
+            // Fallbacks de imagens de alta resolução baseadas na fonte
             let fallbackImg = `https://images.weserv.nl/?url=${encodeURIComponent(getFav(feed.u))}&w=120&h=120&fit=contain`;
             const domain = feed.n.toLowerCase();
             if (domain.includes("magazine hd") || domain.includes("magazinehd")) fallbackImg = "https://images.weserv.nl/?url=www.magazine-hd.com/apps/wp/wp-content/uploads/2023/01/mhd-logo.jpg";
@@ -262,7 +257,7 @@ async function processarFeed(feed) {
             artigos.push({
                 t: title,
                 l: link,
-                i: (thumb && !thumb.includes("favicon") && thumb.length > 10) ? thumb.replace(/&amp;/g, "&") : "",
+                i: (thumb && thumb.length > 10) ? thumb.replace(/&amp;/g, "&") : "",
                 fallback: fallbackImg,
                 p: pubDate.toISOString(),
                 data_formatada: formatarData(pubDate),
