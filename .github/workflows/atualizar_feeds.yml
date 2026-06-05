@@ -9,6 +9,12 @@ on:
     - cron: '0 */2 * * *'
   workflow_dispatch: # Mantém o botão manual ativo por segurança
 
+# Permissões necessárias para o robô conseguir publicar no GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,7 +23,7 @@ jobs:
     - name: Copiar o código do repositório
       uses: actions/checkout@v4
       with:
-        fetch-depth: 0 # Traz o histórico completo necessário para o envio
+        fetch-depth: 0
 
     - name: Configurar o Node.js
       uses: actions/setup-node@v4
@@ -31,14 +37,23 @@ jobs:
     - name: Executar o script de notícias
       run: node processar_feeds.js
 
-    - name: Guardar e enviar o JSON para o repositório
+    - name: Criar estrutura para o Pages
       run: |
-        git config --global user.name "GitHub Action Bot"
-        git config --global user.email "actions@github.com"
-        git add noticias_final.json
-        if ! git diff --cached --quiet; then
-          git commit -m "🤖 Atualização automática de notícias [Skip CI]"
-          git push origin main --force
-        else
-          echo "Nenhuma noticia nova detetada nesta rodada."
-        fi
+        mkdir -p _site
+        cp noticias_final.json _site/
+
+    - name: Enviar para o GitHub Pages de forma pública
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: '_site'
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
