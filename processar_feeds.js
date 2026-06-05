@@ -227,7 +227,7 @@ async function processarFeed(feed) {
             // Procura de forma isolada e flexível qualquer tag de imagem estruturada do RSS
             const tagsImagem = itemXml.match(/<(?:media:content|enclosure|media:thumbnail)[^>]+>/gi);
             if (tagsImagem && tagsImagem.length > 0) {
-                for (const tag de tagsImagem) {
+                for (const tag of tagsImagem) {
                     const urlMatch = tag.match(/\burl\s*=\s*["']([^"'\s>]+)/i);
                     if (urlMatch && urlMatch[1] && urlMatch[1].length > 10 && !urlMatch[1].includes("favicon")) {
                         thumb = urlMatch[1].trim();
