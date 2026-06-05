@@ -31,26 +31,14 @@ jobs:
     - name: Executar o script de notícias
       run: node processar_feeds.js
 
-    - name: Preparar payload do Gist de forma segura
+    - name: Guardar e enviar o JSON para o repositório
       run: |
-        node -e "
-        const fs = require('fs');
-        const conteudoNoticias = fs.readFileSync('noticias_final.json', 'utf8');
-        const estruturaGist = {
-          files: {
-            'noticias_final.json': {
-              content: conteudoNoticias
-            }
-          }
-        };
-        fs.writeFileSync('gist_payload.json', JSON.stringify(estruturaGist));
-        "
-
-    - name: Atualizar o Gist Público para o Blogger
-      run: |
-        curl -X PATCH \
-          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-          -H "Accept: application/vnd.github.v3+json" \
-          -H "Content-Type: application/json" \
-          --data-binary @gist_payload.json \
-          https://api.github.com/gists/a6564ddeec0f72ffeb9918cb5c16a873
+        git config --global user.name "GitHub Action Bot"
+        git config --global user.email "actions@github.com"
+        git add noticias_final.json
+        if ! git diff --cached --quiet; then
+          git commit -m "🤖 Atualização automática de notícias [Skip CI]"
+          git push origin main --force
+        else
+          echo "Nenhuma noticia nova detetada nesta rodada."
+        fi
