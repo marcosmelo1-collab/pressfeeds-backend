@@ -2,7 +2,7 @@ const fs = require('fs');
 const https = require('https');
 
 // Configurações dos URLs base
-const JSON_FEEDS_URL = "https://raw.githubusercontent.com/marcosmelo1-collab/a6564ddeec0f72ffeb9918cb5c16a873/raw/feeds.json";
+const JSON_FEEDS_URL = "https://gist.githubusercontent.com/marcosmelo1-collab/a6564ddeec0f72ffeb9918cb5c16a873/raw/feeds.json";
 const priorityOrder = [
     "Observador", "Mega Hits", "Notícias ao Minuto", "Vagalume", 
     "SIC Notícias", "Papelpop", "Magazine HD", "RTP", 
