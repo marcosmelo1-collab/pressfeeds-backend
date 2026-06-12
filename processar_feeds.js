@@ -262,8 +262,7 @@ async function processarFeed(feed) {
                 p: pubDate.toISOString(),
                 data_formatada: formatarData(pubDate),
                 fav: getFav(feed.u),
-                n: feed.n
-                c: feed.c 
+                n: feed.n 
             });
             contador++;
         }
