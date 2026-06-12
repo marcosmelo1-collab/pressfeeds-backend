@@ -263,6 +263,7 @@ async function processarFeed(feed) {
                 data_formatada: formatarData(pubDate),
                 fav: getFav(feed.u),
                 n: feed.n
+                c: feed.c 
             });
             contador++;
         }
