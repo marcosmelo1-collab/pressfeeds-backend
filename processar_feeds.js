@@ -1,12 +1,13 @@
 const fs = require('fs');
 const https = require('https');
-const zlib = require('zlib'); // Necessário para ler sites modernos compressos
+const zlib = require('zlib');
 
 const JSON_FEEDS_URL = "https://gist.githubusercontent.com/marcosmelo1-collab/a6564ddeec0f72ffeb9918cb5c16a873/raw/feeds.json";
-const priorityOrder = ["Observador", "Mega Hits", "Notícias ao Minuto", "Vagalume", "SIC Notícias", "Papelpop", "Magazine HD", "RTP", "PopNow", "Renascença", "In Magazine", "Billboard", "NiT"];
+const priorityOrder = ["Observador", "Mega Hits", "Notícias ao Minuto", "SIC Notícias", "Público", "RTP", "Renascença", "NiT", "Lisboa Secreta"];
 
-// Função fetchUrl atualizada com suporte a GZIP (essencial para Lisboa Secreta e NiT)
-function fetchUrl(url) {
+function fetchUrl(url, redirectCount = 0) {
+    if (redirectCount > 5) return Promise.reject(new Error('Demasiados redirecionamentos'));
+    
     return new Promise((resolve, reject) => {
         const urlObj = new URL(url);
         const options = {
@@ -14,11 +15,9 @@ function fetchUrl(url) {
             path: urlObj.pathname + urlObj.search,
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
-                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
-                'Accept-Encoding': 'gzip, deflate', // Avisa o site que aceitamos dados compressos
-                'Accept-Language': 'pt-PT,pt;q=0.9',
-                'Referer': 'https://www.google.com/',
-                'Cache-Control': 'no-cache'
+                'Accept': 'application/rss+xml, application/xml, text/xml, */*',
+                'Accept-Encoding': 'gzip, deflate',
+                'Referer': 'https://www.google.com/'
             },
             timeout: 20000
         };
@@ -26,33 +25,20 @@ function fetchUrl(url) {
         https.get(options, (res) => {
             if (res.statusCode === 301 || res.statusCode === 302) {
                 const newLoc = res.headers.location.startsWith('http') ? res.headers.location : `https://${urlObj.hostname}${res.headers.location}`;
-                return fetchUrl(newLoc).then(resolve).catch(reject);
+                return fetchUrl(newLoc, redirectCount + 1).then(resolve).catch(reject);
             }
 
-            if (res.statusCode !== 200) {
-                return reject(new Error(`Erro HTTP ${res.statusCode}`));
-            }
+            if (res.statusCode !== 200) return reject(new Error(`Status ${res.statusCode}`));
 
-            // Lógica para descompactar GZIP/DEFLATE se o site enviar
             let stream = res;
-            const encoding = res.headers['content-encoding'];
-            if (encoding === 'gzip') {
-                stream = res.pipe(zlib.createGunzip());
-            } else if (encoding === 'deflate') {
-                stream = res.pipe(zlib.createInflate());
-            }
+            if (res.headers['content-encoding'] === 'gzip') stream = res.pipe(zlib.createGunzip());
+            else if (res.headers['content-encoding'] === 'deflate') stream = res.pipe(zlib.createInflate());
 
             const chunks = [];
             stream.on('data', chunk => chunks.push(chunk));
             stream.on('end', () => {
                 const buffer = Buffer.concat(chunks);
-                let text = buffer.toString('utf-8');
-                
-                // Se o XML indicar ISO-8859-1, recodifica
-                if (text.includes('encoding="iso-8859-1"') || text.includes('encoding="windows-1252"')) {
-                    text = buffer.toString('latin1');
-                }
-                resolve(text);
+                resolve(buffer.toString('utf-8'));
             });
         }).on('error', err => reject(err));
     });
@@ -63,17 +49,10 @@ function cleanText(txt) {
     return txt.replace(/<!\[CDATA\[/gi, "").replace(/\]\]>/gi, "").replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim();
 }
 
-function getFav(url) {
-    try { return `https://www.google.com/s2/favicons?sz=64&domain=${new URL(url).hostname}`; } catch (e) { return ""; }
-}
-
 async function processarFeed(feed) {
     try {
-        console.log(`> A tentar: ${feed.n}`);
-        const xmlRaw = await fetchUrl(feed.u);
-        const xml = xmlRaw.replace(/^\uFEFF/, '').trim();
-        
-        // Regex flexível para capturar notícias em qualquer formato (RSS ou Atom)
+        console.log(`> A ler: ${feed.n}`);
+        const xml = await fetchUrl(feed.u);
         const itemRegex = /<(item|entry)\b[^>]*>([\s\S]*?)<\/\1>/gi;
         const artigos = [];
         let match;
@@ -85,16 +64,13 @@ async function processarFeed(feed) {
             let title = cleanText(titleMatch ? titleMatch[1] : "");
             if (!title) continue;
 
-            // Tenta link padrão <link> ou link de atributo (Atom)
             const linkMatch = itemXml.match(/<link[^>]*>([\s\S]*?)<\/link>/i) || itemXml.match(/href=["']([^"']+)["']/);
-            let link = linkMatch ? (linkMatch[1] || linkMatch[0]).trim() : "";
-            if (link.includes('href=')) {
-                let m = link.match(/href=["']([^"']+)["']/);
-                link = m ? m[1] : link;
-            }
+            let link = (linkMatch ? (linkMatch[1] || linkMatch[0]) : "").trim();
+            if (link.includes('href=')) link = link.match(/href=["']([^"']+)["']/)[1];
 
-            const pubDateMatch = itemXml.match(/<(pubDate|updated|published)[^>]*>([\s\S]*?)<\/\1>/i);
-            const pubDate = pubDateMatch ? new Date(pubDateMatch[2]) : new Date();
+            const pubDateMatch = itemXml.match(/<(pubDate|updated|published|dc:date)[^>]*>([\s\S]*?)<\/\1>/i);
+            let dateVal = pubDateMatch ? new Date(pubDateMatch[2]) : new Date();
+            if (isNaN(dateVal)) dateVal = new Date(); // Fallback para data atual se falhar
 
             let thumb = "";
             const tagsImg = itemXml.match(/<(?:media:content|enclosure|media:thumbnail)[^>]+>/gi);
@@ -108,18 +84,18 @@ async function processarFeed(feed) {
             artigos.push({
                 t: title,
                 l: link,
-                i: thumb ? thumb.replace(/&amp;/g, "&") : "",
-                p: pubDate.toISOString(),
-                fav: getFav(feed.u),
-                n: feed.n,
+                i: thumb.replace(/&amp;/g, "&"),
+                p: dateVal.toISOString(),
+                fav: `https://www.google.com/s2/favicons?sz=64&domain=${new URL(feed.u).hostname}`,
+                n: feed.n.trim(), // Limpeza absoluta do nome
                 c: feed.c
             });
             contador++;
         }
-        console.log(`  [OK] ${artigos.length} notícias de ${feed.n}`);
+        console.log(`  [OK] ${artigos.length} artigos.`);
         return artigos;
     } catch (e) {
-        console.error(`  [ERRO] ${feed.n}: ${e.message}`);
+        console.error(`  [FALHA] ${feed.n}: ${e.message}`);
         return [];
     }
 }
@@ -135,7 +111,7 @@ async function ejecutar() {
             const artigos = await processarFeed(fonte);
             if (artigos.length > 0) {
                 todosArtigosPlanos = todosArtigosPlanos.concat(artigos);
-                gruposNoticias.push({ nome: fonte.n, categoria: fonte.c, artigos });
+                gruposNoticias.push({ nome: fonte.n.trim(), categoria: fonte.c, artigos });
             }
         }
 
@@ -148,13 +124,13 @@ async function ejecutar() {
 
         const resultado = {
             ultimasAtualizacao: new Date().toISOString(),
-            fontesAtivas: fontes.filter(f => gruposNoticias.some(g => g.nome === f.n)),
+            fontesAtivas: fontes.filter(f => gruposNoticias.some(g => g.nome === f.n.trim())),
             todosArtigosPlanos: todosArtigosPlanos,
             gruposPorPrioridade: gruposNoticias
         };
 
         fs.writeFileSync('noticias_final.json', JSON.stringify(resultado, null, 2));
-        console.log("Processamento concluído com sucesso!");
+        console.log("Sucesso Total!");
     } catch (err) { console.error("Erro Fatal:", err); }
 }
 ejecutar();
