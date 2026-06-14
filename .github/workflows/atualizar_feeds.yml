@@ -5,11 +5,10 @@ on:
     branches:
       - main
   schedule:
-    # Atualiza automaticamente de 2 em 2 horas, todos os dias
-    - cron: '0 */2 * * *'
-  workflow_dispatch: # Mantém o botão manual ativo por segurança
+    # Atualiza automaticamente de 1 em 1 hora (no minuto zero)
+    - cron: '0 * * * *'
+  workflow_dispatch: 
 
-# Permissões necessárias para o robô conseguir publicar no GitHub Pages
 permissions:
   contents: write
   pages: write
@@ -30,10 +29,6 @@ jobs:
       with:
         node-version: '20'
 
-    - name: Instalar dependências se sobrarem
-      run: |
-        if [ -f package.json ]; then npm install; fi
-
     - name: Executar o script de notícias
       run: node processar_feeds.js
 
@@ -42,7 +37,7 @@ jobs:
         mkdir -p _site
         cp noticias_final.json _site/
 
-    - name: Enviar para o GitHub Pages de forma pública
+    - name: Enviar para o GitHub Pages
       uses: actions/upload-pages-artifact@v3
       with:
         path: '_site'
