@@ -1,32 +1,26 @@
 const fs = require('fs');
 const https = require('https');
+const zlib = require('zlib'); // Necessário para ler sites modernos compressos
 
 const JSON_FEEDS_URL = "https://gist.githubusercontent.com/marcosmelo1-collab/a6564ddeec0f72ffeb9918cb5c16a873/raw/feeds.json";
 const priorityOrder = ["Observador", "Mega Hits", "Notícias ao Minuto", "Vagalume", "SIC Notícias", "Papelpop", "Magazine HD", "RTP", "PopNow", "Renascença", "In Magazine", "Billboard", "NiT"];
 
+// Função fetchUrl atualizada com suporte a GZIP (essencial para Lisboa Secreta e NiT)
 function fetchUrl(url) {
     return new Promise((resolve, reject) => {
-        // Correção para Lisboa Secreta: garantir que termina em /
-        if (url.includes('lisboasecreta.co/feed') && !url.endsWith('/')) {
-            url += '/';
-        }
-
         const urlObj = new URL(url);
         const options = {
             hostname: urlObj.hostname,
             path: urlObj.pathname + urlObj.search,
-            method: 'GET',
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
-                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
-                'Accept-Language': 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7',
-                'Cache-Control': 'no-cache',
-                'Pragma': 'no-cache',
-                'Upgrade-Insecure-Requests': '1',
-                'Referer': 'https://www.google.com/'
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+                'Accept-Encoding': 'gzip, deflate', // Avisa o site que aceitamos dados compressos
+                'Accept-Language': 'pt-PT,pt;q=0.9',
+                'Referer': 'https://www.google.com/',
+                'Cache-Control': 'no-cache'
             },
-            timeout: 20000,
-            rejectUnauthorized: false 
+            timeout: 20000
         };
 
         https.get(options, (res) => {
@@ -35,14 +29,30 @@ function fetchUrl(url) {
                 return fetchUrl(newLoc).then(resolve).catch(reject);
             }
 
+            if (res.statusCode !== 200) {
+                return reject(new Error(`Erro HTTP ${res.statusCode}`));
+            }
+
+            // Lógica para descompactar GZIP/DEFLATE se o site enviar
+            let stream = res;
+            const encoding = res.headers['content-encoding'];
+            if (encoding === 'gzip') {
+                stream = res.pipe(zlib.createGunzip());
+            } else if (encoding === 'deflate') {
+                stream = res.pipe(zlib.createInflate());
+            }
+
             const chunks = [];
-            res.on('data', chunk => chunks.push(chunk));
-            res.on('end', () => {
+            stream.on('data', chunk => chunks.push(chunk));
+            stream.on('end', () => {
                 const buffer = Buffer.concat(chunks);
-                let encoding = 'utf-8';
-                const contentType = res.headers['content-type'] || '';
-                if (contentType.toLowerCase().includes('iso-8859-1')) encoding = 'latin1';
-                resolve(buffer.toString(encoding));
+                let text = buffer.toString('utf-8');
+                
+                // Se o XML indicar ISO-8859-1, recodifica
+                if (text.includes('encoding="iso-8859-1"') || text.includes('encoding="windows-1252"')) {
+                    text = buffer.toString('latin1');
+                }
+                resolve(text);
             });
         }).on('error', err => reject(err));
     });
@@ -59,11 +69,11 @@ function getFav(url) {
 
 async function processarFeed(feed) {
     try {
-        console.log(`> A processar: ${feed.n}`);
+        console.log(`> A tentar: ${feed.n}`);
         const xmlRaw = await fetchUrl(feed.u);
         const xml = xmlRaw.replace(/^\uFEFF/, '').trim();
         
-        // Regex aprimorada para Lisboa Secreta e outros Atom/RSS
+        // Regex flexível para capturar notícias em qualquer formato (RSS ou Atom)
         const itemRegex = /<(item|entry)\b[^>]*>([\s\S]*?)<\/\1>/gi;
         const artigos = [];
         let match;
@@ -75,8 +85,9 @@ async function processarFeed(feed) {
             let title = cleanText(titleMatch ? titleMatch[1] : "");
             if (!title) continue;
 
+            // Tenta link padrão <link> ou link de atributo (Atom)
             const linkMatch = itemXml.match(/<link[^>]*>([\s\S]*?)<\/link>/i) || itemXml.match(/href=["']([^"']+)["']/);
-            let link = linkMatch ? (linkMatch[1] || "").trim() : "";
+            let link = linkMatch ? (linkMatch[1] || linkMatch[0]).trim() : "";
             if (link.includes('href=')) {
                 let m = link.match(/href=["']([^"']+)["']/);
                 link = m ? m[1] : link;
@@ -105,10 +116,10 @@ async function processarFeed(feed) {
             });
             contador++;
         }
-        console.log(`  [OK] ${artigos.length} artigos.`);
+        console.log(`  [OK] ${artigos.length} notícias de ${feed.n}`);
         return artigos;
     } catch (e) {
-        console.error(`  [FALHA] ${feed.n}: ${e.message}`);
+        console.error(`  [ERRO] ${feed.n}: ${e.message}`);
         return [];
     }
 }
@@ -143,7 +154,7 @@ async function ejecutar() {
         };
 
         fs.writeFileSync('noticias_final.json', JSON.stringify(resultado, null, 2));
-        console.log("Concluído!");
-    } catch (err) { console.error("Erro fatal:", err); }
+        console.log("Processamento concluído com sucesso!");
+    } catch (err) { console.error("Erro Fatal:", err); }
 }
 ejecutar();
