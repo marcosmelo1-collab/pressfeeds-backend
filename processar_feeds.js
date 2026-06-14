@@ -7,7 +7,6 @@ const priorityOrder = ["Observador", "Mega Hits", "Notícias ao Minuto", "SIC No
 
 function fetchUrl(url, redirectCount = 0) {
     if (redirectCount > 5) return Promise.reject(new Error('Demasiados redirecionamentos'));
-    
     return new Promise((resolve, reject) => {
         const urlObj = new URL(url);
         const options = {
@@ -36,55 +35,37 @@ function fetchUrl(url, redirectCount = 0) {
             stream.on('data', chunk => chunks.push(chunk));
             stream.on('end', () => {
                 const buffer = Buffer.concat(chunks);
-                
-                // DETEÇÃO DE ENCODING (Especial para Record e A Bola)
                 let encoding = 'utf-8';
-                const content = buffer.toString('ascii').toLowerCase();
-                if (content.includes('iso-8859-1') || content.includes('windows-1252') || url.includes('record.pt') || url.includes('abola.pt')) {
-                    encoding = 'latin1';
-                }
-                
+                // Forçar latin1 apenas para Record e A Bola (corrigir acentos)
+                if (url.includes('record.pt') || url.includes('abola.pt')) encoding = 'latin1';
                 resolve(buffer.toString(encoding));
             });
         }).on('error', err => reject(err));
     });
 }
 
-// FUNÇÃO DE LIMPEZA ULTRA-AGRESSIVA
 function cleanText(txt) {
     if (!txt) return "";
     let str = txt;
-    
-    // 1. Remove CDATA e variantes escapadas (Resolve o problema do Record)
-    str = str.replace(/<!\[CDATA\[/gi, "");
-    str = str.replace(/\]\]>/gi, "");
-    str = str.replace(/&lt;!\[CDATA\[/gi, "");
-    str = str.replace(/\]\]&gt;/gi, "");
-    
+    // 1. Remove CDATA escapado (Problema do Record)
+    str = str.replace(/&lt;!\[CDATA\[|&lt;!\[CDATA\[|\]\]&gt;|CDATA\[|\]\]/gi, "");
     // 2. Remove tags HTML
     str = str.replace(/<[^>]+>/g, "");
-    
-    // 3. Repara entidades comuns
+    // 3. Entidades básicas
     str = str.replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, " ");
-
-    // 4. Repara carateres corrompidos (Double encoding e ISO)
+    
+    // 4. Correção manual de carateres comuns se o encoding falhar
     const mapa = {
         'Ã³': 'ó', 'Ã§': 'ç', 'Ã£': 'ã', 'Ã©': 'é', 'Ã¡': 'á', 'Ã­': 'í', 
-        'Ã¢': 'â', 'Ãª': 'ê', 'Ãµ': 'õ', 'Ãº': 'ú', 'Ã ': 'à', 'Âº': 'º', 
-        'Âª': 'ª', 'Ã“': 'Ó', 'Ã‡': 'Ç', 'â€“': '—', 'â€œ': '"', 'â€\u009d': '"',
-        '': 'ç' // Caso específico do Record para Curacao/Curaçao
+        'Ã¢': 'â', 'Ãª': 'ê', 'Ãµ': 'õ', 'Ãº': 'ú', 'Ã ': 'à', 'Âº': 'º'
     };
+    for (let erro in mapa) { str = str.split(erro).join(mapa[erro]); }
     
-    for (let erro in mapa) {
-        str = str.split(erro).join(mapa[erro]);
-    }
-
     return str.replace(/\s+/g, " ").trim();
 }
 
 async function processarFeed(feed) {
     try {
-        console.log(`> A ler: ${feed.n}`);
         const xml = await fetchUrl(feed.u);
         const itemRegex = /<(item|entry)\b[^>]*>([\s\S]*?)<\/\1>/gi;
         const artigos = [];
@@ -93,7 +74,6 @@ async function processarFeed(feed) {
 
         while ((match = itemRegex.exec(xml)) !== null && contador < 10) {
             const itemXml = match[2];
-            
             const titleMatch = itemXml.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
             let title = cleanText(titleMatch ? titleMatch[1] : "");
             if (!title) continue;
@@ -131,7 +111,7 @@ async function processarFeed(feed) {
         }
         return artigos;
     } catch (e) {
-        console.error(`  [FALHA] ${feed.n}: ${e.message}`);
+        console.error(`Falha em ${feed.n}: ${e.message}`);
         return [];
     }
 }
@@ -152,26 +132,21 @@ async function ejecutar() {
         }
 
         todosArtigosPlanos.sort((a, b) => new Date(b.p) - new Date(a.p));
-        
-        // ORDENAÇÃO POR PRIORIDADE
         gruposNoticias.sort((a, b) => {
-            const idxA = priorityOrder.indexOf(a.nome);
-            const idxB = priorityOrder.indexOf(b.nome);
+            const idxA = priorityOrder.indexOf(a.nome), idxB = priorityOrder.indexOf(b.nome);
             if (idxA !== -1 && idxB !== -1) return idxA - idxB;
-            if (idxA !== -1) return -1;
-            if (idxB !== -1) return 1;
-            return 0;
+            return idxA !== -1 ? -1 : (idxB !== -1 ? 1 : 0);
         });
 
         const resultado = {
             ultimasAtualizacao: new Date().toISOString(),
             fontesAtivas: fontes.filter(f => gruposNoticias.some(g => g.nome === f.n.trim())),
-            todosArtigosPlanos: todosArtigosPlanos,
+            todosArtigosPlanos,
             gruposPorPrioridade: gruposNoticias
         };
 
         fs.writeFileSync('noticias_final.json', JSON.stringify(resultado, null, 2));
-        console.log("Sucesso! Carateres corrigidos.");
+        console.log("Concluído com sucesso!");
     } catch (err) { console.error("Erro Fatal:", err); }
 }
 ejecutar();
