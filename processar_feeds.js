@@ -6,15 +6,35 @@ const priorityOrder = ["Observador", "Mega Hits", "Notícias ao Minuto", "Vagalu
 
 function fetchUrl(url) {
     return new Promise((resolve, reject) => {
-        https.get(url, { 
-            headers: { 
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' 
+        // Correção para Lisboa Secreta: garantir que termina em /
+        if (url.includes('lisboasecreta.co/feed') && !url.endsWith('/')) {
+            url += '/';
+        }
+
+        const urlObj = new URL(url);
+        const options = {
+            hostname: urlObj.hostname,
+            path: urlObj.pathname + urlObj.search,
+            method: 'GET',
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+                'Accept-Language': 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7',
+                'Cache-Control': 'no-cache',
+                'Pragma': 'no-cache',
+                'Upgrade-Insecure-Requests': '1',
+                'Referer': 'https://www.google.com/'
             },
-            timeout: 15000 
-        }, (res) => {
+            timeout: 20000,
+            rejectUnauthorized: false 
+        };
+
+        https.get(options, (res) => {
             if (res.statusCode === 301 || res.statusCode === 302) {
-                return fetchUrl(res.headers.location).then(resolve).catch(reject);
+                const newLoc = res.headers.location.startsWith('http') ? res.headers.location : `https://${urlObj.hostname}${res.headers.location}`;
+                return fetchUrl(newLoc).then(resolve).catch(reject);
             }
+
             const chunks = [];
             res.on('data', chunk => chunks.push(chunk));
             res.on('end', () => {
@@ -39,10 +59,11 @@ function getFav(url) {
 
 async function processarFeed(feed) {
     try {
+        console.log(`> A processar: ${feed.n}`);
         const xmlRaw = await fetchUrl(feed.u);
         const xml = xmlRaw.replace(/^\uFEFF/, '').trim();
         
-        // REGEX FLEXÍVEL: Agora aceita <item> ou <entry> mesmo com atributos extras
+        // Regex aprimorada para Lisboa Secreta e outros Atom/RSS
         const itemRegex = /<(item|entry)\b[^>]*>([\s\S]*?)<\/\1>/gi;
         const artigos = [];
         let match;
@@ -80,13 +101,14 @@ async function processarFeed(feed) {
                 p: pubDate.toISOString(),
                 fav: getFav(feed.u),
                 n: feed.n,
-                c: feed.c // Categoria garantida
+                c: feed.c
             });
             contador++;
         }
+        console.log(`  [OK] ${artigos.length} artigos.`);
         return artigos;
     } catch (e) {
-        console.error(`Erro em ${feed.n}:`, e.message);
+        console.error(`  [FALHA] ${feed.n}: ${e.message}`);
         return [];
     }
 }
@@ -121,7 +143,7 @@ async function ejecutar() {
         };
 
         fs.writeFileSync('noticias_final.json', JSON.stringify(resultado, null, 2));
-        console.log("Ficheiro final gerado com sucesso!");
+        console.log("Concluído!");
     } catch (err) { console.error("Erro fatal:", err); }
 }
 ejecutar();
