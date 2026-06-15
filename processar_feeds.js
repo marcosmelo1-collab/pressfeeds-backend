@@ -18,7 +18,7 @@ function fetchUrl(url, redirectCount = 0) {
                 'Accept-Encoding': 'gzip, deflate',
                 'Referer': 'https://www.google.com/'
             },
-            timeout: 15000 // Tempo limite de 15 segundos
+            timeout: 15000 
         };
 
         const req = https.get(options, (res) => {
@@ -50,17 +50,13 @@ function fetchUrl(url, redirectCount = 0) {
         });
 
         req.on('error', err => reject(err));
-        req.on('timeout', () => {
-            req.destroy(); // FECHA A LIGAÇÃO À FORÇA SE DEMORAR
-            reject(new Error('Timeout de 15s'));
-        });
+        req.on('timeout', () => { req.destroy(); reject(new Error('Timeout 15s')); });
     });
 }
 
 function cleanText(txt) {
     if (!txt) return "";
-    let str = txt;
-    str = str.replace(/&lt;!\[CDATA\[|\]\]&gt;|CDATA\[|\]\]/gi, "");
+    let str = txt.replace(/&lt;!\[CDATA\[|\]\]&gt;|CDATA\[|\]\]/gi, "");
     str = str.replace(/<[^>]+>/g, "");
     str = str.replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, " ");
     const mapa = { 'Ã³': 'ó', 'Ã§': 'ç', 'Ã£': 'ã', 'Ã©': 'é', 'Ã¡': 'á', 'Ã­': 'í', 'Ã¢': 'â', 'Ãª': 'ê', 'Ãµ': 'õ', 'Ãº': 'ú', 'Ã ': 'à', 'Âº': 'º' };
@@ -85,28 +81,33 @@ async function processarFeed(feed) {
 
             const linkMatch = itemXml.match(/<link[^>]*>([\s\S]*?)<\/link>/i) || itemXml.match(/href=["']([^"']+)["']/);
             let link = (linkMatch ? (linkMatch[1] || linkMatch[0]) : "").trim();
-            if (link.includes('href=')) {
-                const m = link.match(/href=["']([^"']+)["']/);
-                link = m ? m[1] : link;
-            }
+            if (link.includes('href=')) link = link.match(/href=["']([^"']+)["']/)[1];
 
             const pubDateMatch = itemXml.match(/<(pubDate|updated|published|dc:date)[^>]*>([\s\S]*?)<\/\1>/i);
             let dateVal = pubDateMatch ? new Date(pubDateMatch[2]) : new Date();
             if (isNaN(dateVal)) dateVal = new Date();
 
+            // --- NOVO EXTRATOR DE IMAGENS ROBUSTO ---
             let thumb = "";
-            const tagsImg = itemXml.match(/<(?:media:content|enclosure|media:thumbnail)[^>]+>/gi);
-            if (tagsImg) {
-                for (const tag of tagsImg) {
-                    const u = tag.match(/\burl\s*=\s*["']([^"'\s>]+)/i);
-                    if (u && u[1] && u[1].length > 10) { thumb = u[1]; break; }
+            
+            // 1. Procura etiquetas estruturadas (url="..." ou href="...")
+            const tagsImg = itemXml.match(/<(?:media:content|enclosure|media:thumbnail|image|webfeeds:featuredImage)[^>]+?\b(?:url|href)\s*=\s*["']([^"'\s>]+)/i);
+            if (tagsImg && tagsImg[1] && tagsImg[1].length > 10 && !tagsImg[1].includes('favicon')) {
+                thumb = tagsImg[1];
+            }
+            
+            // 2. Se falhar, procura uma tag <img> dentro da descrição ou conteúdo
+            if (!thumb) {
+                const imgInText = itemXml.match(/<img[^>]+?\b(?:src|data-src)\s*=\s*["']([^"'\s>]+)/i);
+                if (imgInText && imgInText[1] && imgInText[1].length > 10 && !imgInText[1].includes('favicon')) {
+                    thumb = imgInText[1];
                 }
             }
 
             artigos.push({
                 t: title,
                 l: link,
-                i: thumb.replace(/&amp;/g, "&"),
+                i: thumb ? thumb.replace(/&amp;/g, "&").trim() : "",
                 p: dateVal.toISOString(),
                 fav: `https://www.google.com/s2/favicons?sz=128&domain=${new URL(feed.u).hostname}`,
                 n: feed.n.trim(),
@@ -151,7 +152,7 @@ async function ejecutar() {
         };
 
         fs.writeFileSync('noticias_final.json', JSON.stringify(resultado, null, 2));
-        console.log("Concluído!");
+        console.log("Concluído! Imagens otimizadas.");
     } catch (err) { console.error("Erro Fatal:", err); }
 }
 ejecutar();
