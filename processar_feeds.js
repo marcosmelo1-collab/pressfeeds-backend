@@ -18,7 +18,7 @@ function fetchUrl(url, redirectCount = 0) {
                 'Accept-Encoding': 'gzip, deflate',
                 'Referer': 'https://www.google.com/'
             },
-            timeout: 15000 
+            timeout: 25000
         };
 
         const req = https.get(options, (res) => {
@@ -48,7 +48,6 @@ function fetchUrl(url, redirectCount = 0) {
             });
             stream.on('error', err => reject(err));
         });
-
         req.on('error', err => reject(err));
         req.on('timeout', () => { req.destroy(); reject(new Error('Timeout 15s')); });
     });
@@ -87,19 +86,33 @@ async function processarFeed(feed) {
             let dateVal = pubDateMatch ? new Date(pubDateMatch[2]) : new Date();
             if (isNaN(dateVal)) dateVal = new Date();
 
-            // --- NOVO EXTRATOR DE IMAGENS ROBUSTO ---
+            // --- NOVO EXTRATOR DE IMAGENS DE ALTA PERFORMANCE ---
             let thumb = "";
             
-            // 1. Procura etiquetas estruturadas (url="..." ou href="...")
-            const tagsImg = itemXml.match(/<(?:media:content|enclosure|media:thumbnail|image|webfeeds:featuredImage)[^>]+?\b(?:url|href)\s*=\s*["']([^"'\s>]+)/i);
-            if (tagsImg && tagsImg[1] && tagsImg[1].length > 10 && !tagsImg[1].includes('favicon')) {
-                thumb = tagsImg[1];
+            // 1. Passagem: Procura em todas as tags estruturadas possíveis (incluindo as da Billboard e NiT)
+            const tagsImagem = itemXml.match(/<(?:media:content|enclosure|media:thumbnail|image|webfeeds:featuredImage)[^>]+>/gi);
+            if (tagsImagem) {
+                for (const tag of tagsImagem) {
+                    const urlMatch = tag.match(/\b(?:url|href|src)\s*=\s*["']([^"'\s>]+)/i);
+                    if (urlMatch && urlMatch[1] && urlMatch[1].length > 15 && !urlMatch[1].includes('favicon')) {
+                        thumb = urlMatch[1];
+                        break;
+                    }
+                }
             }
-            
-            // 2. Se falhar, procura uma tag <img> dentro da descrição ou conteúdo
+
+            // 2. Passagem: Se não encontrou, procura por tags <image>...URL...</image> (Estilo ZeroZero)
             if (!thumb) {
-                const imgInText = itemXml.match(/<img[^>]+?\b(?:src|data-src)\s*=\s*["']([^"'\s>]+)/i);
-                if (imgInText && imgInText[1] && imgInText[1].length > 10 && !imgInText[1].includes('favicon')) {
+                const imageTagContent = itemXml.match(/<image[^>]*>([\s\S]*?)<\/image>/i);
+                if (imageTagContent && imageTagContent[1].includes('http')) {
+                    thumb = imageTagContent[1].replace(/<!\[CDATA\[|\]\]>/g, "").trim();
+                }
+            }
+
+            // 3. Passagem: Varredura final dentro do texto (Scraping de etiquetas <img>)
+            if (!thumb) {
+                const imgInText = itemXml.match(/<img[^>]+?\b(?:src|data-src|data-lazy-src)\s*=\s*["']([^"'\s>]+)/i);
+                if (imgInText && imgInText[1] && imgInText[1].length > 15) {
                     thumb = imgInText[1];
                 }
             }
@@ -152,7 +165,7 @@ async function ejecutar() {
         };
 
         fs.writeFileSync('noticias_final.json', JSON.stringify(resultado, null, 2));
-        console.log("Concluído! Imagens otimizadas.");
+        console.log("Processamento concluído com sucesso!");
     } catch (err) { console.error("Erro Fatal:", err); }
 }
 ejecutar();
