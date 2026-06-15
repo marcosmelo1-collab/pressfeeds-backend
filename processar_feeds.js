@@ -18,54 +18,59 @@ function fetchUrl(url, redirectCount = 0) {
                 'Accept-Encoding': 'gzip, deflate',
                 'Referer': 'https://www.google.com/'
             },
-            timeout: 25000
+            timeout: 15000 // Tempo limite de 15 segundos
         };
 
-        https.get(options, (res) => {
+        const req = https.get(options, (res) => {
             if (res.statusCode === 301 || res.statusCode === 302) {
                 const newLoc = res.headers.location.startsWith('http') ? res.headers.location : `https://${urlObj.hostname}${res.headers.location}`;
                 return fetchUrl(newLoc, redirectCount + 1).then(resolve).catch(reject);
             }
 
             let stream = res;
-            if (res.headers['content-encoding'] === 'gzip') stream = res.pipe(zlib.createGunzip());
-            else if (res.headers['content-encoding'] === 'deflate') stream = res.pipe(zlib.createInflate());
+            if (res.headers['content-encoding'] === 'gzip') {
+                const gunzip = zlib.createGunzip();
+                res.pipe(gunzip);
+                stream = gunzip;
+            } else if (res.headers['content-encoding'] === 'deflate') {
+                const inflate = zlib.createInflate();
+                res.pipe(inflate);
+                stream = inflate;
+            }
 
             const chunks = [];
             stream.on('data', chunk => chunks.push(chunk));
             stream.on('end', () => {
                 const buffer = Buffer.concat(chunks);
                 let encoding = 'utf-8';
-                // Forçar latin1 apenas para Record e A Bola (corrigir acentos)
                 if (url.includes('record.pt') || url.includes('abola.pt')) encoding = 'latin1';
                 resolve(buffer.toString(encoding));
             });
-        }).on('error', err => reject(err));
+            stream.on('error', err => reject(err));
+        });
+
+        req.on('error', err => reject(err));
+        req.on('timeout', () => {
+            req.destroy(); // FECHA A LIGAÇÃO À FORÇA SE DEMORAR
+            reject(new Error('Timeout de 15s'));
+        });
     });
 }
 
 function cleanText(txt) {
     if (!txt) return "";
     let str = txt;
-    // 1. Remove CDATA escapado (Problema do Record)
-    str = str.replace(/&lt;!\[CDATA\[|&lt;!\[CDATA\[|\]\]&gt;|CDATA\[|\]\]/gi, "");
-    // 2. Remove tags HTML
+    str = str.replace(/&lt;!\[CDATA\[|\]\]&gt;|CDATA\[|\]\]/gi, "");
     str = str.replace(/<[^>]+>/g, "");
-    // 3. Entidades básicas
     str = str.replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, " ");
-    
-    // 4. Correção manual de carateres comuns se o encoding falhar
-    const mapa = {
-        'Ã³': 'ó', 'Ã§': 'ç', 'Ã£': 'ã', 'Ã©': 'é', 'Ã¡': 'á', 'Ã­': 'í', 
-        'Ã¢': 'â', 'Ãª': 'ê', 'Ãµ': 'õ', 'Ãº': 'ú', 'Ã ': 'à', 'Âº': 'º'
-    };
+    const mapa = { 'Ã³': 'ó', 'Ã§': 'ç', 'Ã£': 'ã', 'Ã©': 'é', 'Ã¡': 'á', 'Ã­': 'í', 'Ã¢': 'â', 'Ãª': 'ê', 'Ãµ': 'õ', 'Ãº': 'ú', 'Ã ': 'à', 'Âº': 'º' };
     for (let erro in mapa) { str = str.split(erro).join(mapa[erro]); }
-    
     return str.replace(/\s+/g, " ").trim();
 }
 
 async function processarFeed(feed) {
     try {
+        console.log(`> A ler: ${feed.n}`);
         const xml = await fetchUrl(feed.u);
         const itemRegex = /<(item|entry)\b[^>]*>([\s\S]*?)<\/\1>/gi;
         const artigos = [];
@@ -81,7 +86,7 @@ async function processarFeed(feed) {
             const linkMatch = itemXml.match(/<link[^>]*>([\s\S]*?)<\/link>/i) || itemXml.match(/href=["']([^"']+)["']/);
             let link = (linkMatch ? (linkMatch[1] || linkMatch[0]) : "").trim();
             if (link.includes('href=')) {
-                let m = link.match(/href=["']([^"']+)["']/);
+                const m = link.match(/href=["']([^"']+)["']/);
                 link = m ? m[1] : link;
             }
 
@@ -111,7 +116,7 @@ async function processarFeed(feed) {
         }
         return artigos;
     } catch (e) {
-        console.error(`Falha em ${feed.n}: ${e.message}`);
+        console.error(`  [FALHA] ${feed.n}: ${e.message}`);
         return [];
     }
 }
@@ -146,7 +151,7 @@ async function ejecutar() {
         };
 
         fs.writeFileSync('noticias_final.json', JSON.stringify(resultado, null, 2));
-        console.log("Concluído com sucesso!");
+        console.log("Concluído!");
     } catch (err) { console.error("Erro Fatal:", err); }
 }
 ejecutar();
