@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    # Atualiza automaticamente de 1 em 1 hora (no minuto zero)
+    # Atualiza automaticamente de 2 em 2 horas
     - cron: '0 */2 * * *'
   workflow_dispatch: 
 
@@ -17,17 +17,18 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      # Força o uso do Node 24 como recomendado pelo GitHub
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
     - name: Copiar o código do repositório
       uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
 
     - name: Configurar o Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '20'
+        node-version: '24' # ATUALIZADO PARA NODE 24
 
     - name: Executar o script de notícias
       run: node processar_feeds.js
