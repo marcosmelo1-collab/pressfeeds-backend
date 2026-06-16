@@ -6,7 +6,7 @@ on:
       - main
   schedule:
     # Atualiza automaticamente de 1 em 1 hora (no minuto zero)
-    - cron: '0 * * * *'
+    - cron: '0 */2 * * *'
   workflow_dispatch: 
 
 permissions:
