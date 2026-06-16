@@ -24,29 +24,29 @@ function fetchUrl(url, redirectCount = 0) {
             path: urlObj.pathname + urlObj.search,
             method: 'GET',
             headers: {
-                // User-Agent mais genérico para evitar bloqueios
-                'User-Agent': 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
-                'Accept': 'application/xml, text/xml, application/rss+xml, application/atom+xml, application/xhtml+xml, text/html;q=0.9,image/webp,*/*;q=0.8', // Pedir explicitamente XML
-                'Accept-Language': 'en-US,en;q=0.5',
-                'Accept-Encoding': 'gzip, deflate',
-                'Connection': 'keep-alive',
-                'Pragma': 'no-cache',
-                'Cache-Control': 'no-cache',
-                'Referer': 'https://www.google.com/' // Para simular que veio do Google
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+                'Accept': 'application/rss+xml, application/xml, text/xml, */*',
+                'Accept-Language': 'pt-PT,pt;q=0.9,en-US;q=0.8',
+                'Referer': 'https://www.google.com/',
+                'Cache-Control': 'no-cache'
             },
-            timeout: 20000 // Aumentar para 20 segundos
+            timeout: 20000 
         };
         const req = https.get(options, (res) => {
             if (res.statusCode === 301 || res.statusCode === 302) {
                 const newLoc = res.headers.location.startsWith('http') ? res.headers.location : `https://${urlObj.hostname}${res.headers.location}`;
                 return fetchUrl(newLoc, redirectCount + 1).then(resolve).catch(reject);
             }
-            if (res.statusCode !== 200) {
-                return reject(new Error(`Status ${res.statusCode}`));
-            }
             let stream = res;
-            if (res.headers['content-encoding'] === 'gzip') stream = res.pipe(zlib.createGunzip());
-            else if (res.headers['content-encoding'] === 'deflate') stream = res.pipe(zlib.createInflate());
+            if (res.headers['content-encoding'] === 'gzip') {
+                const gunzip = zlib.createGunzip();
+                res.pipe(gunzip);
+                stream = gunzip;
+            } else if (res.headers['content-encoding'] === 'deflate') {
+                const inflate = zlib.createInflate();
+                res.pipe(inflate);
+                stream = inflate;
+            }
             const chunks = [];
             stream.on('data', chunk => chunks.push(chunk));
             stream.on('end', () => {
@@ -55,10 +55,9 @@ function fetchUrl(url, redirectCount = 0) {
                 if (url.includes('record.pt') || url.includes('abola.pt') || url.includes('sapo.pt')) encoding = 'latin1';
                 resolve(buffer.toString(encoding));
             });
-            stream.on('error', err => reject(err));
         });
         req.on('error', err => reject(err));
-        req.on('timeout', () => { req.destroy(); reject(new Error('Timeout 20s')); });
+        req.on('timeout', () => { req.destroy(); reject(new Error('Timeout')); });
     });
 }
 
@@ -101,7 +100,7 @@ async function processarFeed(feed) {
             contador++;
         }
         return artigos;
-    } catch (e) { return []; }
+    } catch (e) { console.error(`Erro em ${feed.n}: ${e.message}`); return []; }
 }
 
 async function ejecutar() {
