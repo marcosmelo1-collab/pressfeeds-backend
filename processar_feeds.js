@@ -5,8 +5,18 @@ const zlib = require('zlib');
 const JSON_FEEDS_URL = "https://gist.githubusercontent.com/marcosmelo1-collab/a6564ddeec0f72ffeb9918cb5c16a873/raw/feeds.json";
 const priorityOrder = ["Observador", "Mega Hits", "Notícias ao Minuto", "SIC Notícias", "Público", "RTP", "Renascença", "NiT", "Lisboa Secreta"];
 
+async function traduzirTexto(texto) {
+    if (!texto || texto.length < 3) return texto;
+    try {
+        const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=pt&dt=t&q=${encodeURIComponent(texto)}`;
+        const res = await fetchUrl(url);
+        const json = JSON.parse(res);
+        return json[0][0][0];
+    } catch (e) { return texto; }
+}
+
 function fetchUrl(url, redirectCount = 0) {
-    if (redirectCount > 5) return Promise.reject(new Error('Demasiados redirecionamentos'));
+    if (redirectCount > 5) return Promise.reject(new Error('Redirect Loop'));
     return new Promise((resolve, reject) => {
         const urlObj = new URL(url);
         const options = {
@@ -14,30 +24,20 @@ function fetchUrl(url, redirectCount = 0) {
             path: urlObj.pathname + urlObj.search,
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
-                'Accept': 'application/rss+xml, application/xml, text/xml, */*',
+                'Accept': '*/*',
                 'Accept-Encoding': 'gzip, deflate',
                 'Referer': 'https://www.google.com/'
             },
-            timeout: 25000
+            timeout: 15000 
         };
-
         const req = https.get(options, (res) => {
             if (res.statusCode === 301 || res.statusCode === 302) {
                 const newLoc = res.headers.location.startsWith('http') ? res.headers.location : `https://${urlObj.hostname}${res.headers.location}`;
                 return fetchUrl(newLoc, redirectCount + 1).then(resolve).catch(reject);
             }
-
             let stream = res;
-            if (res.headers['content-encoding'] === 'gzip') {
-                const gunzip = zlib.createGunzip();
-                res.pipe(gunzip);
-                stream = gunzip;
-            } else if (res.headers['content-encoding'] === 'deflate') {
-                const inflate = zlib.createInflate();
-                res.pipe(inflate);
-                stream = inflate;
-            }
-
+            if (res.headers['content-encoding'] === 'gzip') stream = res.pipe(zlib.createGunzip());
+            else if (res.headers['content-encoding'] === 'deflate') stream = res.pipe(zlib.createInflate());
             const chunks = [];
             stream.on('data', chunk => chunks.push(chunk));
             stream.on('end', () => {
@@ -46,7 +46,6 @@ function fetchUrl(url, redirectCount = 0) {
                 if (url.includes('record.pt') || url.includes('abola.pt')) encoding = 'latin1';
                 resolve(buffer.toString(encoding));
             });
-            stream.on('error', err => reject(err));
         });
         req.on('error', err => reject(err));
         req.on('timeout', () => { req.destroy(); reject(new Error('Timeout 15s')); });
@@ -56,9 +55,8 @@ function fetchUrl(url, redirectCount = 0) {
 function cleanText(txt) {
     if (!txt) return "";
     let str = txt.replace(/&lt;!\[CDATA\[|\]\]&gt;|CDATA\[|\]\]/gi, "");
-    str = str.replace(/<[^>]+>/g, "");
-    str = str.replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, " ");
-    const mapa = { 'Ã³': 'ó', 'Ã§': 'ç', 'Ã£': 'ã', 'Ã©': 'é', 'Ã¡': 'á', 'Ã­': 'í', 'Ã¢': 'â', 'Ãª': 'ê', 'Ãµ': 'õ', 'Ãº': 'ú', 'Ã ': 'à', 'Âº': 'º' };
+    str = str.replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, " ");
+    const mapa = { 'Ã³': 'ó', 'Ã§': 'ç', 'Ã£': 'ã', 'Ã©': 'é', 'Ã¡': 'á', 'Ã­': 'í', 'Ã¢': 'â', 'Ãª': 'ê', 'Ãµ': 'õ', 'Ãº': 'ú', 'Ã ': 'à' };
     for (let erro in mapa) { str = str.split(erro).join(mapa[erro]); }
     return str.replace(/\s+/g, " ").trim();
 }
@@ -71,68 +69,29 @@ async function processarFeed(feed) {
         const artigos = [];
         let match;
         let contador = 0;
-
         while ((match = itemRegex.exec(xml)) !== null && contador < 10) {
             const itemXml = match[2];
             const titleMatch = itemXml.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
             let title = cleanText(titleMatch ? titleMatch[1] : "");
             if (!title) continue;
-
+            if (feed.l === "en") title = await traduzirTexto(title);
             const linkMatch = itemXml.match(/<link[^>]*>([\s\S]*?)<\/link>/i) || itemXml.match(/href=["']([^"']+)["']/);
             let link = (linkMatch ? (linkMatch[1] || linkMatch[0]) : "").trim();
             if (link.includes('href=')) link = link.match(/href=["']([^"']+)["']/)[1];
-
             const pubDateMatch = itemXml.match(/<(pubDate|updated|published|dc:date)[^>]*>([\s\S]*?)<\/\1>/i);
             let dateVal = pubDateMatch ? new Date(pubDateMatch[2]) : new Date();
-            if (isNaN(dateVal)) dateVal = new Date();
-
-            // --- NOVO EXTRATOR DE IMAGENS DE ALTA PERFORMANCE ---
             let thumb = "";
-            
-            // 1. Passagem: Procura em todas as tags estruturadas possíveis (incluindo as da Billboard e NiT)
-            const tagsImagem = itemXml.match(/<(?:media:content|enclosure|media:thumbnail|image|webfeeds:featuredImage)[^>]+>/gi);
-            if (tagsImagem) {
-                for (const tag of tagsImagem) {
-                    const urlMatch = tag.match(/\b(?:url|href|src)\s*=\s*["']([^"'\s>]+)/i);
-                    if (urlMatch && urlMatch[1] && urlMatch[1].length > 15 && !urlMatch[1].includes('favicon')) {
-                        thumb = urlMatch[1];
-                        break;
-                    }
-                }
-            }
-
-            // 2. Passagem: Se não encontrou, procura por tags <image>...URL...</image> (Estilo ZeroZero)
+            const tagsImg = itemXml.match(/<(?:media:content|enclosure|media:thumbnail|image|webfeeds:featuredImage)[^>]+?\b(?:url|href|src)\s*=\s*["']([^"'\s>]+)/i);
+            if (tagsImg) thumb = tagsImg[1];
             if (!thumb) {
-                const imageTagContent = itemXml.match(/<image[^>]*>([\s\S]*?)<\/image>/i);
-                if (imageTagContent && imageTagContent[1].includes('http')) {
-                    thumb = imageTagContent[1].replace(/<!\[CDATA\[|\]\]>/g, "").trim();
-                }
+                const imgInText = itemXml.match(/<img[^>]+?\b(?:src|data-src)\s*=\s*["']([^"'\s>]+)/i);
+                if (imgInText) thumb = imgInText[1];
             }
-
-            // 3. Passagem: Varredura final dentro do texto (Scraping de etiquetas <img>)
-            if (!thumb) {
-                const imgInText = itemXml.match(/<img[^>]+?\b(?:src|data-src|data-lazy-src)\s*=\s*["']([^"'\s>]+)/i);
-                if (imgInText && imgInText[1] && imgInText[1].length > 15) {
-                    thumb = imgInText[1];
-                }
-            }
-
-            artigos.push({
-                t: title,
-                l: link,
-                i: thumb ? thumb.replace(/&amp;/g, "&").trim() : "",
-                p: dateVal.toISOString(),
-                fav: `https://www.google.com/s2/favicons?sz=128&domain=${new URL(feed.u).hostname}`,
-                n: feed.n.trim(),
-                c: feed.c
-            });
+            artigos.push({ t: title, l: link, i: thumb ? thumb.replace(/&amp;/g, "&").trim() : "", p: dateVal.toISOString(), fav: `https://www.google.com/s2/favicons?sz=128&domain=${new URL(feed.u).hostname}`, n: feed.n.trim(), c: feed.c });
             contador++;
         }
         return artigos;
-    } catch (e) {
-        console.error(`  [FALHA] ${feed.n}: ${e.message}`);
-        return [];
-    }
+    } catch (e) { return []; }
 }
 
 async function ejecutar() {
@@ -141,7 +100,6 @@ async function ejecutar() {
         const fontes = JSON.parse(fontesRaw);
         let todosArtigosPlanos = [];
         let gruposNoticias = [];
-
         for (const fonte of fontes) {
             const artigos = await processarFeed(fonte);
             if (artigos.length > 0) {
@@ -149,23 +107,15 @@ async function ejecutar() {
                 gruposNoticias.push({ nome: fonte.n.trim(), categoria: fonte.c, artigos });
             }
         }
-
         todosArtigosPlanos.sort((a, b) => new Date(b.p) - new Date(a.p));
         gruposNoticias.sort((a, b) => {
             const idxA = priorityOrder.indexOf(a.nome), idxB = priorityOrder.indexOf(b.nome);
             if (idxA !== -1 && idxB !== -1) return idxA - idxB;
             return idxA !== -1 ? -1 : (idxB !== -1 ? 1 : 0);
         });
-
-        const resultado = {
-            ultimasAtualizacao: new Date().toISOString(),
-            fontesAtivas: fontes.filter(f => gruposNoticias.some(g => g.nome === f.n.trim())),
-            todosArtigosPlanos,
-            gruposPorPrioridade: gruposNoticias
-        };
-
+        const resultado = { ultimasAtualizacao: new Date().toISOString(), fontesAtivas: fontes.filter(f => gruposNoticias.some(g => g.nome === f.n.trim())), todosArtigosPlanos, gruposPorPrioridade: gruposNoticias };
         fs.writeFileSync('noticias_final.json', JSON.stringify(resultado, null, 2));
-        console.log("Processamento concluído com sucesso!");
+        console.log("Sucesso!");
     } catch (err) { console.error("Erro Fatal:", err); }
 }
 ejecutar();
