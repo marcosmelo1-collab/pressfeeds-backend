@@ -22,18 +22,27 @@ function fetchUrl(url, redirectCount = 0) {
         const options = {
             hostname: urlObj.hostname,
             path: urlObj.pathname + urlObj.search,
+            method: 'GET',
             headers: {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
-                'Accept': '*/*',
+                // User-Agent mais genérico para evitar bloqueios
+                'User-Agent': 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
+                'Accept': 'application/xml, text/xml, application/rss+xml, application/atom+xml, application/xhtml+xml, text/html;q=0.9,image/webp,*/*;q=0.8', // Pedir explicitamente XML
+                'Accept-Language': 'en-US,en;q=0.5',
                 'Accept-Encoding': 'gzip, deflate',
-                'Referer': 'https://www.google.com/'
+                'Connection': 'keep-alive',
+                'Pragma': 'no-cache',
+                'Cache-Control': 'no-cache',
+                'Referer': 'https://www.google.com/' // Para simular que veio do Google
             },
-            timeout: 15000 
+            timeout: 20000 // Aumentar para 20 segundos
         };
         const req = https.get(options, (res) => {
             if (res.statusCode === 301 || res.statusCode === 302) {
                 const newLoc = res.headers.location.startsWith('http') ? res.headers.location : `https://${urlObj.hostname}${res.headers.location}`;
                 return fetchUrl(newLoc, redirectCount + 1).then(resolve).catch(reject);
+            }
+            if (res.statusCode !== 200) {
+                return reject(new Error(`Status ${res.statusCode}`));
             }
             let stream = res;
             if (res.headers['content-encoding'] === 'gzip') stream = res.pipe(zlib.createGunzip());
@@ -43,12 +52,13 @@ function fetchUrl(url, redirectCount = 0) {
             stream.on('end', () => {
                 const buffer = Buffer.concat(chunks);
                 let encoding = 'utf-8';
-                if (url.includes('record.pt') || url.includes('abola.pt')) encoding = 'latin1';
+                if (url.includes('record.pt') || url.includes('abola.pt') || url.includes('sapo.pt')) encoding = 'latin1';
                 resolve(buffer.toString(encoding));
             });
+            stream.on('error', err => reject(err));
         });
         req.on('error', err => reject(err));
-        req.on('timeout', () => { req.destroy(); reject(new Error('Timeout 15s')); });
+        req.on('timeout', () => { req.destroy(); reject(new Error('Timeout 20s')); });
     });
 }
 
