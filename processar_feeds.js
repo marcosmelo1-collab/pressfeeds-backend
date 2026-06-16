@@ -22,31 +22,22 @@ function fetchUrl(url, redirectCount = 0) {
         const options = {
             hostname: urlObj.hostname,
             path: urlObj.pathname + urlObj.search,
-            method: 'GET',
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
                 'Accept': 'application/rss+xml, application/xml, text/xml, */*',
-                'Accept-Language': 'pt-PT,pt;q=0.9,en-US;q=0.8',
-                'Referer': 'https://www.google.com/',
-                'Cache-Control': 'no-cache'
+                'Accept-Encoding': 'gzip, deflate',
+                'Referer': 'https://www.google.com/'
             },
             timeout: 20000 
         };
-        const req = https.get(options, (res) => {
+        https.get(options, (res) => {
             if (res.statusCode === 301 || res.statusCode === 302) {
                 const newLoc = res.headers.location.startsWith('http') ? res.headers.location : `https://${urlObj.hostname}${res.headers.location}`;
                 return fetchUrl(newLoc, redirectCount + 1).then(resolve).catch(reject);
             }
             let stream = res;
-            if (res.headers['content-encoding'] === 'gzip') {
-                const gunzip = zlib.createGunzip();
-                res.pipe(gunzip);
-                stream = gunzip;
-            } else if (res.headers['content-encoding'] === 'deflate') {
-                const inflate = zlib.createInflate();
-                res.pipe(inflate);
-                stream = inflate;
-            }
+            if (res.headers['content-encoding'] === 'gzip') stream = res.pipe(zlib.createGunzip());
+            else if (res.headers['content-encoding'] === 'deflate') stream = res.pipe(zlib.createInflate());
             const chunks = [];
             stream.on('data', chunk => chunks.push(chunk));
             stream.on('end', () => {
@@ -55,9 +46,7 @@ function fetchUrl(url, redirectCount = 0) {
                 if (url.includes('record.pt') || url.includes('abola.pt') || url.includes('sapo.pt')) encoding = 'latin1';
                 resolve(buffer.toString(encoding));
             });
-        });
-        req.on('error', err => reject(err));
-        req.on('timeout', () => { req.destroy(); reject(new Error('Timeout')); });
+        }).on('error', err => reject(err));
     });
 }
 
@@ -100,7 +89,7 @@ async function processarFeed(feed) {
             contador++;
         }
         return artigos;
-    } catch (e) { console.error(`Erro em ${feed.n}: ${e.message}`); return []; }
+    } catch (e) { return []; }
 }
 
 async function ejecutar() {
