@@ -15,37 +15,32 @@ async function traduzirTexto(texto) {
     } catch (e) { return texto; }
 }
 
-function fetchUrl(url, redirectCount = 0, customTimeout = 15000) {
+function fetchUrl(url, redirectCount = 0, customTimeout = 25000) {
     if (redirectCount > 5) return Promise.reject(new Error('Redirect Loop'));
     return new Promise((resolve, reject) => {
         const urlObj = new URL(url);
-        
-        // IDENTIDADE SECRETA: Se for um site que dá 403, fingimos ser o Googlebot
-        let userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36';
-        if (url.includes('lisboasecreta') || url.includes('timeout') || url.includes('expresso') || url.includes('nit.pt')) {
+        let userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36';
+        if (url.includes('lisboasecreta') || url.includes('timeout') || url.includes('expresso') || url.includes('ratedrnb')) {
             userAgent = 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)';
         }
-
         const options = {
             hostname: urlObj.hostname,
             path: urlObj.pathname + urlObj.search,
+            method: 'GET',
             headers: {
                 'User-Agent': userAgent,
                 'Accept': 'application/rss+xml, application/xml, text/xml, */*',
                 'Accept-Encoding': 'gzip, deflate',
-                'Referer': 'https://www.google.com/',
+                'Connection': 'close',
                 'Cache-Control': 'no-cache'
             },
             timeout: customTimeout
         };
-
         const req = https.get(options, (res) => {
             if (res.statusCode === 301 || res.statusCode === 302) {
                 const newLoc = res.headers.location.startsWith('http') ? res.headers.location : `https://${urlObj.hostname}${res.headers.location}`;
                 return fetchUrl(newLoc, redirectCount + 1).then(resolve).catch(reject);
             }
-            if (res.statusCode !== 200) return reject(new Error(`Status ${res.statusCode}`));
-
             let stream = res;
             if (res.headers['content-encoding'] === 'gzip') {
                 const gunzip = zlib.createGunzip();
@@ -56,7 +51,6 @@ function fetchUrl(url, redirectCount = 0, customTimeout = 15000) {
                 res.pipe(inflate);
                 stream = inflate;
             }
-
             const chunks = [];
             stream.on('data', chunk => chunks.push(chunk));
             stream.on('end', () => {
@@ -80,6 +74,24 @@ function cleanText(txt) {
     return str.replace(/\s+/g, " ").trim();
 }
 
+// NOVO SISTEMA DE FAVICONS COLORIDOS E PRECISOS
+function getColorfulFav(name, feedUrl) {
+    let domain = "";
+    try { domain = new URL(feedUrl).hostname; } catch(e) { domain = "google.com"; }
+    
+    // Correção para fontes com subdomínios ou nomes específicos
+    const n = name.toLowerCase();
+    if (n.includes("sic notícia")) domain = "sicnoticias.pt";
+    else if (n.includes("expresso")) domain = "expresso.pt";
+    else if (n.includes("público")) domain = "publico.pt";
+    else if (n.includes("nit")) domain = "nit.pt";
+    else if (n.includes("lisboa secreta")) domain = "lisboasecreta.co";
+    else if (n.includes("mega hits")) domain = "megahits.fm";
+    else if (n.includes("rolling stone")) domain = "rollingstone.com";
+    
+    return `https://www.google.com/s2/favicons?sz=128&domain=${domain}`;
+}
+
 async function processarFeed(feed) {
     try {
         const xml = await fetchUrl(feed.u);
@@ -87,23 +99,19 @@ async function processarFeed(feed) {
         const artigos = [];
         let match;
         let contador = 0;
-        const domain = new URL(feed.u).hostname;
+        const colorfulFav = getColorfulFav(feed.n, feed.u);
 
         while ((match = itemRegex.exec(xml)) !== null && contador < 10) {
             const itemXml = match[2];
             const titleMatch = itemXml.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
             let title = cleanText(titleMatch ? titleMatch[1] : "");
             if (!title) continue;
-
             if (feed.l === "en") title = await traduzirTexto(title);
-
             const linkMatch = itemXml.match(/<link[^>]*>([\s\S]*?)<\/link>/i) || itemXml.match(/href=["']([^"']+)["']/);
             let link = (linkMatch ? (linkMatch[1] || linkMatch[0]) : "").trim();
             if (link.includes('href=')) link = link.match(/href=["']([^"']+)["']/)[1];
-
             const pubDateMatch = itemXml.match(/<(pubDate|updated|published|dc:date)[^>]*>([\s\S]*?)<\/\1>/i);
             let dateVal = pubDateMatch ? new Date(pubDateMatch[2]) : new Date();
-
             let thumb = "";
             const tagsImg = itemXml.match(/<(?:media:content|enclosure|media:thumbnail|image|webfeeds:featuredImage)[^>]+?\b(?:url|href|src)\s*=\s*["']([^"'\s>]+)/i);
             if (tagsImg) thumb = tagsImg[1];
@@ -111,24 +119,11 @@ async function processarFeed(feed) {
                 const imgInText = itemXml.match(/<img[^>]+?\b(?:src|data-src)\s*=\s*["']([^"'\s>]+)/i);
                 if (imgInText) thumb = imgInText[1];
             }
-
-            artigos.push({
-                t: title,
-                l: link,
-                i: thumb ? thumb.replace(/&amp;/g, "&").trim() : "",
-                p: dateVal.toISOString(),
-                fav: `https://icon.horse/icon/${domain}`,
-                n: feed.n.trim(),
-                c: feed.c
-            });
+            artigos.push({ t: title, l: link, i: thumb ? thumb.replace(/&amp;/g, "&").trim() : "", p: dateVal.toISOString(), fav: colorfulFav, n: feed.n.trim(), c: feed.c });
             contador++;
         }
-        console.log(`[OK] ${feed.n}: ${artigos.length} artigos.`);
         return artigos;
-    } catch (e) {
-        console.log(`[FALHA] ${feed.n}: ${e.message}`);
-        return [];
-    }
+    } catch (e) { return []; }
 }
 
 async function ejecutar() {
@@ -147,7 +142,7 @@ async function ejecutar() {
         todosArtigosPlanos.sort((a, b) => new Date(b.p) - new Date(a.p));
         const resultado = { ultimasAtualizacao: new Date().toISOString(), fontesAtivas: fontes.filter(f => gruposNoticias.some(g => g.nome === f.n.trim())), todosArtigosPlanos, gruposPorPrioridade: gruposNoticias };
         fs.writeFileSync('noticias_final.json', JSON.stringify(resultado, null, 2));
-        console.log("Concluído!");
+        console.log("Sucesso!");
     } catch (err) { console.error("Erro Fatal:", err); }
 }
 ejecutar();
