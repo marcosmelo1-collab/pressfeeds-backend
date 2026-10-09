@@ -5,8 +5,8 @@ on:
     branches:
       - main
   schedule:
-    # ATUALIZAÇÃO AGRESSIVA: De 30 em 30 minutos
-    - cron: '*/30 * * * *'
+    # ATUALIZAÇÃO AGRESSIVA: De 10 em 10 minutos
+    - cron: '*/10 * * * *'
   workflow_dispatch: 
 
 permissions:
