@@ -3,7 +3,6 @@ const https = require('https');
 const zlib = require('zlib');
 
 const JSON_FEEDS_URL = "https://gist.githubusercontent.com/marcosmelo1-collab/a6564ddeec0f72ffeb9918cb5c16a873/raw/feeds.json";
-const priorityOrder = ["Observador", "Mega Hits", "Notícias ao Minuto", "SIC Notícias", "Público", "RTP", "Renascença", "NiT", "Lisboa Secreta"];
 
 async function traduzirTexto(texto) {
     if (!texto || texto.length < 3) return texto;
@@ -67,19 +66,17 @@ function fetchUrl(url, redirectCount = 0, customTimeout = 25000) {
 
 function cleanText(txt) {
     if (!txt) return "";
-    let str = txt.replace(/&lt;!\[CDATA\[|\]\]&gt;|CDATA\[|\]\]/gi, "");
+    let str = txt.replace(/&lt;!\[CDATA\[\vert{}\]\]&gt;|CDATA\[\vert{}\]\]/gi, "");
     str = str.replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, " ");
     const mapa = { 'Ã³': 'ó', 'Ã§': 'ç', 'Ã£': 'ã', 'Ã©': 'é', 'Ã¡': 'á', 'Ã­': 'í', 'Ã¢': 'â', 'Ãª': 'ê', 'Ãµ': 'õ', 'Ãº': 'ú', 'Ã ': 'à' };
     for (let erro in mapa) { str = str.split(erro).join(mapa[erro]); }
     return str.replace(/\s+/g, " ").trim();
 }
 
-// NOVO SISTEMA DE FAVICONS COLORIDOS E PRECISOS
 function getColorfulFav(name, feedUrl) {
     let domain = "";
     try { domain = new URL(feedUrl).hostname; } catch(e) { domain = "google.com"; }
     
-    // Correção para fontes com subdomínios ou nomes específicos
     const n = name.toLowerCase();
     if (n.includes("sic notícia")) domain = "sicnoticias.pt";
     else if (n.includes("expresso")) domain = "expresso.pt";
@@ -132,17 +129,28 @@ async function ejecutar() {
         const fontes = JSON.parse(fontesRaw);
         let todosArtigosPlanos = [];
         let gruposNoticias = [];
+        
         for (const fonte of fontes) {
-            const artigos = await processarFeed(fonte);
+            let artigos = await processarFeed(fonte);
             if (artigos.length > 0) {
+                artigos.sort((a, b) => new Date(b.p) - new Date(a.p));
                 todosArtigosPlanos = todosArtigosPlanos.concat(artigos);
                 gruposNoticias.push({ nome: fonte.n.trim(), categoria: fonte.c, artigos });
             }
         }
+        
         todosArtigosPlanos.sort((a, b) => new Date(b.p) - new Date(a.p));
-        const resultado = { ultimasAtualizacao: new Date().toISOString(), fontesAtivas: fontes.filter(f => gruposNoticias.some(g => g.nome === f.n.trim())), todosArtigosPlanos, gruposPorPrioridade: gruposNoticias };
+        
+        const resultado = { 
+            ultimasAtualizacao: new Date().toISOString(), 
+            fontesAtivas: fontes.filter(f => gruposNoticias.some(g => g.nome === f.n.trim())), 
+            todosArtigosPlanos, 
+            gruposPorPrioridade: gruposNoticias 
+        };
+        
         fs.writeFileSync('noticias_final.json', JSON.stringify(resultado, null, 2));
         console.log("Sucesso!");
     } catch (err) { console.error("Erro Fatal:", err); }
 }
+
 ejecutar();
